@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -5,14 +6,24 @@ export default function Home() {
     <div className="min-h-screen p-8 font-mono">
       <div className="max-w-4xl mx-auto">
         <header className="mb-12">
-          <div className="mb-8">
-            <h1 className="text-4xl font-bold mb-4">
-              <span className="text-primary">~</span>/mikko-kohtala
-            </h1>
-            <p className="text-muted-foreground text-sm">
-              <span className="terminal-prompt">location</span>
-              <span className="text-foreground ml-2">Tampere, Finland</span>
-            </p>
+          <div className="mb-8 flex flex-col sm:flex-row items-center gap-8">
+            <Image
+              src="/images/mikko.jpg"
+              alt="Mikko Kohtala"
+              width={120}
+              height={120}
+              className="rounded-full border-2 grayscale hover:grayscale-0 transition-all duration-300"
+              priority
+            />
+            <div className="text-center sm:text-left">
+              <h1 className="text-4xl font-bold mb-4">
+                <span className="text-primary">~</span>/mikko-kohtala
+              </h1>
+              <p className="text-muted-foreground text-sm">
+                <span className="terminal-prompt">location</span>
+                <span className="text-foreground ml-2">Tampere, Finland</span>
+              </p>
+            </div>
           </div>
 
           <div className="border border-border p-6 mb-8">
@@ -46,23 +57,28 @@ export default function Home() {
 
         <section className="mb-12">
           <h2 className="text-xl font-bold mb-4">
-            <span className="text-primary">$</span> quick-links
+            <span className="text-primary">$</span> projects
           </h2>
-          <nav className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="mb-8">
             <Link
               href="/apps"
-              className="border border-border px-4 py-3 hover:border-primary transition-colors group"
+              className="block border border-border px-4 py-3 hover:border-primary transition-colors group"
             >
               <span className="text-accent group-hover:text-primary transition-colors">
                 [apps]
               </span>
               <span className="ml-2 text-muted-foreground">
-                My projects and applications
+                View my projects and applications
               </span>
             </Link>
+          </div>
 
+          <h2 className="text-xl font-bold mb-4">
+            <span className="text-primary">$</span> connect
+          </h2>
+          <nav className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <a
-              href="https://x.com/mikkokohtala"
+              href="https://x.com/mikko_kohtala"
               target="_blank"
               rel="noopener noreferrer"
               className="border border-border px-4 py-3 hover:border-primary transition-colors group"
@@ -70,11 +86,11 @@ export default function Home() {
               <span className="text-accent group-hover:text-primary transition-colors">
                 [x/twitter]
               </span>
-              <span className="ml-2 text-muted-foreground">@mikkokohtala</span>
+              <span className="ml-2 text-muted-foreground">@mikko_kohtala</span>
             </a>
 
             <a
-              href="https://linkedin.com/in/mikkokohtala"
+              href="https://linkedin.com/in/mikko-kohtala"
               target="_blank"
               rel="noopener noreferrer"
               className="border border-border px-4 py-3 hover:border-primary transition-colors group"
@@ -82,13 +98,11 @@ export default function Home() {
               <span className="text-accent group-hover:text-primary transition-colors">
                 [linkedin]
               </span>
-              <span className="ml-2 text-muted-foreground">
-                Professional network
-              </span>
+              <span className="ml-2 text-muted-foreground">Professional</span>
             </a>
 
             <a
-              href="https://github.com/mikkokohtala"
+              href="https://github.com/mikko-kohtala"
               target="_blank"
               rel="noopener noreferrer"
               className="border border-border px-4 py-3 hover:border-primary transition-colors group"
@@ -96,9 +110,7 @@ export default function Home() {
               <span className="text-accent group-hover:text-primary transition-colors">
                 [github]
               </span>
-              <span className="ml-2 text-muted-foreground">
-                Open source contributions
-              </span>
+              <span className="ml-2 text-muted-foreground">Open source</span>
             </a>
           </nav>
         </section>
