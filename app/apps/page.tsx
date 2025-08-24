@@ -2,19 +2,22 @@ export default function AppsPage() {
   const apps = [
     {
       name: "Multi AI",
-      description: "Chat with multiple AI models simultaneously. Compare responses, get diverse perspectives, and leverage the strengths of different language models.",
+      description:
+        "Chat with multiple AI models simultaneously. Compare responses, get diverse perspectives, and leverage the strengths of different language models.",
       tech: ["Next.js", "TypeScript", "OpenAI", "Anthropic", "Google AI"],
       status: "Active",
     },
     {
       name: "Git Worktree CLI",
-      description: "A powerful command-line tool for managing Git worktrees efficiently. Simplifies branch management and enables seamless context switching.",
+      description:
+        "A powerful command-line tool for managing Git worktrees efficiently. Simplifies branch management and enables seamless context switching.",
       tech: ["Rust", "Git", "CLI"],
       status: "Active",
     },
     {
       name: "Port Monitor",
-      description: "Monitor and manage network ports on your system. Track active connections, identify processes, and ensure system security.",
+      description:
+        "Monitor and manage network ports on your system. Track active connections, identify processes, and ensure system security.",
       tech: ["Go", "System Programming", "Networking"],
       status: "Active",
     },
@@ -28,7 +31,7 @@ export default function AppsPage() {
             <span className="text-primary">~/</span>apps
           </h1>
           <p className="text-muted-foreground">
-            A collection of tools and applications I've built.
+            A collection of tools and applications I&apos;ve built.
           </p>
         </header>
 
@@ -49,11 +52,11 @@ export default function AppsPage() {
                   {app.status}
                 </span>
               </div>
-              
+
               <p className="text-muted-foreground mb-4 leading-relaxed">
                 {app.description}
               </p>
-              
+
               <div className="flex flex-wrap gap-2">
                 {app.tech.map((tech) => (
                   <span
