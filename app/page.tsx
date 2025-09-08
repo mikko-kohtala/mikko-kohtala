@@ -48,7 +48,7 @@ export default function Home() {
                   Continuous learning
                 </li>
                 <li className="before:content-['→'] before:text-muted-foreground before:mr-2">
-                  Creating value-driven systems
+                  Build the Right Thing and Build the Thing Right
                 </li>
               </ul>
             </div>
