@@ -87,7 +87,7 @@ export default async function TagPage({ params }: TagPageProps) {
             <span className="text-primary">#</span> {originalTag}
           </h1>
           <p className="text-muted-foreground">
-            {posts.length} {posts.length === 1 ? 'post' : 'posts'} tagged with "{originalTag}"
+            {posts.length} {posts.length === 1 ? 'post' : 'posts'} tagged with &ldquo;{originalTag}&rdquo;
           </p>
         </header>
 
