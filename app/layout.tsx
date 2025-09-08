@@ -16,13 +16,22 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Mikko Kohtala - Software Developer",
-  description: "Experienced software developer with a strong background in both consultancy and in-house roles, building solutions from concept to production.",
-  keywords: ["software developer", "Tampere", "Finland", "AI", "emerging technologies", "full stack"],
+  description:
+    "Experienced software developer with a strong background in both consultancy and in-house roles, building solutions from concept to production.",
+  keywords: [
+    "software developer",
+    "Tampere",
+    "Finland",
+    "AI",
+    "emerging technologies",
+    "full stack",
+  ],
   authors: [{ name: "Mikko Kohtala" }],
   creator: "Mikko Kohtala",
   openGraph: {
     title: "Mikko Kohtala - Software Developer",
-    description: "Experienced software developer with a strong background in both consultancy and in-house roles, building solutions from concept to production.",
+    description:
+      "Experienced software developer with a strong background in both consultancy and in-house roles, building solutions from concept to production.",
     url: "https://www.mikkokohtala.com",
     siteName: "Mikko Kohtala",
     locale: "en_US",
@@ -31,7 +40,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: "Mikko Kohtala - Software Developer",
-    description: "Experienced software developer with a strong background in both consultancy and in-house roles, building solutions from concept to production.",
+    description:
+      "Experienced software developer with a strong background in both consultancy and in-house roles, building solutions from concept to production.",
     creator: "@mikkokohtala",
   },
   robots: {
@@ -52,7 +62,7 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem={true}
           disableTransitionOnChange
         >
