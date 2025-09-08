@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getRecentPosts, formatDate } from "@/lib/markdown";
 
 export default function Home() {
+  const recentPosts = getRecentPosts(5);
+
   return (
     <div className="min-h-screen p-8 font-mono">
       <div className="max-w-4xl mx-auto">
@@ -113,6 +116,50 @@ export default function Home() {
               <span className="ml-2 text-muted-foreground">Open source</span>
             </a>
           </nav>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-xl font-bold mb-4">
+            <span className="text-primary">$</span> blog
+          </h2>
+          <p className="text-muted-foreground mb-4">
+            Thoughts on software development, AI, and life in general.
+          </p>
+          <div className="mb-6">
+            <Link
+              href="/blog"
+              className="inline-block text-sm text-muted-foreground hover:text-primary transition-colors mb-4"
+            >
+              <span className="text-accent">→</span> View all posts
+            </Link>
+          </div>
+          {recentPosts.length > 0 && (
+            <div className="space-y-4">
+              {recentPosts.map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="block border border-border px-4 py-3 hover:border-primary transition-colors group"
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                    <div className="flex-1">
+                      <h3 className="font-bold group-hover:text-primary transition-colors mb-1">
+                        {post.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground line-clamp-2">
+                        {post.description}
+                      </p>
+                    </div>
+                    <div className="text-xs text-muted-foreground shrink-0">
+                      <span className="text-accent">[</span>
+                      {formatDate(post.date)}
+                      <span className="text-accent">]</span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
         </section>
 
         {/* <footer className="pt-8 border-t border-border">
