@@ -1,7 +1,8 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getPostsByTag, getAllTags, formatDate } from '@/lib/markdown';
+import { env } from '@/env';
+import { formatDate, getAllTags, getPostsByTag } from '@/lib/markdown';
 
 interface TagPageProps {
   params: Promise<{
@@ -10,7 +11,8 @@ interface TagPageProps {
 }
 
 export async function generateStaticParams() {
-  const tags = getAllTags();
+  const includeDrafts = env.APP_ENV === 'local';
+  const tags = getAllTags(includeDrafts);
   return tags.map((tag) => ({
     tag: tag.toLowerCase().replace(/ /g, '-'),
   }));
@@ -19,11 +21,12 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: TagPageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const decodedTag = decodeURIComponent(resolvedParams.tag).replace(/-/g, ' ');
-  
+
   // Find the original tag with proper casing
-  const allTags = getAllTags();
-  const originalTag = allTags.find(t => t.toLowerCase() === decodedTag.toLowerCase());
-  
+  const includeDrafts = env.APP_ENV === 'local';
+  const allTags = getAllTags(includeDrafts);
+  const originalTag = allTags.find((t) => t.toLowerCase() === decodedTag.toLowerCase());
+
   if (!originalTag) {
     return {
       title: 'Tag Not Found',
@@ -44,16 +47,17 @@ export async function generateMetadata({ params }: TagPageProps): Promise<Metada
 export default async function TagPage({ params }: TagPageProps) {
   const resolvedParams = await params;
   const decodedTag = decodeURIComponent(resolvedParams.tag).replace(/-/g, ' ');
-  
+
   // Find the original tag with proper casing
-  const allTags = getAllTags();
-  const originalTag = allTags.find(t => t.toLowerCase() === decodedTag.toLowerCase());
-  
+  const includeDrafts = env.APP_ENV === 'local';
+  const allTags = getAllTags(includeDrafts);
+  const originalTag = allTags.find((t) => t.toLowerCase() === decodedTag.toLowerCase());
+
   if (!originalTag) {
     notFound();
   }
-  
-  const posts = getPostsByTag(originalTag);
+
+  const posts = getPostsByTag(originalTag, includeDrafts);
 
   if (posts.length === 0) {
     notFound();
@@ -61,29 +65,24 @@ export default async function TagPage({ params }: TagPageProps) {
 
   return (
     <div className="min-h-screen p-8 font-mono">
-      <div className="max-w-4xl mx-auto">
+      <div className="mx-auto max-w-4xl">
         <nav className="mb-8">
-          <Link 
-            href="/" 
-            className="text-muted-foreground hover:text-primary transition-colors"
-          >
+          <Link className="text-muted-foreground transition-colors hover:text-primary" href="/">
             <span className="mr-2">←</span> Home
           </Link>
           <span className="mx-2 text-muted-foreground">/</span>
-          <Link 
-            href="/blog" 
-            className="text-muted-foreground hover:text-primary transition-colors"
-          >
+          <Link className="text-muted-foreground transition-colors hover:text-primary" href="/blog">
             Blog
           </Link>
           <span className="mx-2 text-muted-foreground">/</span>
           <span className="text-foreground">
-            <span className="text-accent">#</span>{originalTag}
+            <span className="text-accent">#</span>
+            {originalTag}
           </span>
         </nav>
 
         <header className="mb-12">
-          <h1 className="text-3xl font-bold mb-4">
+          <h1 className="mb-4 font-bold text-3xl">
             <span className="text-primary">#</span> {originalTag}
           </h1>
           <p className="text-muted-foreground">
@@ -92,49 +91,76 @@ export default async function TagPage({ params }: TagPageProps) {
         </header>
 
         <section className="mb-12">
-          <h2 className="text-lg font-bold mb-6">
+          <h2 className="mb-6 font-bold text-lg">
             <span className="text-accent">[posts]</span>
           </h2>
 
           <div className="space-y-6">
             {posts.map((post) => (
-              <article 
+              <article
+                className="group border border-border p-6 transition-colors hover:border-primary"
                 key={post.slug}
-                className="border border-border p-6 hover:border-primary transition-colors group"
               >
-                <Link href={`/blog/${post.slug}`} className="block">
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
-                    <h3 className="text-lg font-bold group-hover:text-primary transition-colors">
-                      {post.title}
-                    </h3>
-                    <div className="text-sm text-muted-foreground shrink-0">
-                      <span className="text-accent">[</span>
-                      {formatDate(post.date)}
-                      <span className="text-accent">]</span>
-                    </div>
-                  </div>
-                  
-                  <p className="text-muted-foreground mb-3">
-                    {post.description}
-                  </p>
-
-                  <div className="flex flex-wrap items-center gap-4 text-sm">
-                    <div className="text-muted-foreground">
-                      <span className="text-accent">⏱</span> {post.readingTime}
-                    </div>
-                    
-                    {post.tags && post.tags.length > 0 && (
-                      <div className="flex flex-wrap gap-2">
-                        {post.tags.map((tag) => (
-                          <span 
-                            key={tag}
-                            className={`text-xs ${tag === originalTag ? 'text-primary font-bold' : 'text-muted-foreground'}`}
-                          >
-                            <span className="text-accent">#</span>{tag}
-                          </span>
-                        ))}
+                <Link className="block" href={`/blog/${post.slug}`}>
+                  <div className="flex gap-4">
+                    {post.coverImageThumbnail && (
+                      <div className="relative w-32 h-20 overflow-hidden rounded shrink-0">
+                        <img
+                          alt={`Cover image for ${post.title}`}
+                          className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                          src={post.coverImageThumbnail}
+                        />
+                        {post.isDraft && (
+                          <div className="absolute top-1 left-1">
+                            <span className="rounded-full border border-orange-500/30 bg-orange-500/20 px-1 py-0.5 font-bold text-orange-400 text-xs">
+                              DRAFT
+                            </span>
+                          </div>
+                        )}
                       </div>
                     )}
+
+                    <div className="flex-1 min-w-0">
+                      <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                        <div className="flex items-center gap-2">
+                          <h3 className="font-bold text-lg transition-colors group-hover:text-primary">{post.title}</h3>
+                          {post.isDraft && !post.coverImageThumbnail && (
+                            <span className="rounded-full border border-orange-500/30 bg-orange-500/20 px-2 py-1 font-bold text-orange-400 text-xs">
+                              DRAFT
+                            </span>
+                          )}
+                        </div>
+                        <div className="shrink-0 text-muted-foreground text-sm">
+                          <span className="text-accent">[</span>
+                          {formatDate(post.date)}
+                          <span className="text-accent">]</span>
+                        </div>
+                      </div>
+
+                      <p className="mb-3 text-muted-foreground">{post.description}</p>
+
+                      <div className="flex flex-wrap items-center gap-4 text-sm">
+                        <div className="text-muted-foreground">
+                          <span className="text-accent">⏱</span> {post.readingTime}
+                        </div>
+
+                        {post.tags && post.tags.length > 0 && (
+                          <div className="flex flex-wrap gap-2">
+                            {post.tags.map((tag) => (
+                              <span
+                                className={`text-xs ${
+                                  tag === originalTag ? 'font-bold text-primary' : 'text-muted-foreground'
+                                }`}
+                                key={tag}
+                              >
+                                <span className="text-accent">#</span>
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </Link>
               </article>
@@ -143,33 +169,36 @@ export default async function TagPage({ params }: TagPageProps) {
         </section>
 
         <section className="mb-12">
-          <h2 className="text-lg font-bold mb-4">
+          <h2 className="mb-4 font-bold text-lg">
             <span className="text-accent">[other tags]</span>
           </h2>
           <div className="flex flex-wrap gap-2">
-            {allTags.filter(tag => tag !== originalTag).map((tag) => (
-              <Link
-                key={tag}
-                href={`/blog/tag/${tag.toLowerCase().replace(/ /g, '-')}`}
-                className="border border-border px-3 py-1 text-sm hover:border-primary transition-colors"
-              >
-                <span className="text-accent">#</span>{tag}
-              </Link>
-            ))}
+            {allTags
+              .filter((tag) => tag !== originalTag)
+              .map((tag) => (
+                <Link
+                  className="border border-border px-3 py-1 text-sm transition-colors hover:border-primary"
+                  href={`/blog/tag/${tag.toLowerCase().replace(/ /g, '-')}`}
+                  key={tag}
+                >
+                  <span className="text-accent">#</span>
+                  {tag}
+                </Link>
+              ))}
           </div>
         </section>
 
-        <footer className="pt-8 border-t border-border">
+        <footer className="border-border border-t pt-8">
           <div className="flex gap-4">
-            <Link 
+            <Link
+              className="inline-block border border-border px-4 py-2 transition-colors hover:border-primary"
               href="/blog"
-              className="inline-block border border-border px-4 py-2 hover:border-primary transition-colors"
             >
               <span className="text-accent">←</span> All posts
             </Link>
-            <Link 
+            <Link
+              className="inline-block border border-border px-4 py-2 transition-colors hover:border-primary"
               href="/"
-              className="inline-block border border-border px-4 py-2 hover:border-primary transition-colors"
             >
               <span className="text-accent">←</span> Home
             </Link>

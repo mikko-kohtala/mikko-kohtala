@@ -1,56 +1,51 @@
-import Image from "next/image";
-import Link from "next/link";
-import { getRecentPosts, formatDate } from "@/lib/markdown";
+import Image from 'next/image';
+import Link from 'next/link';
+import { formatDate, getRecentPosts } from '@/lib/markdown';
 
 export default function Home() {
   const recentPosts = getRecentPosts(5);
 
   return (
     <div className="min-h-screen p-8 font-mono">
-      <div className="max-w-4xl mx-auto">
+      <div className="mx-auto max-w-4xl">
         <header className="mb-12">
-          <div className="mb-8 flex flex-col sm:flex-row items-center gap-8">
+          <div className="mb-8 flex flex-col items-center gap-8 sm:flex-row">
             <Image
-              src="/images/mikko.jpg"
               alt="Mikko Kohtala"
-              width={120}
+              className="rounded-full border-2 grayscale transition-all duration-300 hover:grayscale-0"
               height={120}
-              className="rounded-full border-2 grayscale hover:grayscale-0 transition-all duration-300"
               priority
+              src="/images/mikko.jpg"
+              width={120}
             />
             <div className="text-center sm:text-left">
-              <h1 className="text-4xl font-bold mb-4">
+              <h1 className="mb-4 font-bold text-4xl">
                 <span className="text-primary">~</span>/mikko-kohtala
               </h1>
               <p className="text-muted-foreground text-sm">
                 <span className="terminal-prompt">location</span>
-                <span className="text-foreground ml-2">Tampere, Finland</span>
+                <span className="ml-2 text-foreground">Tampere, Finland</span>
               </p>
             </div>
           </div>
 
-          <div className="border border-border p-6 mb-8">
+          <div className="mb-8 border border-border p-6">
             <p className="text-lg leading-relaxed">
-              Experienced software developer with a strong background in both
-              consultancy and in-house roles, building solutions from concept to
-              production.
+              Experienced software developer with a strong background in both consultancy and in-house roles, building
+              solutions from concept to production.
             </p>
           </div>
 
           <div className="space-y-4">
             <div className="text-sm">
-              <span className="text-accent font-bold">[focus]</span>
-              <ul className="mt-2 space-y-1 ml-8">
-                <li className="before:content-['→'] before:text-muted-foreground before:mr-2">
+              <span className="font-bold text-accent">[focus]</span>
+              <ul className="mt-2 ml-8 space-y-1">
+                <li className="before:mr-2 before:text-muted-foreground before:content-['→']">
                   AI and emerging technologies
                 </li>
-                <li className="before:content-['→'] before:text-muted-foreground before:mr-2">
-                  Technical expertise
-                </li>
-                <li className="before:content-['→'] before:text-muted-foreground before:mr-2">
-                  Continuous learning
-                </li>
-                <li className="before:content-['→'] before:text-muted-foreground before:mr-2">
+                <li className="before:mr-2 before:text-muted-foreground before:content-['→']">Technical expertise</li>
+                <li className="before:mr-2 before:text-muted-foreground before:content-['→']">Continuous learning</li>
+                <li className="before:mr-2 before:text-muted-foreground before:content-['→']">
                   Build the Right Thing and Build the Thing Right
                 </li>
               </ul>
@@ -59,76 +54,64 @@ export default function Home() {
         </header>
 
         <section className="mb-12">
-          <h2 className="text-xl font-bold mb-4">
+          <h2 className="mb-4 font-bold text-xl">
             <span className="text-primary">$</span> projects
           </h2>
           <div className="mb-8">
             <Link
+              className="group block border border-border px-4 py-3 transition-colors hover:border-primary"
               href="/apps"
-              className="block border border-border px-4 py-3 hover:border-primary transition-colors group"
             >
-              <span className="text-accent group-hover:text-primary transition-colors">
-                [apps]
-              </span>
-              <span className="ml-2 text-muted-foreground">
-                View my projects and applications
-              </span>
+              <span className="text-accent transition-colors group-hover:text-primary">[apps]</span>
+              <span className="ml-2 text-muted-foreground">View my projects and applications</span>
             </Link>
           </div>
 
-          <h2 className="text-xl font-bold mb-4">
+          <h2 className="mb-4 font-bold text-xl">
             <span className="text-primary">$</span> connect
           </h2>
-          <nav className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <nav className="grid grid-cols-1 gap-4 sm:grid-cols-3">
             <a
+              className="group border border-border px-4 py-3 transition-colors hover:border-primary"
               href="https://x.com/mikko_kohtala"
-              target="_blank"
               rel="noopener noreferrer"
-              className="border border-border px-4 py-3 hover:border-primary transition-colors group"
+              target="_blank"
             >
-              <span className="text-accent group-hover:text-primary transition-colors">
-                [x/twitter]
-              </span>
+              <span className="text-accent transition-colors group-hover:text-primary">[x/twitter]</span>
               <span className="ml-2 text-muted-foreground">@mikko_kohtala</span>
             </a>
 
             <a
+              className="group border border-border px-4 py-3 transition-colors hover:border-primary"
               href="https://linkedin.com/in/mikko-kohtala"
-              target="_blank"
               rel="noopener noreferrer"
-              className="border border-border px-4 py-3 hover:border-primary transition-colors group"
+              target="_blank"
             >
-              <span className="text-accent group-hover:text-primary transition-colors">
-                [linkedin]
-              </span>
+              <span className="text-accent transition-colors group-hover:text-primary">[linkedin]</span>
               <span className="ml-2 text-muted-foreground">Professional</span>
             </a>
 
             <a
+              className="group border border-border px-4 py-3 transition-colors hover:border-primary"
               href="https://github.com/mikko-kohtala"
-              target="_blank"
               rel="noopener noreferrer"
-              className="border border-border px-4 py-3 hover:border-primary transition-colors group"
+              target="_blank"
             >
-              <span className="text-accent group-hover:text-primary transition-colors">
-                [github]
-              </span>
+              <span className="text-accent transition-colors group-hover:text-primary">[github]</span>
               <span className="ml-2 text-muted-foreground">Open source</span>
             </a>
           </nav>
         </section>
 
         <section className="mb-12">
-          <h2 className="text-xl font-bold mb-4">
+          <h2 className="mb-4 font-bold text-xl">
             <span className="text-primary">$</span> blog
           </h2>
-          <p className="text-muted-foreground mb-4">
-            Thoughts on software development, AI, and life in general.
-          </p>
+          <p className="mb-4 text-muted-foreground">Thoughts on software development, AI, and life in general.</p>
           <div className="mb-6">
             <Link
+              className="mb-4 inline-block text-muted-foreground text-sm transition-colors hover:text-primary"
               href="/blog"
-              className="inline-block text-sm text-muted-foreground hover:text-primary transition-colors mb-4"
             >
               <span className="text-accent">→</span> View all posts
             </Link>
@@ -137,23 +120,45 @@ export default function Home() {
             <div className="space-y-4">
               {recentPosts.map((post) => (
                 <Link
-                  key={post.slug}
+                  className="group block border border-border px-4 py-3 transition-colors hover:border-primary"
                   href={`/blog/${post.slug}`}
-                  className="block border border-border px-4 py-3 hover:border-primary transition-colors group"
+                  key={post.slug}
                 >
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
-                    <div className="flex-1">
-                      <h3 className="font-bold group-hover:text-primary transition-colors mb-1">
-                        {post.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground line-clamp-2">
-                        {post.description}
-                      </p>
-                    </div>
-                    <div className="text-xs text-muted-foreground shrink-0">
-                      <span className="text-accent">[</span>
-                      {formatDate(post.date)}
-                      <span className="text-accent">]</span>
+                  <div className="flex gap-3">
+                    {post.coverImageThumbnail && (
+                      <div className="relative w-20 h-12 overflow-hidden rounded shrink-0">
+                        <img
+                          alt={`Cover image for ${post.title}`}
+                          className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                          src={post.coverImageThumbnail}
+                        />
+                        {post.isDraft && (
+                          <div className="absolute top-0.5 left-0.5">
+                            <span className="rounded-full border border-orange-500/30 bg-orange-500/20 px-1 py-0.5 font-bold text-orange-400 text-xs">
+                              DRAFT
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                    
+                    <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between flex-1 min-w-0">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2">
+                          <h3 className="mb-1 font-bold transition-colors group-hover:text-primary">{post.title}</h3>
+                          {post.isDraft && !post.coverImageThumbnail && (
+                            <span className="rounded-full border border-orange-500/30 bg-orange-500/20 px-1 py-0.5 font-bold text-orange-400 text-xs">
+                              DRAFT
+                            </span>
+                          )}
+                        </div>
+                        <p className="line-clamp-2 text-muted-foreground text-sm">{post.description}</p>
+                      </div>
+                      <div className="shrink-0 text-muted-foreground text-xs">
+                        <span className="text-accent">[</span>
+                        {formatDate(post.date)}
+                        <span className="text-accent">]</span>
+                      </div>
                     </div>
                   </div>
                 </Link>
