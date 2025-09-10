@@ -5,8 +5,11 @@ export const env = createEnv({
   server: {
     APP_ENV: z.enum(["local", "development", "production"]),
   },
-  client: {},
+  client: {
+    NEXT_PUBLIC_BASE_URL: z.string().url().optional(),
+  },
   runtimeEnv: {
     APP_ENV: process.env.APP_ENV,
+    NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
   },
 });

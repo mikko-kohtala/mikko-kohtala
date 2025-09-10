@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Markdown } from "@/components/markdown";
+import { SocialShare } from "@/components/social-share";
 import { env } from "@/env";
 import { formatDate, getAllPosts, getPostBySlug } from "@/lib/markdown";
 
@@ -137,6 +138,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 ))}
               </div>
             )}
+
+            <div className="mt-6">
+              <SocialShare
+                title={post.title}
+                url={`${env.NEXT_PUBLIC_BASE_URL || 'https://mikko-kohtala.com'}/blog/${post.slug}`}
+                description={post.description}
+              />
+            </div>
           </header>
 
           <Markdown html={post.contentHtml || ""} />
