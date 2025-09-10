@@ -60,10 +60,15 @@ export function SocialShare({ title, url, description }: SocialShareProps) {
           onClick={() => handleShare("twitter")}
           title="Share on X (Twitter)"
         >
-          <svg aria-hidden="true" className="h-3 w-3 opacity-60" fill="currentColor" viewBox="0 0 24 24">
+          <svg
+            aria-hidden="true"
+            className="h-3 w-3 opacity-60"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
           </svg>
-          X
+          / Twitter
         </button>
         <button
           aria-label={`Share "${title}" on LinkedIn`}
@@ -75,12 +80,20 @@ export function SocialShare({ title, url, description }: SocialShareProps) {
           LinkedIn
         </button>
         <button
-          aria-label={copied ? "Link copied to clipboard" : `Copy link for "${title}" to clipboard`}
+          aria-label={
+            copied
+              ? "Link copied to clipboard"
+              : `Copy link for "${title}" to clipboard`
+          }
           className={buttonClass}
           onClick={handleCopyLink}
           title={copied ? "Link copied!" : "Copy link to clipboard"}
         >
-          {copied ? <Check className="h-3 w-3 opacity-60" /> : <Link className="h-3 w-3 opacity-60" />}
+          {copied ? (
+            <Check className="h-3 w-3 opacity-60" />
+          ) : (
+            <Link className="h-3 w-3 opacity-60" />
+          )}
           {copied ? "Copied!" : "Copy link"}
         </button>
       </div>
