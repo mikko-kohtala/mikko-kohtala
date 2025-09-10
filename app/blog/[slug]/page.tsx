@@ -1,8 +1,9 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import { env } from '@/env';
-import { formatDate, getAllPosts, getPostBySlug } from '@/lib/markdown';
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { Markdown } from "@/components/markdown";
+import { env } from "@/env";
+import { formatDate, getAllPosts, getPostBySlug } from "@/lib/markdown";
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -11,7 +12,7 @@ interface BlogPostPageProps {
 }
 
 export async function generateStaticParams() {
-  const includeDrafts = env.APP_ENV === 'local';
+  const includeDrafts = env.APP_ENV === "local";
   const posts = getAllPosts(includeDrafts);
   return posts.map((post) => ({
     slug: post.slug,
@@ -22,13 +23,13 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const resolvedParams = await params;
   // Try regular post first, then draft if in local environment
   let post = await getPostBySlug(resolvedParams.slug);
-  if (!post && env.APP_ENV === 'local') {
+  if (!post && env.APP_ENV === "local") {
     post = await getPostBySlug(resolvedParams.slug, true);
   }
 
   if (!post) {
     return {
-      title: 'Post Not Found',
+      title: "Post Not Found",
     };
   }
 
@@ -39,13 +40,13 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     openGraph: {
       title: post.title,
       description: post.description,
-      type: 'article',
+      type: "article",
       publishedTime: post.date,
       authors: [post.author],
       tags: post.tags,
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: post.title,
       description: post.description,
     },
@@ -56,7 +57,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const resolvedParams = await params;
   // Try regular post first, then draft if in local environment
   let post = await getPostBySlug(resolvedParams.slug);
-  if (!post && env.APP_ENV === 'local') {
+  if (!post && env.APP_ENV === "local") {
     post = await getPostBySlug(resolvedParams.slug, true);
   }
 
@@ -138,10 +139,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             )}
           </header>
 
-          <div
-            className="prose prose-invert max-w-none prose-h2:mt-8 prose-h3:mt-6 prose-h2:mb-4 prose-h3:mb-3 prose-p:mb-6 prose-p:leading-relaxed prose-ul:mb-6 prose-ol:mb-6 prose-li:mb-2 prose-ul:list-disc prose-ol:list-decimal prose-ul:pl-6 prose-ol:pl-6 prose-code:rounded prose-pre:border prose-pre:border-border prose-blockquote:border-l-primary prose-code:bg-card prose-pre:bg-card prose-code:px-1 prose-code:py-0.5 prose-headings:font-bold prose-headings:font-mono prose-strong:font-bold prose-strong:text-accent prose-a:text-primary prose-blockquote:text-muted-foreground prose-code:text-accent prose-h2:text-xl prose-h3:text-lg prose-strong:text-foreground prose-a:no-underline prose-code:before:content-[''] prose-code:after:content-[''] hover:prose-a:underline"
-            dangerouslySetInnerHTML={{ __html: post.contentHtml || '' }}
-          />
+          <Markdown html={post.contentHtml || ""} />
         </article>
 
         <footer className="mt-12 border-border border-t pt-8">

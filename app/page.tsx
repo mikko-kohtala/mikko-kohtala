@@ -1,9 +1,11 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { formatDate, getRecentPosts } from '@/lib/markdown';
+import Image from "next/image";
+import Link from "next/link";
+import { env } from "@/env";
+import { formatDate, getRecentPosts } from "@/lib/markdown";
 
 export default function Home() {
-  const recentPosts = getRecentPosts(5);
+  const includeDrafts = env.APP_ENV === "local";
+  const recentPosts = getRecentPosts(5, includeDrafts);
 
   return (
     <div className="min-h-screen p-8 font-mono">
@@ -126,10 +128,10 @@ export default function Home() {
                 >
                   <div className="flex gap-3">
                     {post.coverImageThumbnail && (
-                      <div className="relative w-20 h-12 overflow-hidden rounded shrink-0">
+                      <div className="relative h-12 w-20 shrink-0 overflow-hidden rounded">
                         <img
                           alt={`Cover image for ${post.title}`}
-                          className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                          className="h-full w-full object-cover transition-transform group-hover:scale-105"
                           src={post.coverImageThumbnail}
                         />
                         {post.isDraft && (
@@ -141,8 +143,8 @@ export default function Home() {
                         )}
                       </div>
                     )}
-                    
-                    <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between flex-1 min-w-0">
+
+                    <div className="flex min-w-0 flex-1 flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
                           <h3 className="mb-1 font-bold transition-colors group-hover:text-primary">{post.title}</h3>

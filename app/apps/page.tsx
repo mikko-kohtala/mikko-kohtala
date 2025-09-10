@@ -1,25 +1,25 @@
 export default function AppsPage() {
   const apps = [
     {
-      name: 'Multi AI',
+      name: "Multi AI",
       description:
-        'Chat with multiple AI models simultaneously. Compare responses, get diverse perspectives, and leverage the strengths of different language models.',
-      tech: ['Next.js', 'TypeScript', 'OpenAI', 'Anthropic', 'Google AI'],
-      status: 'Active',
+        "Chat with multiple AI models simultaneously. Compare responses, get diverse perspectives, and leverage the strengths of different language models.",
+      tech: ["Next.js", "TypeScript", "OpenAI", "Anthropic", "Google AI"],
+      status: "Active",
     },
     {
-      name: 'Git Worktree CLI',
+      name: "Git Worktree CLI",
       description:
-        'A powerful command-line tool for managing Git worktrees efficiently. Simplifies branch management and enables seamless context switching.',
-      tech: ['Rust', 'Git', 'CLI'],
-      status: 'Active',
+        "A powerful command-line tool for managing Git worktrees efficiently. Simplifies branch management and enables seamless context switching.",
+      tech: ["Rust", "Git", "CLI"],
+      status: "Active",
     },
     {
-      name: 'Port Monitor',
+      name: "Port Monitor",
       description:
-        'Monitor and manage network ports on your system. Track active connections, identify processes, and ensure system security.',
-      tech: ['Go', 'System Programming', 'Networking'],
-      status: 'Active',
+        "Monitor and manage network ports on your system. Track active connections, identify processes, and ensure system security.",
+      tech: ["Go", "System Programming", "Networking"],
+      status: "Active",
     },
   ];
 
@@ -41,7 +41,7 @@ export default function AppsPage() {
             >
               <div className="mb-4 flex items-start justify-between">
                 <h2 className="font-bold text-xl">
-                  <span className="mr-2 text-accent">[{String(index + 1).padStart(2, '0')}]</span>
+                  <span className="mr-2 text-accent">[{String(index + 1).padStart(2, "0")}]</span>
                   {app.name}
                 </h2>
                 <span className="bg-primary px-2 py-1 text-primary-foreground text-xs">{app.status}</span>

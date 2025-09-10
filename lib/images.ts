@@ -1,9 +1,9 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import sharp from 'sharp';
+import fs from "node:fs";
+import path from "node:path";
+import sharp from "sharp";
 
-const IMAGES_DIR = path.join(process.cwd(), 'public/images/blog');
-const THUMBNAILS_DIR = path.join(process.cwd(), 'public/images/blog/thumbnails');
+const _IMAGES_DIR = path.join(process.cwd(), "public/images/blog");
+const THUMBNAILS_DIR = path.join(process.cwd(), "public/images/blog/thumbnails");
 
 export interface ImageVariant {
   width: number;
@@ -13,9 +13,9 @@ export interface ImageVariant {
 
 // Define image variants for different use cases
 export const IMAGE_VARIANTS: Record<string, ImageVariant> = {
-  thumbnail: { width: 400, height: 225, suffix: '-thumb' },
-  card: { width: 600, height: 338, suffix: '-card' },
-  hero: { width: 1200, height: 675, suffix: '-hero' },
+  thumbnail: { width: 400, height: 225, suffix: "-thumb" },
+  card: { width: 600, height: 338, suffix: "-card" },
+  hero: { width: 1200, height: 675, suffix: "-hero" },
 };
 
 /**
@@ -39,8 +39,8 @@ export async function generateThumbnails(originalImagePath: string, slug: string
 
     await sharp(originalImagePath)
       .resize(variant.width, variant.height, {
-        fit: 'cover',
-        position: 'center',
+        fit: "cover",
+        position: "center",
       })
       .webp({ quality: 85 })
       .toFile(outputPath);
@@ -54,7 +54,7 @@ export async function generateThumbnails(originalImagePath: string, slug: string
 /**
  * Get the cover image path for a blog post
  */
-export function getCoverImagePath(slug: string, variant: keyof typeof IMAGE_VARIANTS = 'card'): string | null {
+export function getCoverImagePath(slug: string, variant: keyof typeof IMAGE_VARIANTS = "card"): string | null {
   const variantConfig = IMAGE_VARIANTS[variant];
   if (!variantConfig) return null;
 
@@ -73,7 +73,7 @@ export function getCoverImagePath(slug: string, variant: keyof typeof IMAGE_VARI
 export function getOriginalCoverImagePath(coverImage: string): string | null {
   if (!coverImage) return null;
 
-  const originalPath = path.join(process.cwd(), 'public', coverImage);
+  const originalPath = path.join(process.cwd(), "public", coverImage);
 
   if (fs.existsSync(originalPath)) {
     return coverImage;
@@ -88,7 +88,7 @@ export function getOriginalCoverImagePath(coverImage: string): string | null {
 export async function ensureThumbnailsExist(coverImage: string, slug: string): Promise<Record<string, string>> {
   if (!coverImage) return {};
 
-  const originalPath = path.join(process.cwd(), 'public', coverImage);
+  const originalPath = path.join(process.cwd(), "public", coverImage);
 
   if (!fs.existsSync(originalPath)) {
     return {};
@@ -96,7 +96,6 @@ export async function ensureThumbnailsExist(coverImage: string, slug: string): P
 
   // Check if all variants exist
   const existingVariants: Record<string, string> = {};
-  let needsGeneration = false;
 
   for (const [variantName, variant] of Object.entries(IMAGE_VARIANTS)) {
     const thumbnailPath = path.join(THUMBNAILS_DIR, `${slug}${variant.suffix}.webp`);
@@ -105,14 +104,9 @@ export async function ensureThumbnailsExist(coverImage: string, slug: string): P
     if (fs.existsSync(thumbnailPath)) {
       existingVariants[variantName] = webPath;
     } else {
-      needsGeneration = true;
-      break;
+      // If any variant is missing, regenerate all
+      return await generateThumbnails(originalPath, slug);
     }
-  }
-
-  // If any variant is missing, regenerate all
-  if (needsGeneration) {
-    return await generateThumbnails(originalPath, slug);
   }
 
   return existingVariants;

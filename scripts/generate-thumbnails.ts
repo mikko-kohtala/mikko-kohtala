@@ -1,14 +1,14 @@
 #!/usr/bin/env tsx
 
-import fs from 'node:fs';
-import path from 'node:path';
-import matter from 'gray-matter';
-import { ensureThumbnailsExist } from '../lib/images';
+import fs from "node:fs";
+import path from "node:path";
+import matter from "gray-matter";
+import { ensureThumbnailsExist } from "../lib/images";
 
-const CONTENT_DIRS = [path.join(process.cwd(), 'content/blog'), path.join(process.cwd(), 'content/drafts')];
+const CONTENT_DIRS = [path.join(process.cwd(), "content/blog"), path.join(process.cwd(), "content/drafts")];
 
 async function generateAllThumbnails() {
-  console.log('🖼️  Generating thumbnails for blog post images...\n');
+  console.log("🖼️  Generating thumbnails for blog post images...\n");
 
   let processedCount = 0;
   let generatedCount = 0;
@@ -19,11 +19,11 @@ async function generateAllThumbnails() {
       continue;
     }
 
-    const files = fs.readdirSync(contentDir).filter((file) => file.endsWith('.md'));
+    const files = fs.readdirSync(contentDir).filter((file) => file.endsWith(".md"));
 
     for (const file of files) {
       const filePath = path.join(contentDir, file);
-      const fileContents = fs.readFileSync(filePath, 'utf8');
+      const fileContents = fs.readFileSync(filePath, "utf8");
       const { data } = matter(fileContents);
 
       if (!data.coverImage) {
@@ -31,7 +31,7 @@ async function generateAllThumbnails() {
       }
 
       // Extract slug from filename
-      const fileNameWithoutExt = file.replace(/\.md$/, '');
+      const fileNameWithoutExt = file.replace(/\.md$/, "");
       const match = fileNameWithoutExt.match(/^\d{4}-\d{2}-\d{2}-(.+)$/);
       const slug = match ? match[1] : fileNameWithoutExt;
 
@@ -43,12 +43,12 @@ async function generateAllThumbnails() {
 
         if (Object.keys(thumbnails).length > 0) {
           generatedCount++;
-          console.log('   ✅ Generated thumbnails:');
-          for (const [variant, path] of Object.entries(thumbnails)) {
-            console.log(`      ${variant}: ${path}`);
+          console.log("   ✅ Generated thumbnails:");
+          for (const [variant, thumbnailPath] of Object.entries(thumbnails)) {
+            console.log(`      ${variant}: ${thumbnailPath}`);
           }
         } else {
-          console.log('   ⚠️  No thumbnails generated (original image may not exist)');
+          console.log("   ⚠️  No thumbnails generated (original image may not exist)");
         }
 
         processedCount++;
@@ -56,7 +56,7 @@ async function generateAllThumbnails() {
         console.error(`   ❌ Error processing ${file}:`, error);
       }
 
-      console.log('');
+      console.log("");
     }
   }
 
