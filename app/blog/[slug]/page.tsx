@@ -139,7 +139,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </header>
 
           <div
-            className="prose prose-invert prose-h2:mt-8 prose-h3:mt-6 prose-h2:mb-4 prose-h3:mb-3 prose-p:mb-4 prose-li:ml-4 max-w-none prose-ul:list-none prose-code:rounded prose-pre:border prose-pre:border-border prose-blockquote:border-l-primary prose-code:bg-card prose-pre:bg-card prose-code:px-1 prose-code:py-0.5 prose-ul:pl-0 prose-headings:font-bold prose-headings:font-mono prose-strong:font-bold prose-a:text-primary prose-blockquote:text-muted-foreground prose-code:text-accent prose-h2:text-xl prose-h3:text-lg prose-strong:text-foreground prose-p:leading-relaxed prose-a:no-underline prose-li:before:mr-2 prose-li:before:text-muted-foreground prose-code:before:content-[''] prose-li:before:content-['→'] prose-code:after:content-[''] hover:prose-a:underline"
+            className="prose prose-invert max-w-none prose-h2:mt-8 prose-h3:mt-6 prose-h2:mb-4 prose-h3:mb-3 prose-p:mb-6 prose-p:leading-relaxed prose-ul:mb-6 prose-ol:mb-6 prose-li:mb-2 prose-ul:list-disc prose-ol:list-decimal prose-ul:pl-6 prose-ol:pl-6 prose-code:rounded prose-pre:border prose-pre:border-border prose-blockquote:border-l-primary prose-code:bg-card prose-pre:bg-card prose-code:px-1 prose-code:py-0.5 prose-headings:font-bold prose-headings:font-mono prose-strong:font-bold prose-strong:text-accent prose-a:text-primary prose-blockquote:text-muted-foreground prose-code:text-accent prose-h2:text-xl prose-h3:text-lg prose-strong:text-foreground prose-a:no-underline prose-code:before:content-[''] prose-code:after:content-[''] hover:prose-a:underline"
             dangerouslySetInnerHTML={{ __html: post.contentHtml || '' }}
           />
         </article>
