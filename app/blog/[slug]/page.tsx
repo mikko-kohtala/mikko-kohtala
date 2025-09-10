@@ -141,9 +141,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
             <div className="mt-6">
               <SocialShare
-                title={post.title}
-                url={`${env.NEXT_PUBLIC_BASE_URL || 'https://mikko-kohtala.com'}/blog/${post.slug}`}
                 description={post.description}
+                title={post.title}
+                url={`${env.NEXT_PUBLIC_BASE_URL || "https://mikko-kohtala.com"}/blog/${post.slug}`}
               />
             </div>
           </header>
