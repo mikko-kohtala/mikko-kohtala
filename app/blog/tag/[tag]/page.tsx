@@ -11,7 +11,7 @@ interface TagPageProps {
 }
 
 export async function generateStaticParams() {
-  const includeDrafts = env.APP_ENV === "local";
+  const includeDrafts = env.APP_ENV !== "production";
   const tags = getAllTags(includeDrafts);
   // Tags are already in kebab-case format from markdown.ts
   return tags.map((tag) => ({
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: TagPageProps): Promise<Metada
   const tag = decodeURIComponent(resolvedParams.tag);
 
   // Find if tag exists
-  const includeDrafts = env.APP_ENV === "local";
+  const includeDrafts = env.APP_ENV !== "production";
   const allTags = getAllTags(includeDrafts);
   const tagExists = allTags.includes(tag);
 
@@ -50,7 +50,7 @@ export default async function TagPage({ params }: TagPageProps) {
   const tag = decodeURIComponent(resolvedParams.tag);
 
   // Check if tag exists
-  const includeDrafts = env.APP_ENV === "local";
+  const includeDrafts = env.APP_ENV !== "production";
   const allTags = getAllTags(includeDrafts);
   const tagExists = allTags.includes(tag);
 

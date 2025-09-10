@@ -13,7 +13,7 @@ interface BlogPostPageProps {
 }
 
 export async function generateStaticParams() {
-  const includeDrafts = env.APP_ENV === "local";
+  const includeDrafts = env.APP_ENV !== "production";
   const posts = getAllPosts(includeDrafts);
   return posts.map((post) => ({
     slug: post.slug,
@@ -22,9 +22,9 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const resolvedParams = await params;
-  // Try regular post first, then draft if in local environment
+  // Try regular post first, then draft if in non-production environment
   let post = await getPostBySlug(resolvedParams.slug);
-  if (!post && env.APP_ENV === "local") {
+  if (!post && env.APP_ENV !== "production") {
     post = await getPostBySlug(resolvedParams.slug, true);
   }
 
@@ -56,9 +56,9 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const resolvedParams = await params;
-  // Try regular post first, then draft if in local environment
+  // Try regular post first, then draft if in non-production environment
   let post = await getPostBySlug(resolvedParams.slug);
-  if (!post && env.APP_ENV === "local") {
+  if (!post && env.APP_ENV !== "production") {
     post = await getPostBySlug(resolvedParams.slug, true);
   }
 

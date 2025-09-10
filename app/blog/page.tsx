@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-  const includeDrafts = env.APP_ENV === "local";
+  const includeDrafts = env.APP_ENV !== "production";
   const posts = getAllPosts(includeDrafts);
   const tags = getAllTags(includeDrafts);
 
