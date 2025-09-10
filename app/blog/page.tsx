@@ -45,7 +45,7 @@ export default function BlogPage() {
               {tags.map((tag) => (
                 <Link
                   className="border border-border px-3 py-1 text-sm transition-colors hover:border-primary"
-                  href={`/blog/tag/${tag.toLowerCase().replace(/ /g, '-')}`}
+                  href={`/blog/tag/${tag}`}
                   key={tag}
                 >
                   <span className="text-accent">#</span>

@@ -3,7 +3,7 @@ title: "Remote Work: Maintaining Productivity and Balance"
 date: "2024-10-28"
 description: "Lessons learned from years of remote software development and strategies for maintaining productivity while working from home."
 author: "Mikko Kohtala"
-tags: ["Remote Work", "Productivity", "Work-Life Balance"]
+tags: ["remote-work", "productivity", "work-life-balance"]
 ---
 
 After years of remote software development, I've learned that success isn't just about having the right tools—it's about developing the right habits and maintaining the right mindset.

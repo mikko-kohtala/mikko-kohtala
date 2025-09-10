@@ -1,9 +1,9 @@
 ---
 title: "Why Run Just One AI Tool When You Can Run Ten in Parallel?"
-date: "2025-01-09"
+date: "2025-09-09"
 description: "Exploring the world of parallel AI CLI tools and comparing their performance across different models and implementations."
 author: "Mikko Kohtala"
-tags: ["AI", "CLI", "Development", "Experimentation", "Tools"]
+tags: ["ai", "cli", "development", "experimentation", "tools"]
 coverImage: "/images/blog/2025-01-09-multi-ai-cli-experiment-cover.jpg"
 ---
 

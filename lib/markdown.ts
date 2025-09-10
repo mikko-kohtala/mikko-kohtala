@@ -10,6 +10,14 @@ import { ensureThumbnailsExist, getCoverImagePath } from './images';
 const postsDirectory = path.join(process.cwd(), 'content/blog');
 const draftsDirectory = path.join(process.cwd(), 'content/drafts');
 
+// Convert a tag to kebab-case format
+function toKebabCase(tag: string): string {
+  return tag
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '');
+}
+
 export interface PostMetadata {
   title: string;
   date: string;
@@ -49,14 +57,18 @@ function getPostsFromDirectory(directory: string, isDraftsDir = false): PostMeta
       const stats = readingTime(content);
 
       // Generate cover image thumbnail path if cover image exists
-      const coverImageThumbnail = data.coverImage ? getCoverImagePath(slug, 'card') : undefined;
+      const coverImageThumbnail = data.coverImage ? getCoverImagePath(slug, 'card') ?? undefined : undefined;
+
+      // Convert tags to kebab-case
+      const tags = data.tags ? data.tags.map((tag: string) => toKebabCase(tag)) : [];
 
       return {
         slug,
         readingTime: stats.text,
         isDraft: isDraftsDir,
         coverImageThumbnail,
-        ...(data as Omit<PostMetadata, 'slug' | 'readingTime' | 'isDraft' | 'coverImageThumbnail'>),
+        ...(data as Omit<PostMetadata, 'slug' | 'readingTime' | 'isDraft' | 'coverImageThumbnail' | 'tags'>),
+        tags,
       };
     });
 
@@ -112,7 +124,10 @@ export async function getPostBySlug(slug: string, isDraft = false): Promise<Post
   const stats = readingTime(content);
 
   // Generate cover image thumbnail path if cover image exists
-  const coverImageThumbnail = data.coverImage ? getCoverImagePath(slug, 'hero') : undefined;
+  const coverImageThumbnail = data.coverImage ? getCoverImagePath(slug, 'hero') ?? undefined : undefined;
+
+  // Convert tags to kebab-case
+  const tags = data.tags ? data.tags.map((tag: string) => toKebabCase(tag)) : [];
 
   return {
     slug,
@@ -121,7 +136,8 @@ export async function getPostBySlug(slug: string, isDraft = false): Promise<Post
     readingTime: stats.text,
     isDraft,
     coverImageThumbnail,
-    ...(data as Omit<Post, 'slug' | 'content' | 'contentHtml' | 'readingTime' | 'isDraft' | 'coverImageThumbnail'>),
+    ...(data as Omit<Post, 'slug' | 'content' | 'contentHtml' | 'readingTime' | 'isDraft' | 'coverImageThumbnail' | 'tags'>),
+    tags,
   };
 }
 

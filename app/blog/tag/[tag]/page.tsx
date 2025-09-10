@@ -13,32 +13,33 @@ interface TagPageProps {
 export async function generateStaticParams() {
   const includeDrafts = env.APP_ENV === 'local';
   const tags = getAllTags(includeDrafts);
+  // Tags are already in kebab-case format from markdown.ts
   return tags.map((tag) => ({
-    tag: tag.toLowerCase().replace(/ /g, '-'),
+    tag: tag,
   }));
 }
 
 export async function generateMetadata({ params }: TagPageProps): Promise<Metadata> {
   const resolvedParams = await params;
-  const decodedTag = decodeURIComponent(resolvedParams.tag).replace(/-/g, ' ');
+  const tag = decodeURIComponent(resolvedParams.tag);
 
-  // Find the original tag with proper casing
+  // Find if tag exists
   const includeDrafts = env.APP_ENV === 'local';
   const allTags = getAllTags(includeDrafts);
-  const originalTag = allTags.find((t) => t.toLowerCase() === decodedTag.toLowerCase());
+  const tagExists = allTags.includes(tag);
 
-  if (!originalTag) {
+  if (!tagExists) {
     return {
       title: 'Tag Not Found',
     };
   }
 
   return {
-    title: `Posts tagged "${originalTag}" | Mikko Kohtala`,
-    description: `All blog posts tagged with ${originalTag}`,
+    title: `Posts tagged "${tag}" | Mikko Kohtala`,
+    description: `All blog posts tagged with ${tag}`,
     openGraph: {
-      title: `Posts tagged "${originalTag}"`,
-      description: `All blog posts tagged with ${originalTag}`,
+      title: `Posts tagged "${tag}"`,
+      description: `All blog posts tagged with ${tag}`,
       type: 'website',
     },
   };
@@ -46,18 +47,18 @@ export async function generateMetadata({ params }: TagPageProps): Promise<Metada
 
 export default async function TagPage({ params }: TagPageProps) {
   const resolvedParams = await params;
-  const decodedTag = decodeURIComponent(resolvedParams.tag).replace(/-/g, ' ');
+  const tag = decodeURIComponent(resolvedParams.tag);
 
-  // Find the original tag with proper casing
+  // Check if tag exists
   const includeDrafts = env.APP_ENV === 'local';
   const allTags = getAllTags(includeDrafts);
-  const originalTag = allTags.find((t) => t.toLowerCase() === decodedTag.toLowerCase());
+  const tagExists = allTags.includes(tag);
 
-  if (!originalTag) {
+  if (!tagExists) {
     notFound();
   }
 
-  const posts = getPostsByTag(originalTag, includeDrafts);
+  const posts = getPostsByTag(tag, includeDrafts);
 
   if (posts.length === 0) {
     notFound();
@@ -77,16 +78,16 @@ export default async function TagPage({ params }: TagPageProps) {
           <span className="mx-2 text-muted-foreground">/</span>
           <span className="text-foreground">
             <span className="text-accent">#</span>
-            {originalTag}
+            {tag}
           </span>
         </nav>
 
         <header className="mb-12">
           <h1 className="mb-4 font-bold text-3xl">
-            <span className="text-primary">#</span> {originalTag}
+            <span className="text-primary">#</span> {tag}
           </h1>
           <p className="text-muted-foreground">
-            {posts.length} {posts.length === 1 ? 'post' : 'posts'} tagged with &ldquo;{originalTag}&rdquo;
+            {posts.length} {posts.length === 1 ? 'post' : 'posts'} tagged with &ldquo;{tag}&rdquo;
           </p>
         </header>
 
@@ -146,15 +147,15 @@ export default async function TagPage({ params }: TagPageProps) {
 
                         {post.tags && post.tags.length > 0 && (
                           <div className="flex flex-wrap gap-2">
-                            {post.tags.map((tag) => (
+                            {post.tags.map((t) => (
                               <span
                                 className={`text-xs ${
-                                  tag === originalTag ? 'font-bold text-primary' : 'text-muted-foreground'
+                                  t === tag ? 'font-bold text-primary' : 'text-muted-foreground'
                                 }`}
-                                key={tag}
+                                key={t}
                               >
                                 <span className="text-accent">#</span>
-                                {tag}
+                                {t}
                               </span>
                             ))}
                           </div>
@@ -174,15 +175,15 @@ export default async function TagPage({ params }: TagPageProps) {
           </h2>
           <div className="flex flex-wrap gap-2">
             {allTags
-              .filter((tag) => tag !== originalTag)
-              .map((tag) => (
+              .filter((t) => t !== tag)
+              .map((t) => (
                 <Link
                   className="border border-border px-3 py-1 text-sm transition-colors hover:border-primary"
-                  href={`/blog/tag/${tag.toLowerCase().replace(/ /g, '-')}`}
-                  key={tag}
+                  href={`/blog/tag/${t}`}
+                  key={t}
                 >
                   <span className="text-accent">#</span>
-                  {tag}
+                  {t}
                 </Link>
               ))}
           </div>

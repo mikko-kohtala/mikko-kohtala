@@ -3,7 +3,7 @@ title: "TypeScript Type Safety: Beyond the Basics"
 date: "2024-12-20"
 description: "Deep dive into advanced TypeScript patterns for building truly type-safe applications."
 author: "Mikko Kohtala"
-tags: ["TypeScript", "Type Safety", "JavaScript", "Best Practices"]
+tags: ["typescript", "type-safety", "javascript", "best-practices"]
 ---
 
 TypeScript has transformed how we write JavaScript applications, but many developers only scratch the surface of its type system. Let's explore advanced patterns that can make your code more robust and maintainable.

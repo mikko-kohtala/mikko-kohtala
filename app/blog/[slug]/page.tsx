@@ -127,7 +127,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 {post.tags.map((tag) => (
                   <Link
                     className="border border-border px-2 py-1 text-xs transition-colors hover:border-primary"
-                    href={`/blog/tag/${tag.toLowerCase().replace(/ /g, '-')}`}
+                    href={`/blog/tag/${tag}`}
                     key={tag}
                   >
                     <span className="text-accent">#</span>

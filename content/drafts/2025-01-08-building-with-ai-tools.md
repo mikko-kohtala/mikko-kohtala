@@ -3,7 +3,7 @@ title: "Building with AI Tools: A Developer's Perspective"
 date: "2025-01-08"
 description: "Exploring how AI-powered development tools are transforming the way we build software, from code generation to debugging and beyond."
 author: "Mikko Kohtala"
-tags: ["AI", "Development", "Tools", "Productivity"]
+tags: ["ai", "development", "tools", "productivity"]
 ---
 
 The landscape of software development is evolving rapidly with the introduction of AI-powered tools. As developers, we're witnessing a paradigm shift in how we approach problem-solving, code generation, and collaboration.

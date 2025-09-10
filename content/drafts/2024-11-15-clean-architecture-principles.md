@@ -3,7 +3,7 @@ title: "Clean Architecture: Building Maintainable Systems"
 date: "2024-11-15"
 description: "Exploring clean architecture principles and how they lead to more maintainable and testable software systems."
 author: "Mikko Kohtala"
-tags: ["Architecture", "Clean Code", "Best Practices", "Design Patterns"]
+tags: ["architecture", "clean-code", "best-practices", "design-patterns"]
 ---
 
 Clean architecture isn't just about organizing code—it's about creating systems that can evolve with changing requirements while maintaining their integrity and testability.
