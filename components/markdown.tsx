@@ -24,7 +24,9 @@ export function Markdown({ html, className }: MarkdownProps) {
         // Code & blockquotes
         'prose-code:rounded prose-code:bg-card prose-pre:bg-card',
         'prose-pre:border prose-pre:border-border',
-        'prose-blockquote:border-l-primary prose-blockquote:text-muted-foreground',
+        'prose-blockquote:border-l-primary',
+        // Darken quote text on light theme for readability
+        'prose-blockquote:text-foreground/80 dark:prose-blockquote:text-muted-foreground',
         // Links & strong
         'prose-a:text-primary prose-a:no-underline hover:prose-a:underline',
         'prose-strong:font-bold prose-strong:text-foreground',
