@@ -57,7 +57,7 @@ function getPostsFromDirectory(directory: string, isDraftsDir = false): PostMeta
       const stats = readingTime(content);
 
       // Generate cover image thumbnail path if cover image exists
-      const coverImageThumbnail = data.coverImage ? getCoverImagePath(slug, 'card') ?? undefined : undefined;
+      const coverImageThumbnail = data.coverImage ? (getCoverImagePath(slug, 'card') ?? undefined) : undefined;
 
       // Convert tags to kebab-case
       const tags = data.tags ? data.tags.map((tag: string) => toKebabCase(tag)) : [];
@@ -86,8 +86,8 @@ export function getAllPosts(includeDrafts = false): PostMetadata[] {
   return allPosts;
 }
 
-export function getRecentPosts(limit = 5): PostMetadata[] {
-  return getAllPosts().slice(0, limit);
+export function getRecentPosts(limit = 5, includeDrafts = false): PostMetadata[] {
+  return getAllPosts(includeDrafts).slice(0, limit);
 }
 
 export async function getPostBySlug(slug: string, isDraft = false): Promise<Post | null> {
@@ -124,7 +124,7 @@ export async function getPostBySlug(slug: string, isDraft = false): Promise<Post
   const stats = readingTime(content);
 
   // Generate cover image thumbnail path if cover image exists
-  const coverImageThumbnail = data.coverImage ? getCoverImagePath(slug, 'hero') ?? undefined : undefined;
+  const coverImageThumbnail = data.coverImage ? (getCoverImagePath(slug, 'hero') ?? undefined) : undefined;
 
   // Convert tags to kebab-case
   const tags = data.tags ? data.tags.map((tag: string) => toKebabCase(tag)) : [];
@@ -136,7 +136,10 @@ export async function getPostBySlug(slug: string, isDraft = false): Promise<Post
     readingTime: stats.text,
     isDraft,
     coverImageThumbnail,
-    ...(data as Omit<Post, 'slug' | 'content' | 'contentHtml' | 'readingTime' | 'isDraft' | 'coverImageThumbnail' | 'tags'>),
+    ...(data as Omit<
+      Post,
+      'slug' | 'content' | 'contentHtml' | 'readingTime' | 'isDraft' | 'coverImageThumbnail' | 'tags'
+    >),
     tags,
   };
 }

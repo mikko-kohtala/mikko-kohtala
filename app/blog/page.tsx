@@ -78,10 +78,10 @@ export default function BlogPage() {
                   <Link className="block" href={`/blog/${post.slug}`}>
                     <div className="flex gap-4">
                       {post.coverImageThumbnail && (
-                        <div className="relative w-32 h-20 overflow-hidden rounded shrink-0">
+                        <div className="relative h-20 w-32 shrink-0 overflow-hidden rounded">
                           <img
                             alt={`Cover image for ${post.title}`}
-                            className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                            className="h-full w-full object-cover transition-transform group-hover:scale-105"
                             src={post.coverImageThumbnail}
                           />
                           {post.isDraft && (
@@ -94,10 +94,12 @@ export default function BlogPage() {
                         </div>
                       )}
 
-                      <div className="flex-1 min-w-0">
+                      <div className="min-w-0 flex-1">
                         <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                           <div className="flex items-center gap-2">
-                            <h3 className="font-bold text-lg transition-colors group-hover:text-primary">{post.title}</h3>
+                            <h3 className="font-bold text-lg transition-colors group-hover:text-primary">
+                              {post.title}
+                            </h3>
                             {post.isDraft && !post.coverImageThumbnail && (
                               <span className="rounded-full border border-orange-500/30 bg-orange-500/20 px-2 py-1 font-bold text-orange-400 text-xs">
                                 DRAFT
