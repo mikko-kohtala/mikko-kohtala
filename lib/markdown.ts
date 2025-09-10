@@ -1,21 +1,21 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import { format, parseISO } from 'date-fns';
-import matter from 'gray-matter';
-import readingTime from 'reading-time';
-import { remark } from 'remark';
-import html from 'remark-html';
-import { ensureThumbnailsExist, getCoverImagePath } from './images';
+import fs from "node:fs";
+import path from "node:path";
+import { format, parseISO } from "date-fns";
+import matter from "gray-matter";
+import readingTime from "reading-time";
+import { remark } from "remark";
+import html from "remark-html";
+import { getCoverImagePath } from "./images";
 
-const postsDirectory = path.join(process.cwd(), 'content/blog');
-const draftsDirectory = path.join(process.cwd(), 'content/drafts');
+const postsDirectory = path.join(process.cwd(), "content/blog");
+const draftsDirectory = path.join(process.cwd(), "content/drafts");
 
 // Convert a tag to kebab-case format
 function toKebabCase(tag: string): string {
   return tag
     .toLowerCase()
-    .replace(/\s+/g, '-')
-    .replace(/[^a-z0-9-]/g, '');
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "");
 }
 
 export interface PostMetadata {
@@ -43,21 +43,21 @@ function getPostsFromDirectory(directory: string, isDraftsDir = false): PostMeta
 
   const fileNames = fs.readdirSync(directory);
   const allPostsData = fileNames
-    .filter((fileName) => fileName.endsWith('.md'))
+    .filter((fileName) => fileName.endsWith(".md"))
     .map((fileName) => {
       // Extract slug from YYYY-MM-DD-slug.md format
-      const fileNameWithoutExt = fileName.replace(/\.md$/, '');
+      const fileNameWithoutExt = fileName.replace(/\.md$/, "");
       const match = fileNameWithoutExt.match(/^\d{4}-\d{2}-\d{2}-(.+)$/);
       const slug = match ? match[1] : fileNameWithoutExt;
 
       const fullPath = path.join(directory, fileName);
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
+      const fileContents = fs.readFileSync(fullPath, "utf8");
       const { data, content } = matter(fileContents);
 
       const stats = readingTime(content);
 
       // Generate cover image thumbnail path if cover image exists
-      const coverImageThumbnail = data.coverImage ? (getCoverImagePath(slug, 'card') ?? undefined) : undefined;
+      const coverImageThumbnail = data.coverImage ? (getCoverImagePath(slug, "card") ?? undefined) : undefined;
 
       // Convert tags to kebab-case
       const tags = data.tags ? data.tags.map((tag: string) => toKebabCase(tag)) : [];
@@ -67,7 +67,7 @@ function getPostsFromDirectory(directory: string, isDraftsDir = false): PostMeta
         readingTime: stats.text,
         isDraft: isDraftsDir,
         coverImageThumbnail,
-        ...(data as Omit<PostMetadata, 'slug' | 'readingTime' | 'isDraft' | 'coverImageThumbnail' | 'tags'>),
+        ...(data as Omit<PostMetadata, "slug" | "readingTime" | "isDraft" | "coverImageThumbnail" | "tags">),
         tags,
       };
     });
@@ -115,7 +115,7 @@ export async function getPostBySlug(slug: string, isDraft = false): Promise<Post
   }
 
   const fullPath = path.join(directory, matchingFile);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
   const processedContent = await remark().use(html).process(content);
@@ -124,7 +124,7 @@ export async function getPostBySlug(slug: string, isDraft = false): Promise<Post
   const stats = readingTime(content);
 
   // Generate cover image thumbnail path if cover image exists
-  const coverImageThumbnail = data.coverImage ? (getCoverImagePath(slug, 'hero') ?? undefined) : undefined;
+  const coverImageThumbnail = data.coverImage ? (getCoverImagePath(slug, "hero") ?? undefined) : undefined;
 
   // Convert tags to kebab-case
   const tags = data.tags ? data.tags.map((tag: string) => toKebabCase(tag)) : [];
@@ -138,7 +138,7 @@ export async function getPostBySlug(slug: string, isDraft = false): Promise<Post
     coverImageThumbnail,
     ...(data as Omit<
       Post,
-      'slug' | 'content' | 'contentHtml' | 'readingTime' | 'isDraft' | 'coverImageThumbnail' | 'tags'
+      "slug" | "content" | "contentHtml" | "readingTime" | "isDraft" | "coverImageThumbnail" | "tags"
     >),
     tags,
   };
@@ -165,5 +165,5 @@ export function getAllTags(includeDrafts = false): string[] {
 
 export function formatDate(dateString: string): string {
   const date = parseISO(dateString);
-  return format(date, 'MMMM d, yyyy');
+  return format(date, "MMMM d, yyyy");
 }

@@ -1,10 +1,10 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { env } from '@/env';
-import { formatDate, getRecentPosts } from '@/lib/markdown';
+import Image from "next/image";
+import Link from "next/link";
+import { env } from "@/env";
+import { formatDate, getRecentPosts } from "@/lib/markdown";
 
 export default function Home() {
-  const includeDrafts = env.APP_ENV === 'local';
+  const includeDrafts = env.APP_ENV === "local";
   const recentPosts = getRecentPosts(5, includeDrafts);
 
   return (

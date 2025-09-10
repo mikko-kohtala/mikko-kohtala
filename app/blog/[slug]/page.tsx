@@ -1,9 +1,9 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import { Markdown } from '@/components/markdown';
-import { env } from '@/env';
-import { formatDate, getAllPosts, getPostBySlug } from '@/lib/markdown';
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { Markdown } from "@/components/markdown";
+import { env } from "@/env";
+import { formatDate, getAllPosts, getPostBySlug } from "@/lib/markdown";
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -12,7 +12,7 @@ interface BlogPostPageProps {
 }
 
 export async function generateStaticParams() {
-  const includeDrafts = env.APP_ENV === 'local';
+  const includeDrafts = env.APP_ENV === "local";
   const posts = getAllPosts(includeDrafts);
   return posts.map((post) => ({
     slug: post.slug,
@@ -23,13 +23,13 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const resolvedParams = await params;
   // Try regular post first, then draft if in local environment
   let post = await getPostBySlug(resolvedParams.slug);
-  if (!post && env.APP_ENV === 'local') {
+  if (!post && env.APP_ENV === "local") {
     post = await getPostBySlug(resolvedParams.slug, true);
   }
 
   if (!post) {
     return {
-      title: 'Post Not Found',
+      title: "Post Not Found",
     };
   }
 
@@ -40,13 +40,13 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     openGraph: {
       title: post.title,
       description: post.description,
-      type: 'article',
+      type: "article",
       publishedTime: post.date,
       authors: [post.author],
       tags: post.tags,
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: post.title,
       description: post.description,
     },
@@ -57,7 +57,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const resolvedParams = await params;
   // Try regular post first, then draft if in local environment
   let post = await getPostBySlug(resolvedParams.slug);
-  if (!post && env.APP_ENV === 'local') {
+  if (!post && env.APP_ENV === "local") {
     post = await getPostBySlug(resolvedParams.slug, true);
   }
 
@@ -139,7 +139,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             )}
           </header>
 
-          <Markdown html={post.contentHtml || ''} />
+          <Markdown html={post.contentHtml || ""} />
         </article>
 
         <footer className="mt-12 border-border border-t pt-8">

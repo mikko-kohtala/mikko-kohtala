@@ -1,5 +1,5 @@
-const fs = require('fs');
-const sharp = require('sharp');
+const _fs = require("node:fs");
+const sharp = require("sharp");
 
 async function createPlaceholder() {
   const width = 1200;
@@ -16,9 +16,9 @@ async function createPlaceholder() {
 
   await sharp(Buffer.from(svg))
     .png()
-    .toFile('/Users/mikko/code/mikko-kohtala/public/images/blog/2025-01-09-multi-ai-cli-experiment-cover.png');
+    .toFile("/Users/mikko/code/mikko-kohtala/public/images/blog/2025-01-09-multi-ai-cli-experiment-cover.png");
 
-  console.log('✅ Placeholder image created');
+  console.log("✅ Placeholder image created");
 }
 
 createPlaceholder().catch(console.error);

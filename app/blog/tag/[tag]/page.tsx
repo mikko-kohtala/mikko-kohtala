@@ -1,8 +1,8 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import { env } from '@/env';
-import { formatDate, getAllTags, getPostsByTag } from '@/lib/markdown';
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { env } from "@/env";
+import { formatDate, getAllTags, getPostsByTag } from "@/lib/markdown";
 
 interface TagPageProps {
   params: Promise<{
@@ -11,7 +11,7 @@ interface TagPageProps {
 }
 
 export async function generateStaticParams() {
-  const includeDrafts = env.APP_ENV === 'local';
+  const includeDrafts = env.APP_ENV === "local";
   const tags = getAllTags(includeDrafts);
   // Tags are already in kebab-case format from markdown.ts
   return tags.map((tag) => ({
@@ -24,13 +24,13 @@ export async function generateMetadata({ params }: TagPageProps): Promise<Metada
   const tag = decodeURIComponent(resolvedParams.tag);
 
   // Find if tag exists
-  const includeDrafts = env.APP_ENV === 'local';
+  const includeDrafts = env.APP_ENV === "local";
   const allTags = getAllTags(includeDrafts);
   const tagExists = allTags.includes(tag);
 
   if (!tagExists) {
     return {
-      title: 'Tag Not Found',
+      title: "Tag Not Found",
     };
   }
 
@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: TagPageProps): Promise<Metada
     openGraph: {
       title: `Posts tagged "${tag}"`,
       description: `All blog posts tagged with ${tag}`,
-      type: 'website',
+      type: "website",
     },
   };
 }
@@ -50,7 +50,7 @@ export default async function TagPage({ params }: TagPageProps) {
   const tag = decodeURIComponent(resolvedParams.tag);
 
   // Check if tag exists
-  const includeDrafts = env.APP_ENV === 'local';
+  const includeDrafts = env.APP_ENV === "local";
   const allTags = getAllTags(includeDrafts);
   const tagExists = allTags.includes(tag);
 
@@ -87,7 +87,7 @@ export default async function TagPage({ params }: TagPageProps) {
             <span className="text-primary">#</span> {tag}
           </h1>
           <p className="text-muted-foreground">
-            {posts.length} {posts.length === 1 ? 'post' : 'posts'} tagged with &ldquo;{tag}&rdquo;
+            {posts.length} {posts.length === 1 ? "post" : "posts"} tagged with &ldquo;{tag}&rdquo;
           </p>
         </header>
 
@@ -149,7 +149,7 @@ export default async function TagPage({ params }: TagPageProps) {
                           <div className="flex flex-wrap gap-2">
                             {post.tags.map((t) => (
                               <span
-                                className={`text-xs ${t === tag ? 'font-bold text-primary' : 'text-muted-foreground'}`}
+                                className={`text-xs ${t === tag ? "font-bold text-primary" : "text-muted-foreground"}`}
                                 key={t}
                               >
                                 <span className="text-accent">#</span>

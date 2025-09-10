@@ -1,20 +1,20 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { env } from '@/env';
-import { formatDate, getAllPosts, getAllTags } from '@/lib/markdown';
+import type { Metadata } from "next";
+import Link from "next/link";
+import { env } from "@/env";
+import { formatDate, getAllPosts, getAllTags } from "@/lib/markdown";
 
 export const metadata: Metadata = {
-  title: 'Blog | Mikko Kohtala',
-  description: 'Thoughts on software development, AI, and life in general.',
+  title: "Blog | Mikko Kohtala",
+  description: "Thoughts on software development, AI, and life in general.",
   openGraph: {
-    title: 'Blog | Mikko Kohtala',
-    description: 'Thoughts on software development, AI, and life in general.',
-    type: 'website',
+    title: "Blog | Mikko Kohtala",
+    description: "Thoughts on software development, AI, and life in general.",
+    type: "website",
   },
 };
 
 export default function BlogPage() {
-  const includeDrafts = env.APP_ENV === 'local';
+  const includeDrafts = env.APP_ENV === "local";
   const posts = getAllPosts(includeDrafts);
   const tags = getAllTags(includeDrafts);
 
@@ -60,7 +60,7 @@ export default function BlogPage() {
           <h2 className="mb-6 font-bold text-lg">
             <span className="text-accent">[posts]</span>
             <span className="ml-2 font-normal text-muted-foreground text-sm">
-              {posts.length} {posts.length === 1 ? 'article' : 'articles'}
+              {posts.length} {posts.length === 1 ? "article" : "articles"}
             </span>
           </h2>
 

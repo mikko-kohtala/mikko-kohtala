@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -23,10 +23,10 @@ export function ThemeToggle() {
     <button
       aria-label="Toggle theme"
       className="group fixed top-4 right-4 border border-border px-3 py-2 font-mono text-sm transition-colors hover:border-primary"
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       <span className="text-accent transition-colors group-hover:text-primary">
-        [{theme === 'dark' ? 'light' : 'dark'}]
+        [{theme === "dark" ? "light" : "dark"}]
       </span>
     </button>
   );
