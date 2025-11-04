@@ -8,7 +8,3 @@ Senior Software Developer at [Aimbition](https://www.aimbition.com/), focused on
 - X: [mikko_kohtala](https://x.com/mikko_kohtala)
 - LinkedIn: [mikko-kohtala](https://linkedin.com/in/mikko-kohtala)
 - Location: Tampere, Finland
-
----
-
-_Building software with AI, one commit at a time_ ⚡
