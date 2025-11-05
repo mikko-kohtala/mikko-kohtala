@@ -1,6 +1,6 @@
 # Mikko Kohtala
 
-**AI-assisted Software Development | Senior Software Developer**
+AI Lead Developer
 
 Email: mikko@mbit.fi | Phone: +358 40 829 1001 | Location: Tampere, Finland
 
@@ -18,9 +18,11 @@ With experience in both in-house and consultancy roles, I help organizations int
 
 ### Aimbition
 
-Role: AI Lead Developer
+Role: Technical AI Lead Consultant
 
 Duration: Nov 2025 - ∞
+
+Guiding organizations through practical AI adoption and software modernization initiatives. Delivering training and enablement programs for leadership, product, and engineering teams on AI-assisted development. Architecting custom AI agents and assistants for workflows including code review, testing, compliance, and product management. Supporting legacy system modernization and cloud-native infrastructure preparation for AI readiness.
 
 ### Knowit
 
@@ -28,11 +30,15 @@ Role: Senior Software Developer
 
 Duration: Mar 2025 - Nov 2025
 
+Developed solutions to optimize factory operations through data-driven insights and predictive analytics. Served as member of the AI Ambassador program, driving AI adoption and evangelizing AI best practices across the organization. Contributed as part of the code competence team, developing and promoting improved engineering practices and ways of working.
+
 ### Inderes
 
 Role: Lead Developer
 
 Duration: Feb 2022 - Mar 2025
+
+Led the IR Software team delivering IR Suite, a B2B investor relations platform used by listed companies to manage regulatory announcements. Owned end-to-end delivery of high-SLA services with secure, reliable announcement distribution. Earlier, contributed to the development of the Videosync virtual event platform used by 400+ Nordic listed companies, later architecting new features and leading refactoring efforts to improve the platform's scalability and maintainability. GenAI tools became integral to daily development workflows during this period.
 
 ### Futurice
 
@@ -40,17 +46,23 @@ Role: Senior Software Developer
 
 Duration: Feb 2019 - Feb 2022
 
+Worked on infrastructure and backend for an IoT data platform aggregating elevator monitoring data. Collaborated in a multi-vendor team to architect and build a multi-region B2B API portal for managing access to elevator and building assets, delivering APIs enabling elevator data retrieval, elevator control, and robot integrations. Maintained and developed ticket vending machines spanning embedded touchscreen systems, payment terminals, and ticket printing. Contributed to the rewrite of the train conductor Android application and supporting backend services.
+
 ### Black Woodpecker Software
 
 Role: Software Developer
 
 Duration: Nov 2017 - Dec 2019
 
+Early team member shipping multiple greenfield products from concept to production before the company was acquired by Euronext. Built Ticker, an insider list management software automating MAR-compliant workflows. Developed Timber, a mobile quality manual empowering sawmill companies to manage and share product imagery. Created Sidonnaisuusrekisteri, a digital liability register helping Finnish councils meet Municipality Act requirements.
+
 ### Vilkas Group
 
 Role: Software Developer
 
 Duration: Aug 2014 - Nov 2017
+
+Developed and maintained an e-commerce platform for Nordic customers, integrating Verifone online payment terminal services.
 
 ---
 
@@ -60,6 +72,15 @@ Duration: Aug 2014 - Nov 2017
 - Improved daily train travel experience for tens of thousands of people.
 - Streamlined how listed companies publish regulatory stock market announcements.
 - Winner of Finland's first (and possibly only) autonomous RC car competition.
+
+---
+
+## Competencies
+
+- AI-assisted software development with extensive full-stack experience
+- Designing robust software, software architectures and APIs
+- Guiding technical teams with emphasis on developer experience and happiness
+- Proven ability to connect technical solutions with business requirements
 
 ---
 

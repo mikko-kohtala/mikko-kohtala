@@ -2,7 +2,7 @@
 
 ## Introduction
 
-I am an experienced full-stack developer and consultant specializing in AI adoption and software modernization. I help organizations integrate AI-assisted development into their workflows, from training engineering teams to architecting custom AI solutions for code review, testing, and compliance automation. With over a decade of experience across diverse sectors—B2B services, IoT systems, virtual event platforms, and financial applications—I focus on delivering practical, scalable solutions that translate directly into measurable business value. My work emphasizes human-AI collaboration and AI-native development practices that accelerate delivery while improving software quality.
+I am an experienced full-stack developer and consultant specializing in AI adoption and software modernization. I help organizations integrate AI-assisted development into their workflows, from training engineering teams to architecting custom AI solutions for code review, testing, and compliance automation. With long experience across diverse sectors - B2B/B2C services, IoT systems, virtual event platforms, and financial applications. I focus on delivering practical, scalable solutions that translate directly into measurable business value. My work emphasizes human-AI collaboration and AI-native development practices that accelerate delivery while improving software quality.
 
 ## Work experience
 
@@ -10,8 +10,8 @@ In my current role, I guide organizations through practical AI adoption, helping
 
 ## Competencies
 
-- AI-native full-stack development (TypeScript, React, Node.js, Next.js)
-- Cloud architecture & infrastructure (AWS, GCP, serverless, Kubernetes)
+- AI-native full-stack development
+- Cloud architecture & infrastructure
 - Software architecture & API design
 - Technical leadership & team enablement
 - AI adoption & modernization consulting
