@@ -2,7 +2,7 @@
 
 **AI-assisted Software Development | Senior Software Developer**
 
-📧 mikko@mbit.fi | 📱 +358 40 829 1001 | 📍 Tampere, Finland
+Email: mikko@mbit.fi | Phone: +358 40 829 1001 | Location: Tampere, Finland
 
 ---
 
