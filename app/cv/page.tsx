@@ -110,14 +110,47 @@ export default function CvPage() {
               <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
                 <div>
                   <h3 className="font-bold text-lg">
+                    Technical AI Lead Consultant
+                  </h3>
+                  <p className="text-muted-foreground">Aimbition</p>
+                </div>
+                <div className="text-muted-foreground text-sm">
+                  Nov 2025 - Present
+                </div>
+              </div>
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+                <li className="before:mr-2 before:text-accent before:content-['→']">
+                  Guiding organizations through practical AI adoption and
+                  software modernization initiatives.
+                </li>
+                <li className="before:mr-2 before:text-accent before:content-['→']">
+                  Delivering training and enablement programs for leadership,
+                  product, and engineering teams on AI-assisted development.
+                </li>
+                <li className="before:mr-2 before:text-accent before:content-['→']">
+                  Architecting custom AI agents and assistants for workflows
+                  including code review, testing, compliance, and product
+                  management.
+                </li>
+                <li className="before:mr-2 before:text-accent before:content-['→']">
+                  Supporting legacy system modernization and cloud-native
+                  infrastructure preparation for AI readiness.
+                </li>
+              </ul>
+            </article>
+
+            <article className="border border-border p-6">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+                <div>
+                  <h3 className="font-bold text-lg">
                     Senior Software Developer
                   </h3>
                   <p className="text-muted-foreground">
-                    Large Finnish industrial company
+                    Knowit (Large Finnish industrial company)
                   </p>
                 </div>
                 <div className="text-muted-foreground text-sm">
-                  Mar 2025 - Present
+                  Mar 2025 - Nov 2025
                 </div>
               </div>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">

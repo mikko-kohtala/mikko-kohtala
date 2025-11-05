@@ -3,7 +3,7 @@ import { z } from "zod";
 
 export const env = createEnv({
   server: {
-    APP_ENV: z.enum(["local", "development", "production"]),
+    APP_ENV: z.enum(["local", "development", "production"]).default("local"),
   },
   client: {
     NEXT_PUBLIC_BASE_URL: z.string().url().optional(),
