@@ -129,6 +129,7 @@ export default function Home() {
                   <div className="flex gap-3">
                     {post.coverImageThumbnail && (
                       <div className="relative h-12 w-20 shrink-0 overflow-hidden rounded">
+                        {/** biome-ignore lint/correctness/useImageSize: ok */}
                         <img
                           alt={`Cover image for ${post.title}`}
                           className="h-full w-full object-cover transition-transform group-hover:scale-105"

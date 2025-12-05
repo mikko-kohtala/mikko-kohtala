@@ -42,7 +42,7 @@ async function generateAllThumbnails() {
         const thumbnails = await ensureThumbnailsExist(data.coverImage, slug);
 
         if (Object.keys(thumbnails).length > 0) {
-          generatedCount++;
+          generatedCount += 1;
           console.log("   ✅ Generated thumbnails:");
           for (const [variant, thumbnailPath] of Object.entries(thumbnails)) {
             console.log(`      ${variant}: ${thumbnailPath}`);
@@ -51,7 +51,7 @@ async function generateAllThumbnails() {
           console.log("   ⚠️  No thumbnails generated (original image may not exist)");
         }
 
-        processedCount++;
+        processedCount += 1;
       } catch (error) {
         console.error(`   ❌ Error processing ${file}:`, error);
       }

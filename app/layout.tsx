@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "./components/theme-provider";
 import { ThemeToggle } from "./components/theme-toggle";
-import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,14 +19,7 @@ export const metadata: Metadata = {
   title: "Mikko Kohtala - Software Developer",
   description:
     "Experienced software developer with a strong background in both consultancy and in-house roles, building solutions from concept to production.",
-  keywords: [
-    "software developer",
-    "Tampere",
-    "Finland",
-    "AI",
-    "emerging technologies",
-    "full stack",
-  ],
+  keywords: ["software developer", "Tampere", "Finland", "AI", "emerging technologies", "full stack"],
   authors: [{ name: "Mikko Kohtala" }],
   creator: "Mikko Kohtala",
   openGraph: {
@@ -58,15 +51,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          disableTransitionOnChange
-          enableSystem={true}
-        >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange enableSystem={true}>
           <ThemeToggle />
           {children}
         </ThemeProvider>

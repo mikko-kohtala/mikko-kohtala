@@ -106,6 +106,7 @@ export default async function TagPage({ params }: TagPageProps) {
                   <div className="flex gap-4">
                     {post.coverImageThumbnail && (
                       <div className="relative h-20 w-32 shrink-0 overflow-hidden rounded">
+                        {/** biome-ignore lint/correctness/useImageSize: ok */}
                         <img
                           alt={`Cover image for ${post.title}`}
                           className="h-full w-full object-cover transition-transform group-hover:scale-105"

@@ -79,9 +79,9 @@ export function getAllPosts(includeDrafts = false): PostMetadata[] {
   const publishedPosts = getPostsFromDirectory(postsDirectory, false);
   const draftPosts = includeDrafts ? getPostsFromDirectory(draftsDirectory, true) : [];
 
-  const allPosts = [...publishedPosts, ...draftPosts].sort((a, b) => {
-    return new Date(b.date).getTime() - new Date(a.date).getTime();
-  });
+  const allPosts = [...publishedPosts, ...draftPosts].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
 
   return allPosts;
 }
@@ -104,9 +104,7 @@ export async function getPostBySlug(slug: string, isDraft = false): Promise<Post
     // Try the other directory
     const altDirectory = isDraft ? postsDirectory : draftsDirectory;
     const altFiles = fs.existsSync(altDirectory) ? fs.readdirSync(altDirectory) : [];
-    const altMatchingFile = altFiles.find((file) => {
-      return file.endsWith(`-${slug}.md`) || file === `${slug}.md`;
-    });
+    const altMatchingFile = altFiles.find((file) => file.endsWith(`-${slug}.md`) || file === `${slug}.md`);
 
     if (!altMatchingFile) {
       return null;

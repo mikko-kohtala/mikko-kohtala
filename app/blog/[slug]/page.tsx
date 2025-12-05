@@ -82,6 +82,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <article>
           {post.coverImageThumbnail && (
             <div className="relative mb-8 aspect-video overflow-hidden rounded-lg">
+              {/** biome-ignore lint/correctness/useImageSize: ok */}
               <img
                 alt={`Cover image for ${post.title}`}
                 className="h-full w-full object-cover"
