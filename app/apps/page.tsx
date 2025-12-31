@@ -1,5 +1,26 @@
+import Image from "next/image";
+import Link from "next/link";
+
+interface App {
+  name: string;
+  description: string;
+  tech: string[];
+  status: string;
+  url?: string;
+  appStoreUrl?: string | null;
+}
+
 export default function AppsPage() {
-  const apps = [
+  const apps: App[] = [
+    {
+      name: "Better Image Optimizer",
+      description:
+        "A native macOS app for batch image optimization. Drag-and-drop images, choose a compression level, and get optimized files in seconds. Features watch folders, menu bar integration, and 5 compression presets from lossless to maximum compression.",
+      tech: ["Swift", "SwiftUI", "macOS", "libvips"],
+      status: "Active",
+      url: "https://www.betterimageoptimizer.com",
+      appStoreUrl: null,
+    },
     {
       name: "Multi AI",
       description:
@@ -47,7 +68,22 @@ export default function AppsPage() {
                 <span className="bg-primary px-2 py-1 text-primary-foreground text-xs">{app.status}</span>
               </div>
 
-              <p className="mb-4 text-muted-foreground leading-relaxed">{app.description}</p>
+              <p className="mb-4 text-muted-foreground leading-relaxed">
+                {app.description}
+                {app.url && (
+                  <>
+                    {" "}
+                    <Link
+                      href={app.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-accent transition-colors hover:text-primary hover:underline"
+                    >
+                      {app.url.replace(/^https?:\/\/(www\.)?/, "")}
+                    </Link>
+                  </>
+                )}
+              </p>
 
               <div className="flex flex-wrap gap-2">
                 {app.tech.map((tech) => (
@@ -59,6 +95,33 @@ export default function AppsPage() {
                   </span>
                 ))}
               </div>
+
+              {app.appStoreUrl !== undefined && (
+                <div className="mt-4 flex items-start border-border border-t pt-4">
+                  {app.appStoreUrl ? (
+                    <Link href={app.appStoreUrl} target="_blank" rel="noopener noreferrer">
+                      <Image
+                        src="/app-store-badge.svg"
+                        alt="Download on the App Store"
+                        width={120}
+                        height={40}
+                        className="h-10 w-auto"
+                      />
+                    </Link>
+                  ) : (
+                    <div className="flex flex-col items-start">
+                      <Image
+                        src="/app-store-badge.svg"
+                        alt="Download on the App Store - Coming Soon"
+                        width={120}
+                        height={40}
+                        className="h-10 w-auto opacity-40 grayscale"
+                      />
+                      <span className="mt-1 text-muted-foreground text-xs">Coming Soon</span>
+                    </div>
+                  )}
+                </div>
+              )}
             </article>
           ))}
         </div>
