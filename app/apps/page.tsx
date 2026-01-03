@@ -50,6 +50,28 @@ export default function AppsPage() {
       },
       status: "Active",
     },
+    {
+      name: "Multi-AI CLI",
+      description:
+        "A Rust CLI tool that manages multiple AI development environments using git worktrees and iTerm2/tmux sessions. Simplifies working with multiple AI coding assistants by creating isolated worktrees and organized terminal layouts.",
+      tech: ["Rust", "Git", "CLI", "iTerm2", "tmux"],
+      tags: ["Open Source"],
+      links: {
+        github: "https://github.com/mikko-kohtala/multi-ai-cli",
+      },
+      status: "Active",
+    },
+    {
+      name: "ai-cli",
+      description:
+        "A Rust CLI tool to manage AI CLI tools and MCP servers from one place. Install, update, and configure multiple AI coding assistants with a single unified interface.",
+      tech: ["Rust", "CLI"],
+      tags: ["Open Source"],
+      links: {
+        github: "https://github.com/mikko-kohtala/ai-cli",
+      },
+      status: "Active",
+    },
   ];
 
   const comingUp: App[] = [
