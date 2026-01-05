@@ -7,4 +7,5 @@ Senior Software Developer at [Aimbition](https://www.aimbition.com/), focused on
 - Email: [mikko@mbit.fi](mailto:mikko@mbit.fi)
 - X: [mikko_kohtala](https://x.com/mikko_kohtala)
 - LinkedIn: [mikko-kohtala](https://linkedin.com/in/mikko-kohtala)
+- Web: https://mikkokohtala.com
 - Location: Tampere, Finland
