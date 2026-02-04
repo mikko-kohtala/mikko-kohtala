@@ -1,7 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async rewrites() {
+    return [
+      {
+        source: "/tmp/claude-code-insights",
+        destination: "/tmp/claude-code-insights/index.html",
+      },
+    ];
+  },
 };
 
 export default nextConfig;
