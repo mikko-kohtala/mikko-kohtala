@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nash Jocic Detailed 5-Day Split</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #fbfaf6;
+      --surface: #ffffff;
+      --surface-2: #f2f6f1;
+      --ink: #20201d;
+      --muted: #62665f;
+      --line: #d9ded5;
+      --green: #1d6b55;
+      --green-soft: #dcefe7;
+      --red: #b23b35;
+      --red-soft: #f7e1dc;
+      --gold: #b77c21;
+      --gold-soft: #f7ead2;
+      --blue: #2a638a;
+      --blue-soft: #dcebf3;
+      --shadow: 0 18px 45px rgba(33, 37, 32, 0.09);
+      --radius: 8px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(32, 32, 29, 0.035) 1px, transparent 1px) 0 0 / 42px 42px,
+        linear-gradient(0deg, rgba(32, 32, 29, 0.03) 1px, transparent 1px) 0 0 / 42px 42px,
+        var(--paper);
+      color: var(--ink);
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      line-height: 1.55;
+      letter-spacing: 0;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 980px;
+      font-size: clamp(2.5rem, 7vw, 6.2rem);
+      font-weight: 700;
+    }
+
+    h2 { font-size: clamp(1.9rem, 4vw, 3.2rem); }
+    h3 { font-size: 1.35rem; }
+    p { margin: 0; }
+    ul, ol { margin: 0; padding-left: 1.15rem; }
+    li + li { margin-top: 0.4rem; }
+    a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+    .wrap {
+      width: min(var(--max), calc(100vw - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 54px 0 30px;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 14% 16%, rgba(42, 99, 138, 0.12), transparent 28%),
+        linear-gradient(120deg, rgba(255, 255, 255, 0.78), rgba(251, 250, 246, 0.92));
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 28px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      min-height: 30px;
+      margin-bottom: 22px;
+      align-items: center;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      background: var(--surface);
+      font-size: 0.78rem;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+    }
+
+    .lede {
+      max-width: 780px;
+      margin-top: 22px;
+      color: #44463f;
+      font-size: 1.1rem;
+    }
+
+    .stamp {
+      border: 2px solid var(--ink);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: 8px 8px 0 rgba(42, 99, 138, 0.18);
+      padding: 18px;
+    }
+
+    .stamp strong {
+      display: block;
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      font-size: 2.15rem;
+      line-height: 1;
+    }
+
+    .stamp span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      border-bottom: 1px solid var(--line);
+      background: rgba(251, 250, 246, 0.92);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-inner {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 10px 0;
+    }
+
+    .nav a {
+      flex: 0 0 auto;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.45rem 0.8rem;
+      background: var(--surface);
+      color: var(--ink);
+      font-size: 0.86rem;
+      font-weight: 750;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav a[aria-current="page"] {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner {
+        flex-wrap: wrap;
+        overflow-x: visible;
+        padding: 8px 0;
+      }
+
+      .nav a {
+        padding: 0.42rem 0.66rem;
+        font-size: 0.78rem;
+      }
+
+      .nav a[href^="#"] {
+        display: none;
+      }
+    }
+
+    main { padding: 30px 0 64px; }
+    section { scroll-margin-top: 74px; margin-top: 40px; }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.68fr) minmax(260px, 0.32fr);
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 18px;
+    }
+
+    .section-note {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .grid { display: grid; gap: 14px; }
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+
+    .panel h3 { margin-bottom: 10px; }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 28px;
+      margin-bottom: 12px;
+      border-radius: 999px;
+      padding: 0.22rem 0.62rem;
+      font-size: 0.72rem;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .green { background: var(--green-soft); color: #104737; }
+    .blue { background: var(--blue-soft); color: #174962; }
+    .gold { background: var(--gold-soft); color: #785014; }
+    .red { background: var(--red-soft); color: #7c221e; }
+
+    .day-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .day-head {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: center;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+      background: #eef3ef;
+    }
+
+    .pill {
+      display: inline-grid;
+      place-items: center;
+      min-width: 50px;
+      min-height: 34px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: white;
+      font-size: 0.82rem;
+      font-weight: 850;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .day-head p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .timebox {
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 0.35rem 0.7rem;
+      font-size: 0.78rem;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.94rem;
+    }
+
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f8faf6;
+      color: #30342d;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .note {
+      border-left: 6px solid var(--blue);
+      background: var(--surface-2);
+      padding: 16px 18px;
+    }
+
+    .warning {
+      border-left-color: var(--red);
+      background: #fff9f7;
+    }
+
+    .source-line {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .section-head,
+      .grid.two,
+      .grid.three,
+      .grid.four {
+        grid-template-columns: 1fr;
+      }
+
+      h1 { font-size: clamp(2.35rem, 12vw, 4.4rem); }
+
+      .day-head {
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
+
+      table, thead, tbody, tr, td { display: block; width: 100%; }
+      thead { display: none; }
+      tr { border-bottom: 1px solid var(--line); padding: 10px 0; }
+      tr:last-child { border-bottom: 0; }
+      td {
+        display: grid;
+        grid-template-columns: 108px minmax(0, 1fr);
+        gap: 10px;
+        border-bottom: 0;
+        padding: 7px 12px;
+      }
+      td::before {
+        color: var(--muted);
+        font-size: 0.72rem;
+        font-weight: 850;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+      }
+      td:nth-child(1)::before { content: "Order"; }
+      td:nth-child(2)::before { content: "Exercise"; }
+      td:nth-child(3)::before { content: "Sets"; }
+      td:nth-child(4)::before { content: "Reps"; }
+      td:nth-child(5)::before { content: "Rest"; }
+      td:nth-child(6)::before { content: "Notes"; }
+    }
+
+    @media print {
+      body { background: white; }
+      .nav { display: none; }
+      .panel, .day-card { box-shadow: none; }
+      a { color: var(--ink); }
+    }
+</style>
+</head>
+<body>
+  <nav class="nav" aria-label="Program navigation">
+    <div class="wrap nav-inner">
+      <a href="/nash-jocic-codex/nash-jocic-findings.html">Findings</a>
+      <a href="/nash-jocic-codex/nash-jocic-4-day-program.html">4-Day</a>
+      <a href="/nash-jocic-codex/nash-jocic-5-day-program.html" aria-current="page">5-Day</a>
+      <a href="#criteria">Use Criteria</a>
+      <a href="#week">Week</a>
+      <a href="#progression">Progression</a>
+      <a href="#sources">Sources</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Detailed program | Nash Jocic method</div>
+        <h1>Five-day split for advanced lifters</h1>
+        <p class="lede">
+          A higher-focus version of the Nash method: one muscle emphasis per session, two weekly
+          rest days, high-quality volume, and no twice-per-week muscle frequency.
+        </p>
+      </div>
+      <aside class="stamp">
+        <strong>5 sessions</strong>
+        <span>Use this when recovery, time, joints, and consistency are already proven.</span>
+      </aside>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="criteria">
+      <div class="section-head">
+        <div>
+          <h2>Use Criteria</h2>
+        </div>
+        <p class="section-note">
+          Nash presents the four-day split as the default. This five-day version is for a smaller
+          group of advanced lifters.
+        </p>
+      </div>
+
+      <div class="grid two">
+        <article class="panel">
+          <span class="tag blue">Choose it if</span>
+          <h3>You can recover from focused volume</h3>
+          <ul>
+            <li>You can train five days consistently without rushing sessions.</li>
+            <li>Your joints are not irritated by current volume.</li>
+            <li>Your sleep and food are stable enough to support harder sessions.</li>
+            <li>You benefit from giving chest, back, legs, shoulders, and arms their own focus.</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <span class="tag red">Do not choose it if</span>
+          <h3>You are already under-recovered</h3>
+          <ul>
+            <li>Your elbows, shoulders, knees, or lower back are persistently sore.</li>
+            <li>You need long rests just to survive the work.</li>
+            <li>You are adding volume while eating or sleeping poorly.</li>
+            <li>You are a beginner who has not built exercise skill yet.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="note" style="margin-top: 14px;">
+        <strong>Core rule:</strong> five days does not mean training a muscle twice per week. The
+        added day gives more room for arms and single-muscle focus while preserving weekly recovery.
+      </div>
+    </section>
+
+    <section id="week">
+      <div class="section-head">
+        <div>
+          <h2>The Week</h2>
+        </div>
+        <p class="section-note">
+          Example layout: Monday, Tuesday, Wednesday, Friday, Saturday. Thursday and Sunday are off.
+        </p>
+      </div>
+
+      <article class="day-card">
+        <div class="day-head">
+          <span class="pill">Day 1</span>
+          <div>
+            <h3>Chest + Abs</h3>
+            <p>Chest receives the full session. Abs are added without interfering with pressing.</p>
+          </div>
+          <span class="timebox">50-70 min</span>
+        </div>
+        <table>
+          <thead>
+            <tr><th>Order</th><th>Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Bench press</td><td>4</td><td>6-12</td><td>45-75 sec</td><td>Heavy but controlled. Lower slowly and keep chest tension.</td></tr>
+            <tr><td>2</td><td>Incline press, Smith, dumbbells, or barbell</td><td>4</td><td>6-12</td><td>45-75 sec</td><td>Use about 30 degrees. Do not let shoulders dominate.</td></tr>
+            <tr><td>3</td><td>Seated chest press or forward-leaning dips</td><td>4</td><td>8-12, or max clean reps</td><td>45-75 sec</td><td>Use a machine if it gives a deeper safe stretch.</td></tr>
+            <tr><td>4</td><td>Dumbbell flyes</td><td>4</td><td>8-12</td><td>30-60 sec</td><td>Keep elbows bent and stop before tension disappears at the top.</td></tr>
+            <tr><td>5</td><td>Pec deck or cable crossovers</td><td>4</td><td>12-20</td><td>30-45 sec</td><td>High-rep finisher for pump and continuous tension.</td></tr>
+            <tr><td>6</td><td>Hanging leg raises</td><td>3-4</td><td>10-20</td><td>30-60 sec</td><td>Control the pelvis and avoid swinging.</td></tr>
+            <tr><td>7</td><td>Crunches or cable crunches</td><td>3-4</td><td>15-25</td><td>30-45 sec</td><td>Optional second abdominal movement.</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="day-card" style="margin-top: 18px;">
+        <div class="day-head">
+          <span class="pill">Day 2</span>
+          <div>
+            <h3>Back</h3>
+            <p>A full back day lets you train width, thickness, and optional lower-back work.</p>
+          </div>
+          <span class="timebox">55-75 min</span>
+        </div>
+        <table>
+          <thead>
+            <tr><th>Order</th><th>Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Wide-grip pull-ups</td><td>4-6</td><td>6 to max clean reps</td><td>60-90 sec</td><td>Use pulldowns if pull-ups fall below six clean reps.</td></tr>
+            <tr><td>2</td><td>Wide-grip pulldown to front</td><td>4</td><td>8-12</td><td>45-75 sec</td><td>Elbows out, full stretch, no behind-the-neck pulling.</td></tr>
+            <tr><td>3</td><td>Bent-over barbell row</td><td>4</td><td>8-12</td><td>60-90 sec</td><td>Stay close to parallel while keeping the chest high.</td></tr>
+            <tr><td>4</td><td>Medium or close-grip pulldown</td><td>4</td><td>8-12</td><td>45-75 sec</td><td>Do not lean far back. Stretch the lats through the top.</td></tr>
+            <tr><td>5</td><td>Chest-supported T-bar row</td><td>4</td><td>8-12</td><td>60-90 sec</td><td>Full shoulder-blade stretch and contraction.</td></tr>
+            <tr><td>6</td><td>Seated cable row</td><td>3-4</td><td>8-12</td><td>60-90 sec</td><td>Use if you can maintain chest-up tension without lower-back takeover.</td></tr>
+            <tr><td>7</td><td>Deadlift</td><td>3</td><td>8-12</td><td>90-120 sec</td><td>Optional once every 3-4 weeks. Keep it precise and avoid maximal loading.</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="day-card" style="margin-top: 18px;">
+        <div class="day-head">
+          <span class="pill">Day 3</span>
+          <div>
+            <h3>Legs + Calves</h3>
+            <p>Advanced leg volume, with calves first or last depending on energy and equipment.</p>
+          </div>
+          <span class="timebox">60-85 min</span>
+        </div>
+        <table>
+          <thead>
+            <tr><th>Order</th><th>Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Standing calf raises</td><td>4-5</td><td>10-20</td><td>30-60 sec</td><td>Pause in the stretch and contraction without bouncing.</td></tr>
+            <tr><td>2</td><td>Seated calf raises</td><td>4-5</td><td>10-20</td><td>30-60 sec</td><td>Keep the reps controlled and dense.</td></tr>
+            <tr><td>3</td><td>Squats</td><td>5-6</td><td>8-12, or 12-20 if conditioned</td><td>90-120 sec</td><td>Deep controlled reps. Warm up thoroughly and stay upright.</td></tr>
+            <tr><td>4</td><td>Leg press</td><td>5-6</td><td>12-20</td><td>90-120 sec</td><td>This is a primary high-rep quad movement in the program.</td></tr>
+            <tr><td>5</td><td>Hack squat</td><td>3-4</td><td>12-20</td><td>90-120 sec</td><td>Optional if knees tolerate it. Do not use it first.</td></tr>
+            <tr><td>6</td><td>Leg extensions</td><td>3-4</td><td>15-20</td><td>60-90 sec</td><td>Use as knee warm-up or quad finisher. No heavy swinging.</td></tr>
+            <tr><td>7</td><td>Lying leg curls</td><td>4</td><td>8-12</td><td>45-75 sec</td><td>Full stretch at the bottom.</td></tr>
+            <tr><td>8</td><td>Straight-leg deadlift</td><td>3-4</td><td>8-12</td><td>60-90 sec</td><td>Hamstring stretch under control. Keep back position disciplined.</td></tr>
+            <tr><td>9</td><td>Seated leg curl</td><td>3-4</td><td>8-12</td><td>45-75 sec</td><td>Optional if hamstrings are a priority and recovery is strong.</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="day-card" style="margin-top: 18px;">
+        <div class="day-head">
+          <span class="pill">Day 4</span>
+          <div>
+            <h3>Rest</h3>
+            <p>Let legs, lower back, and the nervous system settle before shoulders.</p>
+          </div>
+          <span class="timebox">Recover</span>
+        </div>
+        <div style="padding: 20px;">
+          <div class="note warning">
+            <strong>No compensating workout.</strong>
+            Use this day for sleep, walking, food prep, and reducing stress. Adding hard cardio here
+            defeats the purpose of the split.
+          </div>
+        </div>
+      </article>
+
+      <article class="day-card" style="margin-top: 18px;">
+        <div class="day-head">
+          <span class="pill">Day 5</span>
+          <div>
+            <h3>Shoulders</h3>
+            <p>A dedicated shoulder session gives lateral and rear delts enough attention.</p>
+          </div>
+          <span class="timebox">40-60 min</span>
+        </div>
+        <table>
+          <thead>
+            <tr><th>Order</th><th>Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Dumbbell lateral raises</td><td>5</td><td>8-12</td><td>30-45 sec</td><td>Nash often starts shoulders here because lateral delts drive width.</td></tr>
+            <tr><td>2</td><td>Shoulder press to front</td><td>4</td><td>8-12</td><td>45-75 sec</td><td>Never behind the neck. Use the tool that fits your shoulders.</td></tr>
+            <tr><td>3</td><td>Upright row</td><td>4</td><td>8-12</td><td>45-60 sec</td><td>Use controlled elbows-up motion. Wider grip biases lateral delts more.</td></tr>
+            <tr><td>4</td><td>Bent-over lateral raises</td><td>4</td><td>8-12</td><td>30-60 sec</td><td>Rear delts. Move elbows, not hands.</td></tr>
+            <tr><td>5</td><td>Rear-delt machine or machine lateral raise</td><td>3</td><td>10-15</td><td>30-60 sec</td><td>Optional extra volume if shoulder recovery is excellent.</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="day-card" style="margin-top: 18px;">
+        <div class="day-head">
+          <span class="pill">Day 6</span>
+          <div>
+            <h3>Arms</h3>
+            <p>Direct biceps, triceps, and forearms without placing them after another big muscle.</p>
+          </div>
+          <span class="timebox">50-70 min</span>
+        </div>
+        <table>
+          <thead>
+            <tr><th>Order</th><th>Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Barbell curls</td><td>4-5</td><td>8-12</td><td>30-60 sec</td><td>Main biceps mass builder. Elbows slightly forward, no swinging.</td></tr>
+            <tr><td>2</td><td>Preacher curls</td><td>4-5</td><td>8-12</td><td>30-60 sec</td><td>Full stretch under resistance. Excellent second biceps movement.</td></tr>
+            <tr><td>3</td><td>Dumbbell curls</td><td>3</td><td>10-12</td><td>30-45 sec</td><td>Supinate at the top. Optional if biceps recovery is strong.</td></tr>
+            <tr><td>4</td><td>Triceps pushdowns</td><td>4-5</td><td>8-12</td><td>30-60 sec</td><td>Warm the elbows and target lateral and medial heads.</td></tr>
+            <tr><td>5</td><td>French press</td><td>4-5</td><td>8-12</td><td>45-75 sec</td><td>Lower behind the head to stretch the long head.</td></tr>
+            <tr><td>6</td><td>One-arm overhead extension or close-grip bench</td><td>3</td><td>8-12</td><td>45-75 sec</td><td>Use the overhead option for long-head emphasis; close-grip if elbows prefer it.</td></tr>
+            <tr><td>7</td><td>Hammer curls</td><td>3-4</td><td>8-12</td><td>30-45 sec</td><td>Brachialis and brachioradialis work to support arm thickness.</td></tr>
+            <tr><td>8</td><td>Wrist curls</td><td>3-4</td><td>12-20</td><td>30-45 sec</td><td>Forearm flexors. Full controlled wrist range.</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="day-card" style="margin-top: 18px;">
+        <div class="day-head">
+          <span class="pill">Day 7</span>
+          <div>
+            <h3>Rest</h3>
+            <p>Reset before chest. Keep nutrition stable and do not chase a second arm pump.</p>
+          </div>
+          <span class="timebox">Recover</span>
+        </div>
+        <div style="padding: 20px;">
+          <div class="grid three">
+            <div class="panel"><span class="tag green">Walk</span><p>Outdoor walking is fine if it lowers stress and helps recovery.</p></div>
+            <div class="panel"><span class="tag gold">Eat</span><p>Protein stays high; carbs can drop on non-training days.</p></div>
+            <div class="panel"><span class="tag blue">Check</span><p>If performance drops next week, reduce optional sets before changing the split.</p></div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="progression">
+      <div class="section-head">
+        <div>
+          <h2>Progression Rules</h2>
+        </div>
+        <p class="section-note">
+          The same rules apply as the four-day split; the difference is more focus per session.
+        </p>
+      </div>
+
+      <div class="grid four">
+        <article class="panel">
+          <span class="tag green">Working weight</span>
+          <h3>Keep it stable</h3>
+          <p>Use straight sets after warm-ups. Do not pyramid every exercise into one heavy set.</p>
+        </article>
+        <article class="panel">
+          <span class="tag gold">Add load</span>
+          <h3>Only when earned</h3>
+          <p>When the first set exceeds the top rep target with strict form, add roughly 5% next time.</p>
+        </article>
+        <article class="panel">
+          <span class="tag blue">Rest density</span>
+          <h3>Do not drift</h3>
+          <p>If rest becomes 3-5 minutes, the session has shifted toward strength training.</p>
+        </article>
+        <article class="panel">
+          <span class="tag red">Deload signal</span>
+          <h3>Joints decide</h3>
+          <p>Persistent joint pain, sleep disruption, and falling motivation mean reduce optional sets first.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="section-head">
+        <div>
+          <h2>Sources Used</h2>
+        </div>
+        <p class="section-note">
+          Main local transcripts used to assemble this program.
+        </p>
+      </div>
+
+      <div class="grid two">
+        <article class="panel">
+          <h3>Split and principles</h3>
+          <ul>
+            <li>2026-06-17 - The Only Training Split Most People Need.</li>
+            <li>2026-06-08 - The Best Way to Train as a Natural Bodybuilder.</li>
+            <li>2026-04-11 - You're Recovering Wrong.</li>
+            <li>2026-02-14 - Resting Too Long Between Sets?</li>
+            <li>2026-02-28 - Straight Sets vs Pyramid Sets.</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <h3>Body-part workouts</h3>
+          <ul>
+            <li>2025-02-21 - Build a Massive Chest with This Workout.</li>
+            <li>2025-02-04 - Ultimate Back Workout for Width and Thickness.</li>
+            <li>2025-03-21 - Build Bigger Legs.</li>
+            <li>2025-02-28 - Build Massive Shoulders with This Workout.</li>
+            <li>2025-02-07 and 2026-04-27 - Arm training videos.</li>
+          </ul>
+        </article>
+      </div>
+
+      <p class="source-line">
+        This page is a program synthesis from transcripts, not a personalized medical or injury
+        rehabilitation plan.
+      </p>
+    </section>
+  </main>
+</body>
+</html>

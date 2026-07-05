@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Nash Jocic Method — Training & Nutrition Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4eee1;
+    --paper-2:#efe7d6;
+    --card:#fbf7ee;
+    --ink:#211a14;
+    --ink-soft:#4a3f34;
+    --muted:#7a6c5b;
+    --line:#d8cdb6;
+    --line-strong:#c3b596;
+    --oxblood:#98271d;
+    --oxblood-deep:#7a1e16;
+    --pine:#38553f;
+    --pine-deep:#2a4230;
+    --gold:#b1863a;
+    --accent:var(--oxblood);
+    --accent-deep:var(--oxblood-deep);
+    --shadow:0 1px 0 rgba(33,26,20,.04), 0 18px 40px -28px rgba(33,26,20,.55);
+    --maxw:1160px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Newsreader",Georgia,'Times New Roman',serif;
+    font-size:19px;
+    line-height:1.62;
+    font-optical-sizing:auto;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* subtle paper grain */
+  body::before{
+    content:"";
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    opacity:.05; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .wrap{position:relative; z-index:1}
+  a{color:inherit}
+  h1,h2,h3,h4{margin:0; font-weight:600; line-height:1.05}
+  p{margin:0 0 1em}
+  ::selection{background:var(--accent); color:#fff}
+
+  .eyebrow, .kicker, nav a, .stat-num, .th, .tag, .num-lg, .btn{
+    font-family:"Oswald",'Arial Narrow',sans-serif;
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky; top:0; z-index:50;
+    display:flex; align-items:center; gap:1.4rem;
+    padding:.7rem clamp(1rem,4vw,2.4rem);
+    background:rgba(244,238,225,.82);
+    backdrop-filter:blur(9px);
+    border-bottom:1px solid var(--line);
+    transition:box-shadow .3s ease, background .3s ease;
+  }
+  nav.scrolled{box-shadow:0 10px 30px -20px rgba(33,26,20,.5); background:rgba(244,238,225,.94)}
+  .brand{
+    font-family:"Oswald",sans-serif; font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; font-size:.92rem; display:flex; align-items:center; gap:.55rem;
+    margin-right:auto;
+  }
+  .brand .mono{
+    display:inline-grid; place-items:center; width:30px; height:30px;
+    background:var(--oxblood); color:#f4eee1; border-radius:2px; font-size:.8rem; letter-spacing:0;
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,.15);
+  }
+  nav .links{display:flex; gap:1.5rem}
+  nav a{
+    text-transform:uppercase; letter-spacing:.12em; font-size:.78rem; font-weight:500;
+    text-decoration:none; color:var(--ink-soft); position:relative; padding:.2rem 0;
+  }
+  nav a::after{content:""; position:absolute; left:0; right:100%; bottom:-2px; height:2px; background:var(--oxblood); transition:right .28s ease}
+  nav a:hover::after, nav a.active::after{right:0}
+  nav a.active{color:var(--ink)}
+  @media(max-width:660px){ nav .links{gap:.9rem} nav a{font-size:.68rem; letter-spacing:.08em} .brand span.full{display:none} }
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    max-width:var(--maxw); margin:0 auto; padding:clamp(2.2rem,6vw,4.5rem) clamp(1rem,4vw,2.4rem) 2rem;
+  }
+  .issue-line{
+    display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; align-items:center;
+    font-family:"Oswald",sans-serif; text-transform:uppercase; letter-spacing:.2em;
+    font-size:.72rem; color:var(--muted); font-weight:500;
+    padding-bottom:1rem; border-bottom:3px double var(--line-strong);
+  }
+  .issue-line .dot{width:6px;height:6px;background:var(--oxblood);border-radius:50%}
+  .hero h1{
+    font-family:"Oswald",sans-serif; font-weight:700; text-transform:uppercase;
+    font-size:clamp(2.9rem,9.5vw,7.2rem); letter-spacing:-.01em; line-height:.92;
+    margin:1.1rem 0 .2rem; color:var(--ink);
+  }
+  .hero h1 em{font-style:normal; color:var(--oxblood); display:block}
+  .hero .dek{
+    font-family:"Newsreader",serif; font-size:clamp(1.15rem,2.4vw,1.5rem); line-height:1.4;
+    max-width:44ch; color:var(--ink-soft); margin:.6rem 0 0;
+  }
+  .hero .dek b{font-weight:600; color:var(--ink)}
+  .credit{
+    margin-top:1.5rem; font-size:.95rem; color:var(--muted); max-width:60ch;
+    padding-left:1rem; border-left:3px solid var(--accent);
+  }
+
+  /* animate-in */
+  .rise{opacity:0; transform:translateY(18px); animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+  @keyframes rise{to{opacity:1; transform:none}}
+  .d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.28s}.d4{animation-delay:.42s}.d5{animation-delay:.56s}
+
+  /* stat band */
+  .glance{
+    max-width:var(--maxw); margin:2.2rem auto 0; padding:0 clamp(1rem,4vw,2.4rem);
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:0;
+    border:1px solid var(--line-strong); background:var(--card); border-radius:4px; overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .glance .g{
+    padding:1.2rem 1.25rem; border-right:1px solid var(--line);
+  }
+  .glance .g:last-child{border-right:none}
+  .glance .stat-num{font-size:1.9rem; font-weight:700; color:var(--oxblood); line-height:1; letter-spacing:.01em}
+  .glance .stat-lab{font-family:"Oswald",sans-serif; text-transform:uppercase; letter-spacing:.11em; font-size:.66rem; color:var(--muted); margin-top:.45rem}
+  @media(max-width:620px){ .glance .g{border-right:none; border-bottom:1px solid var(--line)} .glance .g:last-child{border-bottom:none} }
+
+  /* ---------- SECTION SCAFFOLD ---------- */
+  main{max-width:var(--maxw); margin:0 auto; padding:0 clamp(1rem,4vw,2.4rem)}
+  .part{padding:clamp(3rem,7vw,6rem) 0 1rem; scroll-margin-top:70px}
+  .part--training{--accent:var(--oxblood); --accent-deep:var(--oxblood-deep)}
+  .part--nutrition{--accent:var(--pine); --accent-deep:var(--pine-deep)}
+  .part--ref{--accent:var(--gold); --accent-deep:#8f6a2c}
+
+  .part-head{display:flex; align-items:flex-start; gap:clamp(.8rem,3vw,1.6rem); border-top:4px solid var(--accent); padding-top:1.1rem; margin-bottom:1.8rem}
+  .part-head .num-lg{font-size:clamp(2.6rem,7vw,4.6rem); font-weight:700; color:var(--accent); line-height:.8; opacity:.9}
+  .part-head .ph-eye{font-family:"Oswald",sans-serif; text-transform:uppercase; letter-spacing:.28em; font-size:.75rem; color:var(--muted); font-weight:500}
+  .part-head h2{font-family:"Oswald",sans-serif; text-transform:uppercase; font-weight:700; font-size:clamp(1.9rem,5vw,3.1rem); letter-spacing:-.01em; margin-top:.15rem}
+  .part-head .ph-sub{font-size:1.05rem; color:var(--ink-soft); max-width:60ch; margin-top:.5rem}
+
+  .block{margin:2.6rem 0; scroll-margin-top:80px}
+  .block > .eyebrow{
+    font-family:"Oswald",sans-serif; text-transform:uppercase; letter-spacing:.2em; font-size:.74rem;
+    color:var(--accent); font-weight:600; display:flex; align-items:center; gap:.6rem; margin-bottom:.5rem;
+  }
+  .block > .eyebrow::before{content:""; width:22px; height:2px; background:var(--accent)}
+  .block h3{font-family:"Oswald",sans-serif; text-transform:uppercase; font-weight:600; font-size:clamp(1.4rem,3.4vw,2rem); letter-spacing:0; margin-bottom:.5rem; color:var(--ink)}
+  .lede{font-size:1.08rem; color:var(--ink-soft); max-width:68ch}
+
+  /* first paragraph drop cap in intro */
+  .intro-copy{max-width:66ch; font-size:1.12rem}
+  .intro-copy p:first-of-type::first-letter{
+    font-family:"Oswald",sans-serif; font-weight:700; float:left; font-size:3.9rem; line-height:.72;
+    padding:.14em .12em 0 0; color:var(--oxblood);
+  }
+
+  /* ---------- CARDS / GRID ---------- */
+  .grid{display:grid; gap:1.1rem}
+  .cols-2{grid-template-columns:repeat(2,1fr)}
+  .cols-3{grid-template-columns:repeat(3,1fr)}
+  .cols-4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:820px){ .cols-3,.cols-4{grid-template-columns:repeat(2,1fr)} }
+  @media(max-width:540px){ .cols-2,.cols-3,.cols-4{grid-template-columns:1fr} }
+
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:5px; padding:1.3rem 1.35rem;
+    box-shadow:var(--shadow); position:relative; transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .card:hover{transform:translateY(-3px); box-shadow:0 24px 46px -30px rgba(33,26,20,.6)}
+  .card h4{font-family:"Oswald",sans-serif; text-transform:uppercase; letter-spacing:.04em; font-size:1.02rem; margin-bottom:.5rem; color:var(--ink)}
+  .card p{font-size:.98rem; color:var(--ink-soft); margin:0}
+  .card .big{font-family:"Oswald",sans-serif; font-weight:700; font-size:2.1rem; color:var(--accent); line-height:1; display:block; margin-bottom:.15rem}
+  .card .sub{font-family:"Oswald",sans-serif; text-transform:uppercase; letter-spacing:.1em; font-size:.66rem; color:var(--muted)}
+
+  /* rule / principle callout */
+  .rule{
+    background:linear-gradient(180deg,var(--accent),var(--accent-deep)); color:#f6efe0;
+    border-radius:6px; padding:1.5rem 1.6rem; box-shadow:var(--shadow); position:relative; overflow:hidden;
+  }
+  .rule::after{content:"§"; position:absolute; right:.6rem; bottom:-1.2rem; font-family:"Newsreader",serif; font-size:8rem; opacity:.13; line-height:1}
+  .rule .tag{display:inline-block; font-family:"Oswald",sans-serif; text-transform:uppercase; letter-spacing:.2em; font-size:.68rem; opacity:.85; margin-bottom:.35rem}
+  .rule strong{font-family:"Oswald",sans-serif; text-transform:uppercase; font-weight:600; font-size:clamp(1.3rem,3.2vw,1.75rem); display:block; line-height:1.08; letter-spacing:.01em}
+  .rule p{color:#f0e6d4; opacity:.92; margin:.6rem 0 0; font-size:1rem; max-width:66ch}
+
+  /* MYTH vs NASH */
+  .myth{
+    display:grid; grid-template-columns:1fr 1fr; gap:0; border-radius:6px; overflow:hidden;
+    border:1px solid var(--line-strong); box-shadow:var(--shadow); margin:1.1rem 0;
+  }
+  .myth > div{padding:1.05rem 1.2rem}
+  .myth .m-x{background:#efe7d6; border-right:1px solid var(--line-strong)}
+  .myth .m-v{background:var(--card)}
+  .myth .lab{font-family:"Oswald",sans-serif; text-transform:uppercase; letter-spacing:.16em; font-size:.68rem; font-weight:600; display:flex; align-items:center; gap:.45rem; margin-bottom:.4rem}
+  .myth .m-x .lab{color:var(--muted)}
+  .myth .m-v .lab{color:var(--accent)}
+  .myth .sym{display:inline-grid; place-items:center; width:18px; height:18px; border-radius:50%; font-size:.72rem; font-weight:700}
+  .myth .m-x .sym{background:#c9bda3; color:#5a4f40}
+  .myth .m-v .sym{background:var(--accent); color:#f6efe0}
+  .myth p{margin:0; font-size:1rem}
+  .myth .m-x p{color:var(--muted); text-decoration:line-through; text-decoration-color:rgba(122,108,91,.5)}
+  .myth .m-v p{color:var(--ink)}
+  @media(max-width:540px){ .myth{grid-template-columns:1fr} .myth .m-x{border-right:none; border-bottom:1px solid var(--line-strong)} }
+
+  /* ---------- TABLES ---------- */
+  .table-scroll{overflow-x:auto; border:1px solid var(--line-strong); border-radius:6px; box-shadow:var(--shadow); background:var(--card)}
+  table{border-collapse:collapse; width:100%; min-width:600px}
+  thead th{
+    font-family:"Oswald",sans-serif; text-transform:uppercase; letter-spacing:.1em; font-size:.72rem;
+    text-align:left; padding:.85rem 1rem; background:var(--accent); color:#f6efe0; font-weight:500; white-space:nowrap;
+  }
+  tbody td{padding:.8rem 1rem; border-top:1px solid var(--line); font-size:.98rem; color:var(--ink-soft); vertical-align:top}
+  tbody tr:nth-child(even){background:rgba(216,205,182,.16)}
+  tbody td:first-child{font-family:"Oswald",sans-serif; text-transform:uppercase; letter-spacing:.03em; font-size:.9rem; color:var(--ink); font-weight:500; white-space:nowrap}
+  td .mini{font-family:"Oswald",sans-serif; font-size:.82rem; color:var(--accent); letter-spacing:.03em}
+  .split-table td:first-child{color:var(--accent); font-weight:600}
+  .rest{color:var(--muted); font-style:italic}
+
+  /* eat / avoid */
+  .foodcols{display:grid; grid-template-columns:1fr 1fr; gap:1.1rem}
+  @media(max-width:600px){ .foodcols{grid-template-columns:1fr} }
+  .foodbox{background:var(--card); border:1px solid var(--line); border-radius:6px; padding:1.2rem 1.3rem; box-shadow:var(--shadow)}
+  .foodbox h4{font-family:"Oswald",sans-serif; text-transform:uppercase; letter-spacing:.08em; display:flex; align-items:center; gap:.5rem; margin-bottom:.7rem; font-size:1.05rem}
+  .foodbox.eat{border-top:4px solid var(--pine)}
+  .foodbox.avoid{border-top:4px solid var(--oxblood)}
+  .foodbox ul{list-style:none; margin:0; padding:0}
+  .foodbox li{padding:.32rem 0 .32rem 1.4rem; position:relative; font-size:1rem; color:var(--ink-soft); border-bottom:1px dotted var(--line)}
+  .foodbox li:last-child{border-bottom:none}
+  .foodbox.eat li::before{content:"✚"; position:absolute; left:0; color:var(--pine); font-size:.8rem; top:.55rem}
+  .foodbox.avoid li::before{content:"✕"; position:absolute; left:0; color:var(--oxblood); font-size:.8rem; top:.55rem}
+
+  /* macro proportion bar */
+  .macrobar{display:flex; height:52px; border-radius:5px; overflow:hidden; border:1px solid var(--line-strong); box-shadow:var(--shadow); font-family:"Oswald",sans-serif; text-transform:uppercase; letter-spacing:.06em}
+  .macrobar span{display:grid; place-items:center; color:#f6efe0; font-size:.82rem; padding:0 .4rem; text-align:center}
+  .macrobar .mp{background:var(--pine); flex:6}
+  .macrobar .mf{background:var(--gold); flex:3}
+  .macrobar .mc{background:#a8a08c; flex:1; color:#2a2519}
+  .macro-key{display:flex; flex-wrap:wrap; gap:1.2rem; margin-top:.7rem; font-family:"Oswald",sans-serif; text-transform:uppercase; letter-spacing:.08em; font-size:.72rem; color:var(--muted)}
+  .macro-key i{display:inline-block; width:12px; height:12px; border-radius:2px; margin-right:.4rem; vertical-align:middle}
+
+  /* timeline (nash's day) */
+  .timeline{position:relative; margin:1rem 0 0; padding-left:1.6rem}
+  .timeline::before{content:""; position:absolute; left:5px; top:.4rem; bottom:.4rem; width:2px; background:var(--line-strong)}
+  .tl{position:relative; padding:0 0 1.3rem}
+  .tl::before{content:""; position:absolute; left:-1.6rem; top:.35rem; width:12px; height:12px; border-radius:50%; background:var(--paper); border:2.5px solid var(--accent)}
+  .tl .time{font-family:"Oswald",sans-serif; text-transform:uppercase; letter-spacing:.1em; font-size:.72rem; color:var(--accent); font-weight:600}
+  .tl h4{font-family:"Oswald",sans-serif; text-transform:uppercase; font-size:1rem; margin:.15rem 0 .1rem}
+  .tl p{font-size:.98rem; color:var(--ink-soft); margin:0}
+
+  /* pull quote */
+  .pull{
+    font-family:"Newsreader",serif; font-style:italic; font-size:clamp(1.35rem,3.4vw,2rem); line-height:1.28;
+    color:var(--ink); max-width:26ch; margin:2.4rem auto; text-align:center; position:relative; padding:1.2rem 0;
+  }
+  .pull::before, .pull::after{content:""; display:block; width:60px; height:3px; background:var(--accent); margin:0 auto}
+  .pull::before{margin-bottom:1.1rem}
+  .pull::after{margin-top:1.1rem}
+  .pull b{font-style:normal; color:var(--accent); font-weight:600}
+
+  /* checklist */
+  .checks{columns:2; column-gap:2rem; margin:0; padding:0; list-style:none}
+  @media(max-width:600px){ .checks{columns:1} }
+  .checks li{break-inside:avoid; padding:.4rem 0 .4rem 1.6rem; position:relative; font-size:1rem; color:var(--ink-soft)}
+  .checks li::before{content:"→"; position:absolute; left:0; color:var(--accent); font-family:"Oswald",sans-serif}
+  .checks li b{color:var(--ink); font-weight:600}
+
+  .note-inline{font-size:.9rem; color:var(--muted); font-style:italic; margin-top:.5rem}
+
+  /* ---------- FOOTER / DISCLAIMER ---------- */
+  footer{max-width:var(--maxw); margin:3rem auto 0; padding:2.4rem clamp(1rem,4vw,2.4rem) 3.5rem}
+  .disclaimer{
+    border:1px solid var(--line-strong); border-left:5px solid var(--oxblood); background:var(--card);
+    border-radius:5px; padding:1.4rem 1.6rem; box-shadow:var(--shadow);
+  }
+  .disclaimer h4{font-family:"Oswald",sans-serif; text-transform:uppercase; letter-spacing:.14em; font-size:.82rem; color:var(--oxblood); margin-bottom:.6rem}
+  .disclaimer p{font-size:.92rem; color:var(--ink-soft); margin:0 0 .7rem}
+  .disclaimer p:last-child{margin-bottom:0}
+  .colophon{margin-top:2rem; padding-top:1.3rem; border-top:3px double var(--line-strong); display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; align-items:center;
+    font-family:"Oswald",sans-serif; text-transform:uppercase; letter-spacing:.16em; font-size:.7rem; color:var(--muted)}
+  .colophon .dot{width:5px;height:5px;background:var(--accent);border-radius:50%}
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important; transition:none!important; scroll-behavior:auto!important}
+    .rise{opacity:1; transform:none}
+  }
+  /* scroll reveal */
+  .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1; transform:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav id="nav">
+  <div class="brand"><span class="mono">NJ</span><span class="full">The Nash Jocic Method</span></div>
+  <div class="links">
+    <a href="#philosophy">Philosophy</a>
+    <a href="#training">Training</a>
+    <a href="#nutrition">Nutrition</a>
+    <a href="#reference">Reference</a>
+    <a href="#notes">Notes</a>
+    <a href="/nash-jocic-claude/nash-jocic-programs.html" style="color:var(--oxblood);font-weight:600">Programs&nbsp;›</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="issue-line rise d1">
+    <span>Dr. Nash Jocic</span><span class="dot"></span>
+    <span>Training &amp; Nutrition Digest</span><span class="dot"></span>
+    <span>Two-Year Review · 2024–2026</span><span class="dot"></span>
+    <span>197 Videos</span>
+  </div>
+  <h1 class="rise d2">Train Once.<br>Eat <em>Low-Carb.</em></h1>
+  <p class="dek rise d3">A field guide to the workout and nutrition system Dr. Nash Jocic has taught across <b>197 YouTube videos</b> in the last two years — a Golden-Era, natural-lifter method distilled into one page.</p>
+  <p class="credit rise d3">Compiled from every English transcript published July 2024 → July 2026. Grouped into a <b>Gym Plan</b> and a <b>Nutrition Plan</b>, with his most-repeated positions taken as the through-line and any shifts flagged.</p>
+
+  <div class="glance rise d4">
+    <div class="g"><div class="stat-num">1&times;</div><div class="stat-lab">per muscle / week</div></div>
+    <div class="g"><div class="stat-num">20–30</div><div class="stat-lab">sets · big muscles</div></div>
+    <div class="g"><div class="stat-num">1–2</div><div class="stat-lab">reps shy of failure</div></div>
+    <div class="g"><div class="stat-num">2–3<span style="font-size:1rem">g/kg</span></div><div class="stat-lab">protein / day</div></div>
+    <div class="g"><div class="stat-num">&lt;50–150<span style="font-size:1rem">g</span></div><div class="stat-lab">carbs / day</div></div>
+    <div class="g"><div class="stat-num">2–3</div><div class="stat-lab">meals / day</div></div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ PHILOSOPHY ============ -->
+<section class="part part--training" id="philosophy">
+  <div class="part-head reveal">
+    <div class="num-lg">00</div>
+    <div>
+      <div class="ph-eye">The Man &amp; The Method</div>
+      <h2>Golden-Era Thinking</h2>
+      <p class="ph-sub">Who Nash is, and the single idea underneath everything he teaches.</p>
+    </div>
+  </div>
+
+  <div class="block reveal">
+    <div class="intro-copy">
+      <p>Dr. Nash Jocic is a 64-year-old bodybuilding coach with 40+ years under the bar — 46 contests, 17 titles, and by his own count more than 3,000 clients trained. He built his approach on the <b>Golden Era</b>: Serge Nubret (whom he met in Paris around 1982), Vince Gironda, Arnold, Sergio Oliva, Frank Zane and Lee Haney. His verdict on most modern training and nutrition advice is blunt — it's wrong, and the classic-era greats had it right.</p>
+      <p>His own arc frames the whole system: he started on Mike Mentzer's one-set-to-failure "Heavy Duty" plus a high-carb diet, and got fat and injured. After meeting Nubret he flipped to <b>high volume, short rest, high protein and low carbs</b> — and never looked back. The method below is aimed squarely at the <b>natural lifter</b>, who (unlike the enhanced pros) can't cheat recovery or nutrition.</p>
+    </div>
+  </div>
+
+  <div class="grid cols-3 reveal">
+    <div class="card">
+      <h4>Tension is the driver</h4>
+      <p>Mechanical tension is the #1 growth signal — then metabolic stress, then muscle damage. The pump is a by-product, not the goal.</p>
+    </div>
+    <div class="card">
+      <h4>Aesthetics over mass</h4>
+      <p>Bodybuilding ≠ powerlifting. He chases the V-taper, small waist and proportion of the classic physiques. "Muscle is the end; weight is only the means."</p>
+    </div>
+    <div class="card">
+      <h4>Hormones over calories</h4>
+      <p>"A calorie is not a calorie." How food moves <b>insulin</b> matters more than how many calories it carries. Insulin sensitivity is the master switch.</p>
+    </div>
+  </div>
+
+  <p class="pull reveal">"Consistency beats intensity — <b>every single time.</b>"</p>
+</section>
+
+<!-- ============ PART I — TRAINING ============ -->
+<section class="part part--training" id="training">
+  <div class="part-head reveal">
+    <div class="num-lg">I</div>
+    <div>
+      <div class="ph-eye">Part One · The Gym Plan</div>
+      <h2>How Nash Trains</h2>
+      <p class="ph-sub">Once a week per muscle, high volume, stopping just shy of failure — built to be repeated for decades without injury.</p>
+    </div>
+  </div>
+
+  <!-- Frequency & split -->
+  <div class="block reveal" id="split">
+    <div class="eyebrow">Frequency &amp; Split</div>
+    <h3>Hit Each Muscle Once Every 7 Days</h3>
+    <p class="lede">His single most-repeated rule. A muscle recovers in 48–72 h, but the connective tissue (tendons, ligaments, fascia) and the nervous system around it need <b>5–7 days</b>. You train a whole "unit," and super-compensation peaks around day 5–7 — so twice-a-week frequency (or PPL six days a week) quietly accumulates injury for a trained lifter.</p>
+
+    <div class="rule" style="margin:1.4rem 0">
+      <span class="tag">The Cornerstone</span>
+      <strong>Train a muscle. Then leave it alone for a week.</strong>
+      <p>Sessions run 45–60 minutes. Beginners start with full-body 3×/week, graduate to upper/lower 2×/week, and only then move to the once-a-week split below.</p>
+    </div>
+
+    <div class="grid cols-2">
+      <div>
+        <div class="th" style="font-family:'Oswald';text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;color:var(--accent);margin-bottom:.5rem">4-Day Split — most people &amp; naturals</div>
+        <div class="table-scroll">
+          <table class="split-table">
+            <thead><tr><th>Day</th><th>Muscles</th></tr></thead>
+            <tbody>
+              <tr><td>Day 1</td><td>Chest + Biceps</td></tr>
+              <tr><td>Day 2</td><td>Legs + Calves</td></tr>
+              <tr><td>Day 3</td><td class="rest">Rest</td></tr>
+              <tr><td>Day 4</td><td>Back + Abs</td></tr>
+              <tr><td>Day 5</td><td>Shoulders + Triceps</td></tr>
+              <tr><td>Day 6–7</td><td class="rest">Rest</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <div class="th" style="font-family:'Oswald';text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;color:var(--accent);margin-bottom:.5rem">5-Day Split — advanced &amp; Nash's own</div>
+        <div class="table-scroll">
+          <table class="split-table">
+            <thead><tr><th>Day</th><th>Muscles</th></tr></thead>
+            <tbody>
+              <tr><td>Day 1</td><td>Chest + Abs</td></tr>
+              <tr><td>Day 2</td><td>Back</td></tr>
+              <tr><td>Day 3</td><td>Legs + Calves</td></tr>
+              <tr><td>Day 4</td><td class="rest">Rest</td></tr>
+              <tr><td>Day 5</td><td>Shoulders</td></tr>
+              <tr><td>Day 6</td><td>Arms</td></tr>
+              <tr><td>Day 7</td><td class="rest">Rest</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <p class="note-inline">Exact day-pairings vary between videos; the once-a-week principle does not. He rejects Push/Pull/Legs for trained lifters — you can't fit enough work in.</p>
+  </div>
+
+  <!-- Volume & reps -->
+  <div class="block reveal" id="volume">
+    <div class="eyebrow">Volume &amp; Reps</div>
+    <h3>Go High-Volume — Then Cap It</h3>
+    <p class="lede">This is the "Serge Nubret conversion." Naturals benefit <em>more</em> from volume than the pros do. Build up to it: it's a target, not a starting point.</p>
+    <div class="grid cols-4" style="margin:1.2rem 0">
+      <div class="card"><span class="big">20–30</span><span class="sub">sets · legs / back / chest</span></div>
+      <div class="card"><span class="big">16–20</span><span class="sub">sets · shoulders</span></div>
+      <div class="card"><span class="big">12–16</span><span class="sub">sets · biceps / triceps</span></div>
+      <div class="card"><span class="big">10–12</span><span class="sub">sets · beginner start</span></div>
+    </div>
+    <div class="grid cols-2">
+      <div class="card"><h4>Reps by body part</h4><p><b>Upper body 8–12.</b> Quads / legs <b>12–20+</b> (advanced 20–25). Calves 12–20. Never drop below 8 upper / 12 for quads — it shortens time-under-tension and courts injury.</p></div>
+      <div class="card"><h4>"Junk volume" ≠ high volume</h4><p>Junk = sets taken to failure, sets too heavy, partial reps, pyramid warm-ups. Done properly (near-failure + short rest), the body self-limits total quality sets to about 20–30.</p></div>
+    </div>
+    <p class="note-inline">Evolution flagged: in his earliest 2024 videos he cited a research-based ~10–20 sets; through 2025 he settled firmly on the higher 20–30 range.</p>
+  </div>
+
+  <!-- Intensity / failure -->
+  <div class="block reveal" id="failure">
+    <div class="eyebrow">Intensity &amp; Failure</div>
+    <h3>Stop 1–2 Reps Short — Never Train to Failure</h3>
+    <div class="rule" style="margin:1.2rem 0">
+      <span class="tag">Where the growth is</span>
+      <strong>Leave 1–2 reps in the tank on every set.</strong>
+      <p>The last ~5–6 reps before failure are the "quality" reps. Stopping just short lets you do many more sets — so you accumulate <b>more</b> quality reps overall (≈100 across 20 near-failure sets vs. ≈60 across 10 sets to failure), without frying the nervous system, joints and tendons.</p>
+    </div>
+    <div class="myth">
+      <div class="m-x"><div class="lab"><span class="sym">✕</span>The Myth</div><p>Train to absolute failure for maximum growth.</p></div>
+      <div class="m-v"><div class="lab"><span class="sym">✓</span>Nash</div><p>Failure fatigues the whole system and causes injury. Take at most one set per exercise to failure, occasionally. "Stimulate, don't annihilate" (Lee Haney).</p></div>
+    </div>
+    <p class="lede" style="margin-top:1rem">He is firmly <b>anti-HIT / Heavy Duty</b>: he argues even Mentzer and Dorian Yates actually trained ~20–25 sets, and that one-set-to-failure "was a marketing tool." For naturals: no forced reps, negatives, drop sets or supersets as a staple (drop sets maybe monthly).</p>
+  </div>
+
+  <!-- Rest & tempo -->
+  <div class="block reveal" id="tempo">
+    <div class="eyebrow">Rest &amp; Tempo</div>
+    <h3>Short Rest, Slow Negatives</h3>
+    <div class="grid cols-3">
+      <div class="card"><span class="big">30–60<span style="font-size:1rem">s</span></span><span class="sub">rest · upper body</span><p style="margin-top:.6rem">60–120 s for legs. Long 3–5 min rests train the nervous system — that's powerlifting, not hypertrophy.</p></div>
+      <div class="card"><span class="big">3–4<span style="font-size:1rem">s</span></span><span class="sub">per rep tempo</span><p style="margin-top:.6rem">≈1–2 s up, 2 s+ down. No bouncing, no lockout — keep continuous tension.</p></div>
+      <div class="card"><span class="big">60–70%</span><span class="sub">of growth = the eccentric</span><p style="margin-top:.6rem">"Bodybuilding is more about lowering the weight." Muscles handle ~40% more load lowering than lifting.</p></div>
+    </div>
+    <p class="lede" style="margin-top:1rem">Target set duration: ≈20–40 s upper body, 45–90 s legs. "Every next set steps on the tail of the previous one" — rest only until breathing is under control and form holds.</p>
+  </div>
+
+  <!-- Straight sets & overload -->
+  <div class="block reveal" id="overload">
+    <div class="eyebrow">Straight Sets &amp; Progressive Overload</div>
+    <h3>Same Weight Every Set — Earn the Next Plate</h3>
+    <div class="grid cols-2">
+      <div class="card">
+        <h4>Straight sets, not pyramids</h4>
+        <p>Use the <b>same weight for every working set</b>, each taken near failure, reps naturally dropping (e.g. 100 kg × 12, 10, 8). It's trackable — critical for a natural. Pyramids waste the first sets as warm-ups and leave you fatigued for the one heavy set.</p>
+      </div>
+      <div class="card">
+        <h4>The overload rule</h4>
+        <p>Adding weight every week is ego lifting. Add <b>~5% (or 2.5 kg) only after you beat the top of the rep range</b> in perfect form — then reps reset to the bottom. Raise reps, tempo, sets and form <em>before</em> load. Muscle grows in waves, not a straight line.</p>
+      </div>
+    </div>
+    <div class="myth">
+      <div class="m-x"><div class="lab"><span class="sym">✕</span>The Myth</div><p>Put more weight on the bar every single week.</p></div>
+      <div class="m-v"><div class="lab"><span class="sym">✓</span>Nash</div><p>True overload is mechanical tension, not load. Micro-progress over months and years — that's how you add up to ~10 kg of muscle.</p></div>
+    </div>
+  </div>
+
+  <!-- Exercise database -->
+  <div class="block reveal" id="exercises">
+    <div class="eyebrow">The Exercise Database</div>
+    <h3>Best Movements, Muscle by Muscle</h3>
+    <p class="lede">Compounds are the foundation and trigger the most testosterone and growth hormone (vital for naturals); isolation complements but never replaces them. Lead with a barbell compound, follow with dumbbells.</p>
+    <div class="table-scroll" style="margin-top:1rem">
+      <table>
+        <thead><tr><th>Muscle</th><th>Go-to exercises</th><th>Reps</th><th>Key cue</th></tr></thead>
+        <tbody>
+          <tr><td>Chest</td><td>Flat barbell bench <span class="mini">(king)</span>, incline press (DB for upper), dips / decline, DB flyes, cable crossover</td><td>8–12</td><td>Elbows out, full stretch at the bottom</td></tr>
+          <tr><td>Back</td><td>Wide pull-ups / pulldown <span class="mini">(width)</span>, bent-over barbell row <span class="mini">(thickness)</span>, close-grip pulldown, seated cable row, hyperextension</td><td>8–12</td><td>Pull with the elbows; conventional deadlift skipped for bodybuilding</td></tr>
+          <tr><td>Shoulders</td><td>Overhead press <b>to the front</b>, DB lateral raise, rear-delt raise, upright row / shrug</td><td>8–12</td><td>Never press behind the neck</td></tr>
+          <tr><td>Biceps</td><td>Barbell curl (straight bar, not EZ), preacher / Scott curl, hammer &amp; DB curl</td><td>8–12</td><td>Elbows slightly forward, full supination, no swing</td></tr>
+          <tr><td>Triceps</td><td>Pushdown, overhead French press (bar <b>behind</b> the head), rope pushdown, close-grip bench</td><td>8–12</td><td>Elbows close and still</td></tr>
+          <tr><td>Quads</td><td>Squat <span class="mini">(king)</span>, leg press, hack / V-squat, leg extension, walking lunge</td><td>12–20</td><td>Break parallel for full range</td></tr>
+          <tr><td>Hamstrings</td><td>Lying + seated leg curl, stiff-leg deadlift</td><td>8–12</td><td>Own day once advanced</td></tr>
+          <tr><td>Calves</td><td>Standing raise (gastrocnemius) + seated raise (soleus)</td><td>12–20</td><td>Often trained first; heavy + high reps</td></tr>
+          <tr><td>Abs</td><td>Hanging leg / hip raise, crunch</td><td>15–25</td><td>Full stretch; Nubret did them daily as "cardio"</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card" style="margin-top:1.1rem">
+      <h4>Form principle that ties it together</h4>
+      <p>Full range with a <b>loaded stretch</b> ("passive tension") is the key growth stimulus — <em>except</em> where the stretch carries no tension (barbell/DB curls, DB lateral &amp; bent-over raises), where a machine or cable supplies it instead. Control the negative, squeeze where the movement allows, don't lock out, and initiate every rep with the target muscle.</p>
+    </div>
+  </div>
+
+  <!-- Cardio, recovery, populations -->
+  <div class="block reveal" id="recovery">
+    <div class="eyebrow">Cardio · Recovery · Who It's For</div>
+    <h3>Walk, Sleep, Repeat</h3>
+    <div class="grid cols-3">
+      <div class="card">
+        <h4>Skip cardio — walk instead</h4>
+        <p>Conventional cardio raises cortisol and eats muscle on low carb. High-volume, short-rest lifting <em>is</em> your cardiovascular work. For everything else: <b>outdoor walking, 30–60 min, most days</b>, medium pace, nasal breathing, ideally fasted and separate from the workout.</p>
+      </div>
+      <div class="card">
+        <h4>Recovery is training</h4>
+        <p><b>Sleep 7–9 h</b> in a dark, cool room before midnight — growth hormone releases ~60–90 min in. Watch for "survival mode" (growth shut down) from chronic stress, high insulin, CNS fatigue, poor sleep or inflammation. No deload needed if you train right.</p>
+      </div>
+      <div class="card">
+        <h4>Over 40 / 50 / 60</h4>
+        <p>You can build muscle at any age. Keep the once-a-week 4-day split, avoid failure and maximal weights, warm up longer (shoulders 5–10 min), eat <b>more</b> protein, and guard recovery. Women: same system.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PART II — NUTRITION ============ -->
+<section class="part part--nutrition" id="nutrition">
+  <div class="part-head reveal">
+    <div class="num-lg">II</div>
+    <div>
+      <div class="ph-eye">Part Two · The Nutrition Plan</div>
+      <h2>How Nash Eats</h2>
+      <p class="ph-sub">High protein, plenty of fat, few or no carbs, two or three meals a day — engineered around insulin, not calories.</p>
+    </div>
+  </div>
+
+  <!-- Macro approach -->
+  <div class="block reveal" id="macros">
+    <div class="eyebrow">The Macro Blueprint</div>
+    <h3>Protein First, Fat Second, Carbs Last</h3>
+    <p class="lede">A high-protein, low-carb, animal-based template. The target ratio is roughly <b>2 parts protein to 1 part fat</b> by grams, with carbs low or absent — e.g. a 300 g protein day sits near 150 g fat and 0–100 g carbs.</p>
+    <div style="margin:1.3rem 0">
+      <div class="macrobar">
+        <span class="mp">Protein · 2–3 g/kg</span>
+        <span class="mf">Fat · ½× protein</span>
+        <span class="mc">Carbs</span>
+      </div>
+      <div class="macro-key">
+        <span><i style="background:var(--pine)"></i>Protein — the priority</span>
+        <span><i style="background:var(--gold)"></i>Fat — essential, ~half of protein</span>
+        <span><i style="background:#a8a08c"></i>Carbs — optional, &lt;50–150 g</span>
+      </div>
+    </div>
+    <div class="myth">
+      <div class="m-x"><div class="lab"><span class="sym">✕</span>The Myth</div><p>Count calories; a calorie is a calorie.</p></div>
+      <div class="m-v"><div class="lab"><span class="sym">✓</span>Nash</div><p>What food does to your <b>hormones</b> — chiefly insulin — matters more than the number. He doesn't count; he follows hunger and principle.</p></div>
+    </div>
+  </div>
+
+  <!-- Protein -->
+  <div class="block reveal" id="protein">
+    <div class="eyebrow">Protein</div>
+    <h3>Eat More Than They Tell You — With Fat</h3>
+    <div class="grid cols-3">
+      <div class="card"><span class="big">2–3<span style="font-size:1rem">g/kg</span></span><span class="sub">bodyweight · naturals</span><p style="margin-top:.6rem">Over-40s more; enhanced pros 4–6 g/kg. Nash runs ~250–300 g/day (450–500 g competing).</p></div>
+      <div class="card"><span class="big">70–120<span style="font-size:1rem">g</span></span><span class="sub">per meal is fine</span><p style="margin-top:.6rem">Eat it <b>with fat</b> (steak &amp; eggs) so aminos release slowly — lean-only or shakes spike then get burned off.</p></div>
+      <div class="card"><span class="big">#1</span><span class="sub">source: whole eggs</span><p style="margin-top:.6rem">Then red meat, liver, chicken/turkey, oily fish, cheese/cottage cheese. Whey last, and only occasionally.</p></div>
+    </div>
+    <div class="myth">
+      <div class="m-x"><div class="lab"><span class="sym">✕</span>The Myth</div><p>You can only absorb ~30 g of protein per meal, and there's a 30-minute anabolic window.</p></div>
+      <div class="m-v"><div class="lab"><span class="sym">✓</span>Nash</div><p>The body uses it all. Nubret ate 100–150 g per meal. Protein synthesis stays elevated 24–48 h and protein digests over 6–10 h — the "window" is a marketing story.</p></div>
+    </div>
+  </div>
+
+  <!-- Carbs -->
+  <div class="block reveal" id="carbs">
+    <div class="eyebrow">Carbohydrates</div>
+    <h3>Not Essential — Keep Them Low</h3>
+    <p class="lede">There is no such thing as an essential carbohydrate (only essential amino acids and fatty acids). The body makes the glucose it needs via gluconeogenesis, and muscle glycogen refills over the week before you train that muscle again.</p>
+    <div class="grid cols-2" style="margin-top:1rem">
+      <div class="card"><h4>If you eat them</h4><p><b>Under 50–150 g/day</b>, timed around training, zero on rest days. Sources: sweet potato, rice, fruit. Only ~10–12% of people stay lean on high carb.</p></div>
+      <div class="card"><h4>Sugar is out</h4><p>Dopamine hit, insulin spike then crash, fat storage, suppressed GH. Avoid sugar, bread, pasta, cereal and "healthy" processed carbs alike.</p></div>
+    </div>
+    <div class="myth">
+      <div class="m-x"><div class="lab"><span class="sym">✕</span>The Myth</div><p>You need carbs for energy and to refill glycogen after training.</p></div>
+      <div class="m-v"><div class="lab"><span class="sym">✓</span>Nash</div><p>Glycogen isn't the same as carbs (1 g carb holds ~3 g water). A session burns ~100–150 g and it refills on its own over the week. The post-workout carb rush largely blunts growth hormone.</p></div>
+    </div>
+  </div>
+
+  <!-- Fats -->
+  <div class="block reveal" id="fats">
+    <div class="eyebrow">Fats &amp; Cholesterol</div>
+    <h3>Fat Doesn't Make You Fat</h3>
+    <div class="rule" style="margin:1.1rem 0">
+      <span class="tag">The reframe</span>
+      <strong>Insulin makes you fat — not dietary fat.</strong>
+      <p>Fat is essential: testosterone is built from cholesterol, and the fat-soluble vitamins A, D, E and K need it. Cutting fat too low is, in his view, the #1 diet mistake and a fast track to low testosterone.</p>
+    </div>
+    <div class="grid cols-2">
+      <div class="card"><h4>Cook &amp; choose well</h4><p>Cook with <b>butter, lard, coconut oil</b>; olive oil raw or low-heat only. <b>Avoid seed &amp; vegetable oils</b> (sunflower, corn, soybean) — they oxidise. Get omega-3 from oily fish or fish oil. Don't over-eat fat either.</p></div>
+      <div class="card"><h4>The markers that matter</h4><p>Cholesterol isn't the villain — particle type is. Watch <b>triglyceride : HDL (aim &lt; 2, ideally &lt; 1)</b> and <b>fasting insulin</b> (his sits around 1). Low-carb raises the LDL number but improves the ratios.</p></div>
+    </div>
+  </div>
+
+  <!-- Meal timing + Nash's day -->
+  <div class="block reveal" id="meals">
+    <div class="eyebrow">Meal Frequency &amp; Timing</div>
+    <h3>Two or Three Meals — Not Six</h3>
+    <div class="grid cols-2">
+      <div>
+        <p class="lede">Fewer meals mean fewer insulin spikes — which keeps insulin sensitivity high and lets growth hormone, autophagy and fat-burning do their work. Eat when hungry, not by the clock; total daily protein matters more than how you split it.</p>
+        <div class="myth">
+          <div class="m-x"><div class="lab"><span class="sym">✕</span>The Myth</div><p>Eat 6 small meals to "stoke your metabolism."</p></div>
+          <div class="m-v"><div class="lab"><span class="sym">✓</span>Nash</div><p>That came from the food industry. 2–3 meals; 3 on training days, 2 on rest days. Don't eat late — it raises overnight insulin and cortisol.</p></div>
+        </div>
+      </div>
+      <div>
+        <div class="th" style="font-family:'Oswald';text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;color:var(--accent);margin-bottom:.6rem">Nash's own day</div>
+        <div class="timeline">
+          <div class="tl"><div class="time">~7–9 am · fasted</div><h4>Black coffee + walk</h4><p>12–14 h overnight fast; 45–60 min outdoor walk before the first meal.</p></div>
+          <div class="tl"><div class="time">~10 am · Meal 1</div><h4>5–6 whole eggs + 200 g cottage cheese</h4><p>Unchanged for ~35 years.</p></div>
+          <div class="tl"><div class="time">~3–4 pm · Meal 2</div><h4>Chicken or mince + salad</h4><p>Medium-fast protein through the day.</p></div>
+          <div class="tl"><div class="time">Evening · Meal 3</div><h4>Red meat / mince "burgers" ~400–500 g</h4><p>Slow protein, no carbs, 2–4 h before bed.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fasting -->
+  <div class="block reveal" id="fasting">
+    <div class="eyebrow">Intermittent Fasting &amp; Ramadan</div>
+    <h3>A Tool, Not Magic</h3>
+    <div class="grid cols-2">
+      <div class="card"><h4>Intermittent fasting</h4><p>A <b>12–16 h fast / 8–12 h window</b>; Nash himself fasts 12–14 h. It won't cost you muscle if total daily protein is high and training is on point. Skip breakfast and train fasted if you like — the glycogen was banked days ago. Not for very-high-calorie needs or beginners.</p></div>
+      <div class="card"><h4>Ramadan</h4><p>You can hold or even build muscle. Train 30–60 min before breaking the fast (or 1–2 h after), cut volume ~20–25%, and drink <b>35–45 ml/kg water a day with electrolytes</b>.</p></div>
+    </div>
+  </div>
+
+  <!-- Foods eat/avoid -->
+  <div class="block reveal" id="foods">
+    <div class="eyebrow">The Grocery List</div>
+    <h3>What to Eat, What to Drop</h3>
+    <div class="foodcols">
+      <div class="foodbox eat">
+        <h4><span style="color:var(--pine)">✚</span> Eat freely</h4>
+        <ul>
+          <li>Whole eggs (5–10/day)</li>
+          <li>Red meat &amp; mince</li>
+          <li>Liver &amp; organ meats</li>
+          <li>Oily fish — salmon, tuna, sardines</li>
+          <li>Chicken (legs with skin over breast)</li>
+          <li>Cottage cheese, cheese, full-fat dairy</li>
+          <li>Butter, lard, coconut oil</li>
+          <li>Optional: big green salads &amp; low-carb veg</li>
+        </ul>
+      </div>
+      <div class="foodbox avoid">
+        <h4><span style="color:var(--oxblood)">✕</span> Drop</h4>
+        <ul>
+          <li>Sugar &amp; sweets</li>
+          <li>Bread, pasta, rice, cereal, oats, grains</li>
+          <li>Fruit juice &amp; sugary drinks</li>
+          <li>Seed &amp; vegetable oils</li>
+          <li>Processed / packaged food</li>
+          <li>Excess milk</li>
+          <li>Fibre for its own sake — not essential</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note-inline">On the food pyramid: the 1992 USDA "6–11 servings of grains, fat at the top" model — rooted in 1977 low-fat policy — is, in his words, "fundamentally wrong," and the driver of modern obesity and diabetes. The problem is chronic insulin, not calories.</p>
+  </div>
+
+  <!-- Supplements -->
+  <div class="block reveal" id="supplements">
+    <div class="eyebrow">Supplements</div>
+    <h3>Food First — Then These Few</h3>
+    <div class="rule" style="margin:1.1rem 0">
+      <span class="tag">On creatine</span>
+      <strong>It works, it's safe — and you may not need it.</strong>
+      <p>If you eat enough red meat and fish (≈4–5 g creatine per kg), you're likely covered. If you supplement: <b>3–5 g/day, no loading phase</b> (loading is a myth that just upsets your stomach). It really helps vegetarians, vegans and low-red-meat eaters. It doesn't harm healthy kidneys; the weight it adds is intracellular water, not fat.</p>
+    </div>
+    <div class="grid cols-3">
+      <div class="card"><h4>His top 3</h4><p><b>Vitamin D3</b> 4,000–5,000 IU + K2 (MK-7) 100–200 mcg + magnesium ~400 mg, with a fatty meal · <b>Omega-3</b> (fish / cod-liver oil, EPA+DHA) · <b>Vitamin C</b> 500 mg ×3.</p></div>
+      <div class="card"><h4>Electrolytes</h4><p>Essential on low carb: <b>sodium 3–5 g/day</b> (≈7–12 g Celtic/Himalayan salt), potassium 2.6–3.5 g, magnesium ~400 mg. Plain water alone flushes minerals.</p></div>
+      <div class="card"><h4>Coffee</h4><p>Fine — <b>1–3 cups/day</b>, morning and pre-workout, but not within 6–8 h of bed. The cortisol bump is temporary (~60 min). Fat-burner pills, meanwhile, don't work.</p></div>
+    </div>
+  </div>
+
+  <!-- Fat loss + hormones -->
+  <div class="block reveal" id="fatloss">
+    <div class="eyebrow">Fat Loss &amp; Hormones</div>
+    <h3>Lose Fat, Not Weight</h3>
+    <div class="grid cols-2">
+      <div class="card">
+        <h4>Fat loss ≠ weight loss</h4>
+        <p>Ignore the scale and BMI — judge by the mirror, photos and composition. Crash diets shed &gt;50% muscle and rebound. The method: high protein + low carb + weights + walking + sleep. Low insulin lets <b>glucagon</b> release fat, and most fat is actually burned during sleep. Stay lean year-round — <b>don't bulk</b>; "get fat then get lean is stupid."</p>
+      </div>
+      <div class="card">
+        <h4>The hormone hierarchy</h4>
+        <p>Five levers govern growth: <b>testosterone, insulin sensitivity, cortisol, growth hormone, thyroid.</b> The base of the pyramid is your metabolic environment — insulin sensitivity — then testosterone / GH / nitric oxide, and only at the top do protein, calories and supplements matter. Most people build that pyramid upside-down.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="pull reveal">"You are not what you eat — <b>you are what you absorb.</b>"</p>
+</section>
+
+<!-- ============ REFERENCE ============ -->
+<section class="part part--ref" id="reference">
+  <div class="part-head reveal">
+    <div class="num-lg">✦</div>
+    <div>
+      <div class="ph-eye">Appendix</div>
+      <h2>The Blueprints He Cites</h2>
+      <p class="ph-sub">The Golden-Era diets and methods Nash points to as proof — context, not prescriptions.</p>
+    </div>
+  </div>
+  <div class="block reveal">
+    <div class="grid cols-3">
+      <div class="card">
+        <h4>Serge Nubret</h4>
+        <p>Up to ~6 lb of meat a day, 400–600 g protein across 2–3 meals, low carb, <b>no supplements</b>, no vegetables. Trained huge volume with ~30 s rest and never to failure. Always lean.</p>
+      </div>
+      <div class="card">
+        <h4>Vince Gironda — "the Iron Guru"</h4>
+        <p>Steak &amp; eggs (½ lb steak + 3–4 eggs in butter, 3–4×/day); "egg &amp; cream" for hardgainers; a carb refeed every 3–4 days (70–100 g). Desiccated liver tablets. "Bodybuilding is 85% nutrition."</p>
+      </div>
+      <div class="card">
+        <h4>Arnold &amp; Sergio Oliva</h4>
+        <p>Protein-dominant, low carb, and no carbs before a show — decades before it was fashionable. Proof, to Nash, that the classic physiques were built on this template.</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:1.1rem">
+      <h4>Nash, at a glance</h4>
+      <p>64 years old · trains 5×/week, once per muscle · ~250–300 g protein and ~2–3 meals a day · fasts 12–14 h · fasting insulin ≈ 1 · "never a serious injury" in 40+ years. He positions his own once-a-week, high-volume, low-carb system as the <em>natural lifter's</em> distillation of everything above.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer id="notes">
+  <div class="disclaimer reveal">
+    <h4>Read this before you change anything</h4>
+    <p>This page is an <b>editorial summary of one coach's opinions</b> as expressed across his YouTube videos from July 2024 to July 2026 — not medical, dietary or training advice, and not an endorsement.</p>
+    <p>Several positions here are <b>contrarian versus mainstream sports-science and dietary guidance</b>: protein at 2–3 g/kg sits above the usual 1.6–2.2 g/kg recommendations; "carbs are non-essential / near-zero," "calories matter less than hormones," dismissing the per-meal protein ceiling, and doing zero conventional cardio are all debated. Specific mechanisms and figures he cites (e.g. "90% of growth," exact hormone claims) are his interpretation, not settled consensus.</p>
+    <p>His own advice also <b>evolved across the window</b> — training volume drifted up (~10–20 → 20–30 sets) and meal frequency down (5–6 → 2–3 meals). Where sources differed, the most-repeated recent position was taken as the through-line.</p>
+    <p>Talk to a qualified doctor or dietitian before making big training or nutrition changes, especially if you have any medical condition.</p>
+  </div>
+  <div class="colophon">
+    <span>The Nash Jocic Method</span><span class="dot"></span>
+    <span>Compiled from 197 transcripts</span><span class="dot"></span>
+    <span>2024–2026</span><span class="dot"></span>
+    <span>Gym Plan · Nutrition Plan</span>
+  </div>
+</footer>
+
+</div>
+
+<script>
+  // nav shadow + scroll-spy
+  (function(){
+    var nav = document.getElementById('nav');
+    var links = Array.prototype.slice.call(document.querySelectorAll('nav a')).filter(function(a){ return a.getAttribute('href').charAt(0) === '#'; });
+    var sections = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+    function onScroll(){
+      nav.classList.toggle('scrolled', window.scrollY > 12);
+      var pos = window.scrollY + 120, active = -1;
+      for (var i=0;i<sections.length;i++){ if (sections[i] && sections[i].offsetTop <= pos) active = i; }
+      links.forEach(function(l,i){ l.classList.toggle('active', i===active); });
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+
+    // reveal on scroll
+    if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+      document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+    } else {
+      document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>

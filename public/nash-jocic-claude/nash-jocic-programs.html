@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Nash Jocic Method — 4-Day &amp; 5-Day Programs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4eee1; --paper-2:#efe7d6; --card:#fbf7ee;
+    --ink:#211a14; --ink-soft:#4a3f34; --muted:#7a6c5b;
+    --line:#d8cdb6; --line-strong:#c3b596;
+    --oxblood:#98271d; --oxblood-deep:#7a1e16;
+    --steel:#2c4a57; --steel-deep:#20343d;
+    --pine:#38553f; --gold:#b1863a;
+    --accent:var(--oxblood); --accent-deep:var(--oxblood-deep);
+    --shadow:0 1px 0 rgba(33,26,20,.04), 0 18px 40px -28px rgba(33,26,20,.55);
+    --maxw:1160px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Newsreader",Georgia,'Times New Roman',serif;font-size:19px;line-height:1.62;
+    font-optical-sizing:auto;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.05;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .wrap{position:relative;z-index:1}
+  a{color:inherit}
+  h1,h2,h3,h4{margin:0;font-weight:600;line-height:1.05}
+  p{margin:0 0 1em}
+  ::selection{background:var(--accent);color:#fff}
+  .eyebrow,.kicker,nav a,.stat-num,.th,.tag,.num-lg,.btn,.chip,.vt{font-family:"Oswald",'Arial Narrow',sans-serif}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:1.4rem;
+    padding:.7rem clamp(1rem,4vw,2.4rem);background:rgba(244,238,225,.82);backdrop-filter:blur(9px);
+    border-bottom:1px solid var(--line);transition:box-shadow .3s ease,background .3s ease}
+  nav.scrolled{box-shadow:0 10px 30px -20px rgba(33,26,20,.5);background:rgba(244,238,225,.94)}
+  .brand{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    font-size:.92rem;display:flex;align-items:center;gap:.55rem;margin-right:auto}
+  .brand .mono{display:inline-grid;place-items:center;width:30px;height:30px;background:var(--oxblood);
+    color:#f4eee1;border-radius:2px;font-size:.8rem;letter-spacing:0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+  nav .links{display:flex;gap:1.4rem;align-items:center}
+  nav a{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:500;text-decoration:none;
+    color:var(--ink-soft);position:relative;padding:.2rem 0}
+  nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:2px;background:var(--oxblood);transition:right .28s ease}
+  nav a:hover::after,nav a.active::after{right:0}
+  nav a.active{color:var(--ink)}
+  nav a.back{color:var(--muted);font-size:.72rem}
+  nav a.back::before{content:"‹ ";}
+  @media(max-width:680px){nav .links{gap:.85rem}nav a{font-size:.68rem;letter-spacing:.07em}.brand span.full{display:none}}
+
+  /* HERO */
+  header.hero{max-width:var(--maxw);margin:0 auto;padding:clamp(2rem,6vw,4rem) clamp(1rem,4vw,2.4rem) 1.5rem}
+  .issue-line{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;align-items:center;font-family:"Oswald",sans-serif;
+    text-transform:uppercase;letter-spacing:.2em;font-size:.72rem;color:var(--muted);font-weight:500;
+    padding-bottom:1rem;border-bottom:3px double var(--line-strong)}
+  .issue-line .dot{width:6px;height:6px;background:var(--oxblood);border-radius:50%}
+  .hero h1{font-family:"Oswald",sans-serif;font-weight:700;text-transform:uppercase;
+    font-size:clamp(2.7rem,9vw,6.6rem);letter-spacing:-.01em;line-height:.92;margin:1.1rem 0 .2rem;color:var(--ink)}
+  .hero h1 em{font-style:normal;color:var(--oxblood)}
+  .hero .dek{font-size:clamp(1.12rem,2.4vw,1.45rem);line-height:1.42;max-width:52ch;color:var(--ink-soft);margin:.5rem 0 0}
+  .hero .dek b{font-weight:600;color:var(--ink)}
+  .glance{max-width:var(--maxw);margin:1.8rem auto 0;padding:0 clamp(1rem,4vw,2.4rem);
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border:1px solid var(--line-strong);
+    background:var(--card);border-radius:4px;overflow:hidden;box-shadow:var(--shadow)}
+  .glance .g{padding:1.15rem 1.25rem;border-right:1px solid var(--line)}
+  .glance .g:last-child{border-right:none}
+  .glance .stat-num{font-size:1.9rem;font-weight:700;color:var(--oxblood);line-height:1}
+  .glance .stat-lab{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.11em;font-size:.66rem;color:var(--muted);margin-top:.4rem}
+  @media(max-width:620px){.glance .g{border-right:none;border-bottom:1px solid var(--line)}.glance .g:last-child{border-bottom:none}}
+
+  main{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1rem,4vw,2.4rem)}
+
+  /* rise-in */
+  .rise{opacity:0;transform:translateY(16px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.28s}.d4{animation-delay:.42s}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* SHARED RULES PANEL */
+  .rules{margin:2.4rem 0;background:var(--card);border:1px solid var(--line-strong);border-radius:6px;
+    box-shadow:var(--shadow);overflow:hidden}
+  .rules .rh{background:var(--ink);color:var(--paper);padding:1rem 1.4rem;display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+  .rules .rh h3{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.04em;font-size:1.2rem}
+  .rules .rh span{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.18em;font-size:.68rem;color:#c9b79a}
+  .rules .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  @media(max-width:760px){.rules .rgrid{grid-template-columns:1fr}}
+  .rules .r{padding:1.15rem 1.4rem;border-right:1px solid var(--line);border-top:1px solid var(--line)}
+  .rules .r:nth-child(3n){border-right:none}
+  @media(max-width:760px){.rules .r{border-right:none}}
+  .rules .r h4{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:.92rem;color:var(--oxblood);margin-bottom:.3rem;display:flex;gap:.5rem;align-items:center}
+  .rules .r h4 b{font-family:"Oswald";font-size:1.05rem}
+  .rules .r p{font-size:.95rem;color:var(--ink-soft);margin:0}
+
+  /* CHOOSER */
+  .chooser{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin:1.4rem 0 0}
+  @media(max-width:640px){.chooser{grid-template-columns:1fr}}
+  .choice{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--accent);border-radius:6px;
+    padding:1.3rem 1.4rem;box-shadow:var(--shadow);transition:transform .25s ease,box-shadow .25s ease;text-decoration:none;display:block}
+  .choice:hover{transform:translateY(-3px);box-shadow:0 24px 46px -30px rgba(33,26,20,.6)}
+  .choice.four{--accent:var(--oxblood)}
+  .choice.five{--accent:var(--steel)}
+  .choice .cnum{font-family:"Oswald",sans-serif;font-weight:700;font-size:2.6rem;color:var(--accent);line-height:.9}
+  .choice h4{font-family:"Oswald",sans-serif;text-transform:uppercase;font-size:1.15rem;margin:.3rem 0 .5rem}
+  .choice p{font-size:.96rem;color:var(--ink-soft);margin:0 0 .6rem}
+  .choice .who{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:.7rem;color:var(--muted)}
+  .choice .go{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:.74rem;color:var(--accent);margin-top:.8rem;display:inline-block}
+
+  /* PROGRAM SECTION */
+  .prog{padding:clamp(2.6rem,6vw,4.5rem) 0 1rem;scroll-margin-top:66px}
+  .prog--four{--accent:var(--oxblood);--accent-deep:var(--oxblood-deep)}
+  .prog--five{--accent:var(--steel);--accent-deep:var(--steel-deep)}
+  .prog-head{display:flex;align-items:flex-start;gap:clamp(.8rem,3vw,1.6rem);border-top:4px solid var(--accent);padding-top:1.1rem;margin-bottom:1.4rem}
+  .prog-head .num-lg{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:700;color:var(--accent);line-height:.8}
+  .prog-head .ph-eye{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.26em;font-size:.74rem;color:var(--muted);font-weight:500}
+  .prog-head h2{font-family:"Oswald",sans-serif;text-transform:uppercase;font-weight:700;font-size:clamp(1.8rem,5vw,3rem);letter-spacing:-.01em;margin-top:.15rem}
+  .prog-head .ph-sub{font-size:1.02rem;color:var(--ink-soft);max-width:60ch;margin-top:.45rem}
+
+  /* CALENDAR STRIP */
+  .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:.5rem;margin:0 0 1.6rem}
+  @media(max-width:680px){.cal{grid-template-columns:repeat(4,1fr)}}
+  @media(max-width:420px){.cal{grid-template-columns:repeat(2,1fr)}}
+  .day-chip{border-radius:5px;padding:.7rem .6rem;min-height:74px;display:flex;flex-direction:column;gap:.25rem;justify-content:center;
+    border:1px solid var(--line-strong);background:var(--card)}
+  .day-chip .dow{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:.62rem;color:var(--muted)}
+  .day-chip .foc{font-family:"Oswald",sans-serif;text-transform:uppercase;font-size:.82rem;line-height:1.05;font-weight:500;color:var(--ink)}
+  .day-chip.train{background:var(--accent);border-color:var(--accent-deep)}
+  .day-chip.train .dow{color:rgba(246,239,224,.75)}
+  .day-chip.train .foc{color:#f6efe0}
+  .day-chip.rest{opacity:.72}
+  .day-chip.rest .foc{color:var(--muted);font-style:normal}
+
+  /* WORKOUT CARDS */
+  .days{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:1.1rem}
+  .wcard{background:var(--card);border:1px solid var(--line);border-radius:6px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+  .wcard .wh{background:var(--accent);color:#f6efe0;padding:.85rem 1.1rem;display:flex;align-items:center;justify-content:space-between;gap:.6rem}
+  .wcard .wh .dnum{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.16em;font-size:.66rem;opacity:.82}
+  .wcard .wh h3{font-family:"Oswald",sans-serif;text-transform:uppercase;font-size:1.2rem;letter-spacing:.02em;line-height:1}
+  .wcard .wh .vbadge{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:.62rem;
+    background:rgba(0,0,0,.18);padding:.28rem .5rem;border-radius:20px;white-space:nowrap}
+  table.wt{border-collapse:collapse;width:100%}
+  table.wt thead th{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.09em;font-size:.62rem;
+    text-align:left;padding:.55rem 1.1rem;color:var(--muted);font-weight:500;border-bottom:1px solid var(--line)}
+  table.wt thead th.n{text-align:center;width:14%}
+  table.wt thead th.r{text-align:right;width:16%}
+  table.wt td{padding:.52rem 1.1rem;border-bottom:1px dotted var(--line);font-size:.96rem;color:var(--ink-soft);vertical-align:baseline}
+  table.wt tr:last-child td{border-bottom:none}
+  table.wt td.ex{color:var(--ink)}
+  table.wt td.ex small{display:block;color:var(--muted);font-size:.76rem;font-style:italic;line-height:1.2}
+  table.wt td.sets{text-align:center;font-family:"Oswald",sans-serif;font-weight:600;color:var(--accent);white-space:nowrap}
+  table.wt td.reps{text-align:center;font-family:"Oswald",sans-serif;font-size:.92rem;letter-spacing:.02em;white-space:nowrap}
+  table.wt td.rest{text-align:right;color:var(--muted);font-family:"Oswald",sans-serif;font-size:.82rem}
+  tr.grp td{background:rgba(216,205,182,.28);font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.14em;
+    font-size:.64rem;color:var(--accent-deep);font-weight:600;padding:.35rem 1.1rem}
+
+  /* VOLUME TALLY */
+  .tally{margin:1.5rem 0 0;background:var(--card);border:1px dashed var(--line-strong);border-radius:6px;padding:1.1rem 1.3rem}
+  .tally .tt{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:.68rem;color:var(--muted);margin-bottom:.7rem}
+  .tally .row{display:flex;flex-wrap:wrap;gap:.5rem}
+  .vt{display:inline-flex;align-items:baseline;gap:.35rem;background:var(--paper-2);border:1px solid var(--line);border-radius:20px;padding:.28rem .7rem}
+  .vt b{font-family:"Oswald",sans-serif;font-weight:600;color:var(--accent);font-size:.95rem}
+  .vt span{text-transform:uppercase;letter-spacing:.06em;font-size:.64rem;color:var(--ink-soft)}
+
+  /* NOTE / progress */
+  .block{margin:2.4rem 0}
+  .block > .eyebrow{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:.74rem;
+    color:var(--accent);font-weight:600;display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem}
+  .block > .eyebrow::before{content:"";width:22px;height:2px;background:var(--accent)}
+  .block h3{font-family:"Oswald",sans-serif;text-transform:uppercase;font-weight:600;font-size:clamp(1.4rem,3.4vw,2rem);margin-bottom:.5rem}
+  .lede{font-size:1.06rem;color:var(--ink-soft);max-width:70ch}
+  .rule{background:linear-gradient(180deg,var(--accent),var(--accent-deep));color:#f6efe0;border-radius:6px;
+    padding:1.4rem 1.6rem;box-shadow:var(--shadow);position:relative;overflow:hidden;margin:1.2rem 0}
+  .rule::after{content:"↗";position:absolute;right:.9rem;bottom:-.6rem;font-family:"Newsreader",serif;font-size:6rem;opacity:.14;line-height:1}
+  .rule .tag{display:inline-block;font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:.68rem;opacity:.85;margin-bottom:.3rem}
+  .rule strong{font-family:"Oswald",sans-serif;text-transform:uppercase;font-weight:600;font-size:clamp(1.25rem,3vw,1.65rem);display:block;line-height:1.1}
+  .rule p{color:#f0e6d4;opacity:.94;margin:.55rem 0 0;font-size:1rem;max-width:68ch}
+  .steps{counter-reset:s;list-style:none;margin:1rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.9rem}
+  .steps li{counter-increment:s;position:relative;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1rem 1.1rem 1rem 3rem;box-shadow:var(--shadow);font-size:.96rem;color:var(--ink-soft)}
+  .steps li::before{content:counter(s);position:absolute;left:.85rem;top:.9rem;width:26px;height:26px;display:grid;place-items:center;
+    background:var(--accent);color:#f6efe0;border-radius:50%;font-family:"Oswald",sans-serif;font-weight:600;font-size:.85rem}
+  .steps li b{color:var(--ink)}
+
+  /* FOOTER */
+  footer{max-width:var(--maxw);margin:2.6rem auto 0;padding:2.2rem clamp(1rem,4vw,2.4rem) 3.4rem}
+  .disclaimer{border:1px solid var(--line-strong);border-left:5px solid var(--oxblood);background:var(--card);border-radius:5px;padding:1.3rem 1.5rem;box-shadow:var(--shadow)}
+  .disclaimer h4{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:.82rem;color:var(--oxblood);margin-bottom:.5rem}
+  .disclaimer p{font-size:.92rem;color:var(--ink-soft);margin:0 0 .6rem}
+  .disclaimer p:last-child{margin-bottom:0}
+  .disclaimer a{color:var(--oxblood);font-weight:600}
+  .colophon{margin-top:1.8rem;padding-top:1.2rem;border-top:3px double var(--line-strong);display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;align-items:center;
+    font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;color:var(--muted)}
+  .colophon .dot{width:5px;height:5px;background:var(--accent);border-radius:50%}
+
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rise,.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav id="nav">
+  <div class="brand"><span class="mono">NJ</span><span class="full">The Nash Jocic Method</span></div>
+  <div class="links">
+    <a class="back" href="/nash-jocic-claude/nash-jocic-training-nutrition.html">Method Guide</a>
+    <a href="#rules">Rules</a>
+    <a href="#four">4-Day</a>
+    <a href="#five">5-Day</a>
+    <a href="#progress">Progress</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="issue-line rise d1">
+    <span>Dr. Nash Jocic</span><span class="dot"></span>
+    <span>Ready-to-Run Routines</span><span class="dot"></span>
+    <span>Once Per Muscle · Per Week</span><span class="dot"></span>
+    <span>Natural Lifter</span>
+  </div>
+  <h1 class="rise d2">The <em>Programs.</em></h1>
+  <p class="dek rise d3">Two complete routines built straight from Nash's method — a <b>4-day split</b> for most people and a <b>5-day split</b> for the advanced. Every muscle once a week, high volume, straight sets, stopping a rep or two shy of failure.</p>
+
+  <div class="glance rise d4">
+    <div class="g"><div class="stat-num">2</div><div class="stat-lab">complete splits</div></div>
+    <div class="g"><div class="stat-num">1&times;</div><div class="stat-lab">per muscle / week</div></div>
+    <div class="g"><div class="stat-num">45–60<span style="font-size:1rem">m</span></div><div class="stat-lab">per session</div></div>
+    <div class="g"><div class="stat-num">8–20</div><div class="stat-lab">rep range</div></div>
+    <div class="g"><div class="stat-num">1–2</div><div class="stat-lab">reps in reserve</div></div>
+  </div>
+</header>
+
+<main>
+
+<!-- SHARED RULES -->
+<section id="rules" class="block reveal" style="scroll-margin-top:66px">
+  <div class="rules">
+    <div class="rh"><span>Read first</span><h3>Run Every Set Like This</h3></div>
+    <div class="rgrid">
+      <div class="r"><h4>Straight sets</h4><p>Same weight for <b>all</b> working sets — reps fall naturally as you fatigue (e.g. 12, 10, 8). Never pyramid up.</p></div>
+      <div class="r"><h4>Leave <b>1–2</b> in the tank</h4><p>Stop just shy of failure on every set. At most one all-out set on the last exercise of a muscle, occasionally.</p></div>
+      <div class="r"><h4>Tempo <b>3–4s</b></h4><p>~1–2s up, 2s+ down. Control the negative, no bouncing, no lockout — keep constant tension.</p></div>
+      <div class="r"><h4>Rest short</h4><p>Upper body 30–60s, isolation 30–45s, legs 60–120s. Enough to hold form, not enough to fully recover.</p></div>
+      <div class="r"><h4>Order the day</h4><p>Lead with the heaviest barbell compound, then dumbbells and machines, isolation last. Warm-up ramps don't count as sets.</p></div>
+      <div class="r"><h4>Add weight when earned</h4><p>Beat the <b>top</b> of the rep range on set 1 in clean form → add ~5% (2.5 kg) next time. Reps reset to the bottom.</p></div>
+    </div>
+  </div>
+
+  <div class="chooser">
+    <a class="choice four" href="#four">
+      <div class="cnum">4</div>
+      <h4>The 4-Day Split</h4>
+      <p>Trains Mon · Tue · Thu · Fri. Muscles paired so each is hit hard once, then rested a full week.</p>
+      <div class="who">Best for: most people · naturals · intermediate · over-40 · limited time</div>
+      <span class="go">See the program →</span>
+    </a>
+    <a class="choice five" href="#five">
+      <div class="cnum">5</div>
+      <h4>The 5-Day Split</h4>
+      <p>Back, shoulders and arms get their own days for higher per-muscle volume. Nash's own template.</p>
+      <div class="who">Best for: advanced · strong recovery · 5 free days · chasing weak points</div>
+      <span class="go">See the program →</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ 4-DAY ============ -->
+<section class="prog prog--four" id="four">
+  <div class="prog-head reveal">
+    <div class="num-lg">4</div>
+    <div>
+      <div class="ph-eye">Program A</div>
+      <h2>The 4-Day Split</h2>
+      <p class="ph-sub">Four sessions, three rest days. Each muscle trained once, then left alone for seven days. The default for the natural lifter.</p>
+    </div>
+  </div>
+
+  <div class="cal reveal">
+    <div class="day-chip train"><span class="dow">Mon</span><span class="foc">Chest + Biceps</span></div>
+    <div class="day-chip train"><span class="dow">Tue</span><span class="foc">Legs + Calves</span></div>
+    <div class="day-chip rest"><span class="dow">Wed</span><span class="foc">Rest</span></div>
+    <div class="day-chip train"><span class="dow">Thu</span><span class="foc">Back + Abs</span></div>
+    <div class="day-chip train"><span class="dow">Fri</span><span class="foc">Shoulders + Triceps</span></div>
+    <div class="day-chip rest"><span class="dow">Sat</span><span class="foc">Rest</span></div>
+    <div class="day-chip rest"><span class="dow">Sun</span><span class="foc">Rest</span></div>
+  </div>
+
+  <div class="days">
+    <!-- Day 1 -->
+    <div class="wcard reveal">
+      <div class="wh"><div><div class="dnum">Day 1 · Monday</div><h3>Chest + Biceps</h3></div><span class="vbadge">33 sets</span></div>
+      <table class="wt">
+        <thead><tr><th>Exercise</th><th class="n">Sets</th><th class="n">Reps</th><th class="r">Rest</th></tr></thead>
+        <tbody>
+          <tr class="grp"><td colspan="4">Chest — 20 sets</td></tr>
+          <tr><td class="ex">Flat Barbell Bench Press <small>the "king" — elbows out, full stretch</small></td><td class="sets">5</td><td class="reps">8–12</td><td class="rest">60s</td></tr>
+          <tr><td class="ex">Incline Dumbbell Press</td><td class="sets">4</td><td class="reps">8–12</td><td class="rest">60s</td></tr>
+          <tr><td class="ex">Weighted Dips <small>or decline press</small></td><td class="sets">4</td><td class="reps">8–12</td><td class="rest">60s</td></tr>
+          <tr><td class="ex">Dumbbell Flyes</td><td class="sets">4</td><td class="reps">10–12</td><td class="rest">45s</td></tr>
+          <tr><td class="ex">Cable Crossover</td><td class="sets">3</td><td class="reps">12–15</td><td class="rest">45s</td></tr>
+          <tr class="grp"><td colspan="4">Biceps — 13 sets</td></tr>
+          <tr><td class="ex">Barbell Curl <small>straight bar, elbows forward, supinate</small></td><td class="sets">5</td><td class="reps">8–12</td><td class="rest">45s</td></tr>
+          <tr><td class="ex">Preacher (Scott) Curl</td><td class="sets">4</td><td class="reps">8–12</td><td class="rest">45s</td></tr>
+          <tr><td class="ex">Hammer Curl</td><td class="sets">4</td><td class="reps">10–12</td><td class="rest">45s</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Day 2 -->
+    <div class="wcard reveal">
+      <div class="wh"><div><div class="dnum">Day 2 · Tuesday</div><h3>Legs + Calves</h3></div><span class="vbadge">37 sets</span></div>
+      <table class="wt">
+        <thead><tr><th>Exercise</th><th class="n">Sets</th><th class="n">Reps</th><th class="r">Rest</th></tr></thead>
+        <tbody>
+          <tr class="grp"><td colspan="4">Quads — 18 sets</td></tr>
+          <tr><td class="ex">Squat <small>the "king" — break parallel</small></td><td class="sets">5</td><td class="reps">12–20</td><td class="rest">90–120s</td></tr>
+          <tr><td class="ex">Leg Press</td><td class="sets">4</td><td class="reps">12–20</td><td class="rest">90s</td></tr>
+          <tr><td class="ex">Hack / V-Squat</td><td class="sets">3</td><td class="reps">12–15</td><td class="rest">90s</td></tr>
+          <tr><td class="ex">Leg Extension</td><td class="sets">4</td><td class="reps">15–20</td><td class="rest">60s</td></tr>
+          <tr><td class="ex">Walking Lunges</td><td class="sets">2</td><td class="reps">20–30 st.</td><td class="rest">60s</td></tr>
+          <tr class="grp"><td colspan="4">Hamstrings — 10 sets</td></tr>
+          <tr><td class="ex">Lying Leg Curl</td><td class="sets">4</td><td class="reps">8–12</td><td class="rest">60s</td></tr>
+          <tr><td class="ex">Stiff-Leg Deadlift</td><td class="sets">3</td><td class="reps">8–12</td><td class="rest">60s</td></tr>
+          <tr><td class="ex">Seated Leg Curl</td><td class="sets">3</td><td class="reps">10–12</td><td class="rest">45s</td></tr>
+          <tr class="grp"><td colspan="4">Calves — 9 sets</td></tr>
+          <tr><td class="ex">Standing Calf Raise <small>gastrocnemius</small></td><td class="sets">5</td><td class="reps">8–12</td><td class="rest">45s</td></tr>
+          <tr><td class="ex">Seated Calf Raise <small>soleus</small></td><td class="sets">4</td><td class="reps">12–20</td><td class="rest">45s</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Day 4 -->
+    <div class="wcard reveal">
+      <div class="wh"><div><div class="dnum">Day 3 · Thursday</div><h3>Back + Abs</h3></div><span class="vbadge">28 sets</span></div>
+      <table class="wt">
+        <thead><tr><th>Exercise</th><th class="n">Sets</th><th class="n">Reps</th><th class="r">Rest</th></tr></thead>
+        <tbody>
+          <tr class="grp"><td colspan="4">Back — 21 sets</td></tr>
+          <tr><td class="ex">Wide-Grip Pull-Ups <small>#1 for width — or pulldown to front</small></td><td class="sets">5</td><td class="reps">8–12</td><td class="rest">60s</td></tr>
+          <tr><td class="ex">Bent-Over Barbell Row <small>#1 for thickness</small></td><td class="sets">5</td><td class="reps">8–12</td><td class="rest">60s</td></tr>
+          <tr><td class="ex">Close-Grip Pulldown</td><td class="sets">4</td><td class="reps">8–12</td><td class="rest">60s</td></tr>
+          <tr><td class="ex">Seated Cable Row</td><td class="sets">4</td><td class="reps">8–12</td><td class="rest">60s</td></tr>
+          <tr><td class="ex">Hyperextension</td><td class="sets">3</td><td class="reps">12–15</td><td class="rest">45s</td></tr>
+          <tr class="grp"><td colspan="4">Abs — 7 sets</td></tr>
+          <tr><td class="ex">Hanging Leg Raise</td><td class="sets">4</td><td class="reps">12–20</td><td class="rest">45s</td></tr>
+          <tr><td class="ex">Crunch</td><td class="sets">3</td><td class="reps">15–25</td><td class="rest">45s</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Day 5 -->
+    <div class="wcard reveal">
+      <div class="wh"><div><div class="dnum">Day 4 · Friday</div><h3>Shoulders + Triceps</h3></div><span class="vbadge">30 sets</span></div>
+      <table class="wt">
+        <thead><tr><th>Exercise</th><th class="n">Sets</th><th class="n">Reps</th><th class="r">Rest</th></tr></thead>
+        <tbody>
+          <tr class="grp"><td colspan="4">Shoulders — 17 sets</td></tr>
+          <tr><td class="ex">Overhead Press <small>to the front — never behind the neck</small></td><td class="sets">5</td><td class="reps">8–12</td><td class="rest">60s</td></tr>
+          <tr><td class="ex">Dumbbell Lateral Raise</td><td class="sets">5</td><td class="reps">10–15</td><td class="rest">45s</td></tr>
+          <tr><td class="ex">Rear-Delt Raise</td><td class="sets">4</td><td class="reps">12–15</td><td class="rest">45s</td></tr>
+          <tr><td class="ex">Upright Row / Shrug</td><td class="sets">3</td><td class="reps">10–12</td><td class="rest">45s</td></tr>
+          <tr class="grp"><td colspan="4">Triceps — 13 sets</td></tr>
+          <tr><td class="ex">Triceps Pushdown</td><td class="sets">5</td><td class="reps">8–12</td><td class="rest">45s</td></tr>
+          <tr><td class="ex">Overhead French Press <small>bar behind the head</small></td><td class="sets">4</td><td class="reps">8–12</td><td class="rest">45s</td></tr>
+          <tr><td class="ex">Rope Pushdown</td><td class="sets">4</td><td class="reps">12–15</td><td class="rest">45s</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="tally reveal">
+    <div class="tt">Weekly volume per muscle — inside Nash's ranges</div>
+    <div class="row">
+      <span class="vt"><b>20</b><span>Chest</span></span>
+      <span class="vt"><b>21</b><span>Back</span></span>
+      <span class="vt"><b>18</b><span>Quads</span></span>
+      <span class="vt"><b>10</b><span>Hamstrings</span></span>
+      <span class="vt"><b>17</b><span>Shoulders</span></span>
+      <span class="vt"><b>13</b><span>Biceps</span></span>
+      <span class="vt"><b>13</b><span>Triceps</span></span>
+      <span class="vt"><b>9</b><span>Calves</span></span>
+      <span class="vt"><b>7</b><span>Abs</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5-DAY ============ -->
+<section class="prog prog--five" id="five">
+  <div class="prog-head reveal">
+    <div class="num-lg">5</div>
+    <div>
+      <div class="ph-eye">Program B</div>
+      <h2>The 5-Day Split</h2>
+      <p class="ph-sub">Back, shoulders and arms earn their own days, so each gets more sets. More recovery demand — for the advanced lifter who has the days and the sleep.</p>
+    </div>
+  </div>
+
+  <div class="cal reveal">
+    <div class="day-chip train"><span class="dow">Mon</span><span class="foc">Chest + Abs</span></div>
+    <div class="day-chip train"><span class="dow">Tue</span><span class="foc">Back</span></div>
+    <div class="day-chip train"><span class="dow">Wed</span><span class="foc">Legs + Calves</span></div>
+    <div class="day-chip rest"><span class="dow">Thu</span><span class="foc">Rest</span></div>
+    <div class="day-chip train"><span class="dow">Fri</span><span class="foc">Shoulders</span></div>
+    <div class="day-chip train"><span class="dow">Sat</span><span class="foc">Arms</span></div>
+    <div class="day-chip rest"><span class="dow">Sun</span><span class="foc">Rest</span></div>
+  </div>
+
+  <div class="days">
+    <!-- Day 1 -->
+    <div class="wcard reveal">
+      <div class="wh"><div><div class="dnum">Day 1 · Monday</div><h3>Chest + Abs</h3></div><span class="vbadge">30 sets</span></div>
+      <table class="wt">
+        <thead><tr><th>Exercise</th><th class="n">Sets</th><th class="n">Reps</th><th class="r">Rest</th></tr></thead>
+        <tbody>
+          <tr class="grp"><td colspan="4">Chest — 22 sets</td></tr>
+          <tr><td class="ex">Flat Barbell Bench Press</td><td class="sets">5</td><td class="reps">8–12</td><td class="rest">60s</td></tr>
+          <tr><td class="ex">Incline Dumbbell Press</td><td class="sets">5</td><td class="reps">8–12</td><td class="rest">60s</td></tr>
+          <tr><td class="ex">Weighted Dips <small>or decline press</small></td><td class="sets">4</td><td class="reps">8–12</td><td class="rest">60s</td></tr>
+          <tr><td class="ex">Dumbbell Flyes</td><td class="sets">4</td><td class="reps">10–12</td><td class="rest">45s</td></tr>
+          <tr><td class="ex">Cable Crossover</td><td class="sets">4</td><td class="reps">12–15</td><td class="rest">45s</td></tr>
+          <tr class="grp"><td colspan="4">Abs — 8 sets</td></tr>
+          <tr><td class="ex">Hanging Leg Raise</td><td class="sets">4</td><td class="reps">12–20</td><td class="rest">45s</td></tr>
+          <tr><td class="ex">Cable Crunch</td><td class="sets">4</td><td class="reps">15–20</td><td class="rest">45s</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Day 2 -->
+    <div class="wcard reveal">
+      <div class="wh"><div><div class="dnum">Day 2 · Tuesday</div><h3>Back</h3></div><span class="vbadge">25 sets</span></div>
+      <table class="wt">
+        <thead><tr><th>Exercise</th><th class="n">Sets</th><th class="n">Reps</th><th class="r">Rest</th></tr></thead>
+        <tbody>
+          <tr class="grp"><td colspan="4">Back — 25 sets · its own day = more volume</td></tr>
+          <tr><td class="ex">Wide-Grip Pull-Ups <small>#1 for width</small></td><td class="sets">5</td><td class="reps">8–12</td><td class="rest">60s</td></tr>
+          <tr><td class="ex">Bent-Over Barbell Row <small>#1 for thickness</small></td><td class="sets">5</td><td class="reps">8–12</td><td class="rest">60s</td></tr>
+          <tr><td class="ex">T-Bar Row</td><td class="sets">4</td><td class="reps">8–12</td><td class="rest">60s</td></tr>
+          <tr><td class="ex">Close-Grip Pulldown</td><td class="sets">4</td><td class="reps">8–12</td><td class="rest">60s</td></tr>
+          <tr><td class="ex">Seated Cable Row</td><td class="sets">4</td><td class="reps">8–12</td><td class="rest">60s</td></tr>
+          <tr><td class="ex">Hyperextension</td><td class="sets">3</td><td class="reps">12–15</td><td class="rest">45s</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Day 3 -->
+    <div class="wcard reveal">
+      <div class="wh"><div><div class="dnum">Day 3 · Wednesday</div><h3>Legs + Calves</h3></div><span class="vbadge">41 sets</span></div>
+      <table class="wt">
+        <thead><tr><th>Exercise</th><th class="n">Sets</th><th class="n">Reps</th><th class="r">Rest</th></tr></thead>
+        <tbody>
+          <tr class="grp"><td colspan="4">Quads — 20 sets</td></tr>
+          <tr><td class="ex">Squat</td><td class="sets">5</td><td class="reps">12–20</td><td class="rest">90–120s</td></tr>
+          <tr><td class="ex">Leg Press</td><td class="sets">5</td><td class="reps">12–20</td><td class="rest">90s</td></tr>
+          <tr><td class="ex">Hack / V-Squat</td><td class="sets">4</td><td class="reps">12–15</td><td class="rest">90s</td></tr>
+          <tr><td class="ex">Leg Extension</td><td class="sets">4</td><td class="reps">15–20</td><td class="rest">60s</td></tr>
+          <tr><td class="ex">Walking Lunges</td><td class="sets">2</td><td class="reps">20–30 st.</td><td class="rest">60s</td></tr>
+          <tr class="grp"><td colspan="4">Hamstrings — 11 sets</td></tr>
+          <tr><td class="ex">Lying Leg Curl</td><td class="sets">4</td><td class="reps">8–12</td><td class="rest">60s</td></tr>
+          <tr><td class="ex">Stiff-Leg Deadlift</td><td class="sets">4</td><td class="reps">8–12</td><td class="rest">60s</td></tr>
+          <tr><td class="ex">Seated Leg Curl</td><td class="sets">3</td><td class="reps">10–12</td><td class="rest">45s</td></tr>
+          <tr class="grp"><td colspan="4">Calves — 10 sets</td></tr>
+          <tr><td class="ex">Standing Calf Raise</td><td class="sets">5</td><td class="reps">8–12</td><td class="rest">45s</td></tr>
+          <tr><td class="ex">Seated Calf Raise</td><td class="sets">5</td><td class="reps">12–20</td><td class="rest">45s</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Day 5 -->
+    <div class="wcard reveal">
+      <div class="wh"><div><div class="dnum">Day 4 · Friday</div><h3>Shoulders</h3></div><span class="vbadge">20 sets</span></div>
+      <table class="wt">
+        <thead><tr><th>Exercise</th><th class="n">Sets</th><th class="n">Reps</th><th class="r">Rest</th></tr></thead>
+        <tbody>
+          <tr class="grp"><td colspan="4">Shoulders — 20 sets · own day</td></tr>
+          <tr><td class="ex">Overhead Press <small>to the front</small></td><td class="sets">5</td><td class="reps">8–12</td><td class="rest">60s</td></tr>
+          <tr><td class="ex">Dumbbell Lateral Raise</td><td class="sets">5</td><td class="reps">10–15</td><td class="rest">45s</td></tr>
+          <tr><td class="ex">Rear-Delt Raise</td><td class="sets">4</td><td class="reps">12–15</td><td class="rest">45s</td></tr>
+          <tr><td class="ex">Upright Row</td><td class="sets">3</td><td class="reps">10–12</td><td class="rest">45s</td></tr>
+          <tr><td class="ex">Shrugs <small>traps</small></td><td class="sets">3</td><td class="reps">10–12</td><td class="rest">45s</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Day 6 -->
+    <div class="wcard reveal">
+      <div class="wh"><div><div class="dnum">Day 5 · Saturday</div><h3>Arms</h3></div><span class="vbadge">32 sets</span></div>
+      <table class="wt">
+        <thead><tr><th>Exercise</th><th class="n">Sets</th><th class="n">Reps</th><th class="r">Rest</th></tr></thead>
+        <tbody>
+          <tr class="grp"><td colspan="4">Biceps — 16 sets</td></tr>
+          <tr><td class="ex">Barbell Curl <small>straight bar, full supination</small></td><td class="sets">5</td><td class="reps">8–12</td><td class="rest">45s</td></tr>
+          <tr><td class="ex">Preacher Curl</td><td class="sets">4</td><td class="reps">8–12</td><td class="rest">45s</td></tr>
+          <tr><td class="ex">Dumbbell Curl</td><td class="sets">4</td><td class="reps">8–12</td><td class="rest">45s</td></tr>
+          <tr><td class="ex">Hammer Curl</td><td class="sets">3</td><td class="reps">10–12</td><td class="rest">45s</td></tr>
+          <tr class="grp"><td colspan="4">Triceps — 16 sets</td></tr>
+          <tr><td class="ex">Triceps Pushdown</td><td class="sets">5</td><td class="reps">8–12</td><td class="rest">45s</td></tr>
+          <tr><td class="ex">Overhead French Press <small>bar behind the head</small></td><td class="sets">4</td><td class="reps">8–12</td><td class="rest">45s</td></tr>
+          <tr><td class="ex">Close-Grip Bench Press</td><td class="sets">4</td><td class="reps">8–12</td><td class="rest">60s</td></tr>
+          <tr><td class="ex">Rope Pushdown</td><td class="sets">3</td><td class="reps">12–15</td><td class="rest">45s</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="tally reveal">
+    <div class="tt">Weekly volume per muscle — inside Nash's ranges</div>
+    <div class="row">
+      <span class="vt"><b>22</b><span>Chest</span></span>
+      <span class="vt"><b>25</b><span>Back</span></span>
+      <span class="vt"><b>20</b><span>Quads</span></span>
+      <span class="vt"><b>11</b><span>Hamstrings</span></span>
+      <span class="vt"><b>20</b><span>Shoulders</span></span>
+      <span class="vt"><b>16</b><span>Biceps</span></span>
+      <span class="vt"><b>16</b><span>Triceps</span></span>
+      <span class="vt"><b>10</b><span>Calves</span></span>
+      <span class="vt"><b>8</b><span>Abs</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW TO PROGRESS ============ -->
+<section class="prog prog--four" id="progress">
+  <div class="prog-head reveal">
+    <div class="num-lg">↗</div>
+    <div>
+      <div class="ph-eye">Running It Long-Term</div>
+      <h2>How To Progress</h2>
+      <p class="ph-sub">Muscle grows in waves, not a straight line. Don't add weight for the sake of it — earn it.</p>
+    </div>
+  </div>
+
+  <div class="block reveal">
+    <div class="rule">
+      <span class="tag">The double-progression rule</span>
+      <strong>Beat the top of the rep range, then — and only then — add weight.</strong>
+      <p>Keep the same load until set 1 hits the top number in clean form (12 upper body, 20 for quads). Next session, add ~5% (about 2.5 kg) and let the reps drop back to the bottom of the range. Repeat. This is slow on purpose: it adds up to real muscle over months and years.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Start light enough</b> to hit the top of the range on your first working set with a rep or two still in reserve.</li>
+      <li><b>Chase reps first.</b> Same weight every session until set 1 reaches the top number cleanly across the whole exercise.</li>
+      <li><b>Then add ~2.5 kg.</b> Reps reset to the bottom of the range — that's expected. Rebuild them week by week.</li>
+      <li><b>Stuck for 2–3 weeks?</b> Don't force load. Add a rep, slow the negative, add a set, or tighten form before touching the weight.</li>
+      <li><b>Change little, and rarely.</b> Swap barbell↔dumbbell versions or reorder a lift every few months — keep a working routine 3–6 months.</li>
+      <li><b>Guard recovery.</b> 7–9 h sleep, once-per-muscle frequency, and the low-carb high-protein plan in the Method Guide do the growing.</li>
+    </ol>
+    <p class="lede" style="margin-top:1.4rem">New to lifting? Don't start here. Build up with full-body training 3×/week for a few months, then upper/lower, and only then move to the once-a-week splits — beginning near the <b>bottom</b> of every set range (10–12 sets per big muscle) and adding volume over time toward these targets.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="disclaimer reveal">
+    <h4>A note before you start</h4>
+    <p>These routines are a faithful, practical build of the training method Dr. Nash Jocic describes across his 2024–2026 videos — exercise choices, set/rep ranges, rest, tempo and progression all follow his stated principles. Set counts were arranged to land inside his per-muscle volume ranges; he never dictates one fixed sheet, so treat this as a starting template to adjust to your own recovery.</p>
+    <p>The very high weekly volume here (20–30 sets for big muscles) is Nash's position and sits above what much of the research uses — build up to it gradually rather than jumping straight in, and pair it with the nutrition and recovery in the <a href="/nash-jocic-claude/nash-jocic-training-nutrition.html">Method Guide</a>. This is a summary of one coach's approach, not medical or coaching advice — check with a qualified professional before starting, especially with any injury or medical condition.</p>
+  </div>
+  <div class="colophon">
+    <span>The Nash Jocic Method</span><span class="dot"></span>
+    <span>4-Day &amp; 5-Day Programs</span><span class="dot"></span>
+    <span>Once Per Muscle · Per Week</span><span class="dot"></span>
+    <span><a href="/nash-jocic-claude/nash-jocic-training-nutrition.html" style="text-decoration:none">← Method Guide</a></span>
+  </div>
+</footer>
+
+</div>
+
+<script>
+  (function(){
+    var nav=document.getElementById('nav');
+    var links=[].slice.call(document.querySelectorAll('nav a')).filter(function(a){return a.getAttribute('href').charAt(0)==='#';});
+    var sections=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+    function onScroll(){
+      nav.classList.toggle('scrolled',window.scrollY>12);
+      var pos=window.scrollY+120,active=-1;
+      for(var i=0;i<sections.length;i++){if(sections[i]&&sections[i].offsetTop<=pos)active=i;}
+      links.forEach(function(l,i){l.classList.toggle('active',i===active);});
+    }
+    window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+    if(!window.matchMedia||!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -6% 0px'});
+      document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+    }else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});}
+  })();
+</script>
+</body>
+</html>

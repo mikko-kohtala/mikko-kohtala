@@ -1,0 +1,1249 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dr. Nash Jocic: Workout and Nutrition Findings</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #fbfaf6;
+      --surface: #ffffff;
+      --surface-2: #f1f6f4;
+      --ink: #20201d;
+      --muted: #666963;
+      --line: #d9ded5;
+      --green: #1d6b55;
+      --green-soft: #dcefe7;
+      --red: #b23b35;
+      --red-soft: #f6dfd9;
+      --gold: #b77c21;
+      --gold-soft: #f7ead2;
+      --blue: #2a638a;
+      --blue-soft: #dcebf3;
+      --shadow: 0 18px 45px rgba(33, 37, 32, 0.09);
+      --radius: 8px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(32, 32, 29, 0.035) 1px, transparent 1px) 0 0 / 42px 42px,
+        linear-gradient(0deg, rgba(32, 32, 29, 0.03) 1px, transparent 1px) 0 0 / 42px 42px,
+        var(--paper);
+      color: var(--ink);
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      line-height: 1.55;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      letter-spacing: 0;
+      line-height: 1.05;
+      margin: 0;
+    }
+
+    h1 {
+      max-width: 980px;
+      font-size: clamp(2.6rem, 6vw, 6.4rem);
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.6rem);
+    }
+
+    h3 {
+      font-size: 1.45rem;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    ul,
+    ol {
+      margin: 0;
+      padding-left: 1.15rem;
+    }
+
+    li + li {
+      margin-top: 0.45rem;
+    }
+
+    code {
+      background: #f2f0e9;
+      border: 1px solid #e1ded4;
+      border-radius: 5px;
+      padding: 0.08rem 0.28rem;
+      font-size: 0.92em;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100vw - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 56px 0 28px;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 12% 18%, rgba(29, 107, 85, 0.12), transparent 28%),
+        linear-gradient(120deg, rgba(255, 255, 255, 0.78), rgba(251, 250, 246, 0.92));
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 28px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 30px;
+      margin-bottom: 22px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      background: var(--surface);
+      color: var(--ink);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+    }
+
+    .lede {
+      max-width: 760px;
+      margin-top: 22px;
+      color: #44463f;
+      font-size: 1.12rem;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 12px;
+    }
+
+    .stamp {
+      border: 2px solid var(--ink);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: 8px 8px 0 rgba(29, 107, 85, 0.18);
+      padding: 18px;
+    }
+
+    .stamp strong {
+      display: block;
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      font-size: 2.1rem;
+      line-height: 1;
+    }
+
+    .stamp span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      border-bottom: 1px solid var(--line);
+      background: rgba(251, 250, 246, 0.92);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-inner {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 10px 0;
+    }
+
+    .nav a {
+      flex: 0 0 auto;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.45rem 0.8rem;
+      background: var(--surface);
+      color: var(--ink);
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav a[aria-current="page"] {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner {
+        flex-wrap: wrap;
+        overflow-x: visible;
+        padding: 8px 0;
+      }
+
+      .nav a {
+        padding: 0.42rem 0.66rem;
+        font-size: 0.78rem;
+      }
+
+      .nav a[href^="#"] {
+        display: none;
+      }
+    }
+
+    main {
+      padding: 30px 0 64px;
+    }
+
+    section {
+      scroll-margin-top: 74px;
+      margin-top: 40px;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.7fr) minmax(280px, 0.3fr);
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 18px;
+    }
+
+    .section-note {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid.four {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+
+    .panel.flat {
+      box-shadow: none;
+    }
+
+    .panel h3 {
+      margin-bottom: 12px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 28px;
+      margin-bottom: 12px;
+      border-radius: 999px;
+      padding: 0.22rem 0.62rem;
+      color: var(--ink);
+      font-size: 0.72rem;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .tag.green {
+      background: var(--green-soft);
+      color: #104737;
+    }
+
+    .tag.red {
+      background: var(--red-soft);
+      color: #7c221e;
+    }
+
+    .tag.gold {
+      background: var(--gold-soft);
+      color: #785014;
+    }
+
+    .tag.blue {
+      background: var(--blue-soft);
+      color: #174962;
+    }
+
+    .big-number {
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .source-line {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .callout {
+      border-left: 6px solid var(--green);
+      background: var(--surface-2);
+      padding: 18px 20px;
+    }
+
+    .callout strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .split-table,
+    .program-table,
+    .source-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      font-size: 0.95rem;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #eef3ef;
+      color: #30342d;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .day {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 46px;
+      min-height: 28px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--surface);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.06em;
+    }
+
+    .micro {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .check {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: 10px;
+      align-items: start;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fffdf9;
+      padding: 12px;
+    }
+
+    .mark {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--green);
+      color: white;
+      font-weight: 900;
+    }
+
+    .warning {
+      border-color: #e8c0ba;
+      background: #fff9f7;
+    }
+
+    .warning .mark {
+      background: var(--red);
+    }
+
+    .meal-block {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      padding: 16px;
+    }
+
+    .meal-block h3 {
+      margin-bottom: 8px;
+      font-size: 1.18rem;
+    }
+
+    .kicker {
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .flow-step {
+      position: relative;
+      min-height: 132px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      padding: 16px;
+    }
+
+    .flow-step::before {
+      content: attr(data-step);
+      display: inline-grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      margin-bottom: 12px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: white;
+      font-weight: 850;
+    }
+
+    .source-table code {
+      display: inline-block;
+      max-width: 100%;
+      word-break: break-word;
+    }
+
+    .footer-note {
+      margin-top: 40px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .section-head,
+      .grid.two,
+      .grid.three,
+      .grid.four,
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: clamp(2.4rem, 12vw, 4.4rem);
+      }
+
+      .split-table,
+      .program-table,
+      .source-table {
+        display: block;
+        overflow: visible;
+        box-shadow: none;
+        white-space: normal;
+      }
+
+      .split-table thead,
+      .program-table thead,
+      .source-table thead {
+        display: none;
+      }
+
+      .split-table tbody,
+      .split-table tr,
+      .split-table td,
+      .program-table tbody,
+      .program-table tr,
+      .program-table td,
+      .source-table tbody,
+      .source-table tr,
+      .source-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .split-table tr,
+      .program-table tr,
+      .source-table tr {
+        border-bottom: 1px solid var(--line);
+        padding: 10px 0;
+      }
+
+      .split-table tr:last-child,
+      .program-table tr:last-child,
+      .source-table tr:last-child {
+        border-bottom: 0;
+      }
+
+      .split-table td,
+      .program-table td,
+      .source-table td {
+        display: grid;
+        grid-template-columns: 112px minmax(0, 1fr);
+        gap: 10px;
+        border-bottom: 0;
+        padding: 7px 12px;
+      }
+
+      .split-table td::before,
+      .program-table td::before,
+      .source-table td::before {
+        color: var(--muted);
+        font-size: 0.72rem;
+        font-weight: 850;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+      }
+
+      .split-table td:nth-child(1)::before { content: "Day"; }
+      .split-table td:nth-child(2)::before { content: "Session"; }
+      .split-table td:nth-child(3)::before { content: "Reasoning"; }
+
+      .program-table td:nth-child(1)::before { content: "Workout"; }
+      .program-table td:nth-child(2)::before { content: "Exercises"; }
+      .program-table td:nth-child(3)::before { content: "Target"; }
+      .program-table td:nth-child(4)::before { content: "Progress"; }
+
+      .source-table td:nth-child(1)::before { content: "Theme"; }
+      .source-table td:nth-child(2)::before { content: "Video"; }
+      .source-table td:nth-child(3)::before { content: "Transcript"; }
+
+      .source-table code {
+        white-space: normal;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .panel,
+      .split-table,
+      .program-table,
+      .source-table {
+        box-shadow: none;
+      }
+
+      a {
+        color: var(--ink);
+      }
+    }
+</style>
+</head>
+<body>
+  <nav class="nav" aria-label="Report navigation">
+    <div class="wrap nav-inner">
+      <a href="/nash-jocic-codex/nash-jocic-findings.html" aria-current="page">Findings</a>
+      <a href="/nash-jocic-codex/nash-jocic-4-day-program.html">4-Day</a>
+      <a href="/nash-jocic-codex/nash-jocic-5-day-program.html">5-Day</a>
+      <a href="#takeaway">Takeaway</a>
+      <a href="#gym">Gym Plan</a>
+      <a href="#weekly-template">Weekly Template</a>
+      <a href="#nutrition">Nutrition</a>
+      <a href="#recovery">Recovery</a>
+      <a href="#sources">Sources</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Transcript synthesis | 2024-07-04 to 2026-07-04</div>
+        <h1>Dr. Nash Jocic workout and nutrition findings</h1>
+        <p class="lede">
+          A practical summary of the training and eating pattern Nash Jocic repeatedly recommends in
+          the last two years of downloaded video transcripts. This is a synthesis of his content,
+          not a personalized medical prescription.
+        </p>
+      </div>
+      <div class="hero-side" aria-label="Corpus summary">
+        <div class="stamp">
+          <strong>197</strong>
+          <span>recent text transcripts reviewed</span>
+        </div>
+        <div class="stamp">
+          <strong>619k</strong>
+          <span>approximate transcript words in scope</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="takeaway">
+      <div class="section-head">
+        <div>
+          <h2>Core Takeaway</h2>
+        </div>
+        <p class="section-note">
+          The first in-scope transcript is from 2024-07-31 and the latest is from 2026-07-03.
+        </p>
+      </div>
+
+      <div class="grid three">
+        <article class="panel">
+          <span class="tag green">Training</span>
+          <h3>Stimulate, recover, repeat.</h3>
+          <p>
+            Nash's recent position is strongly recovery-led: most natural lifters should train each
+            muscle once per week, do enough quality volume in that session, and avoid turning every
+            set into a failure test.
+          </p>
+          <p class="source-line">Core sources: 2026-06-17, 2026-06-08, 2026-07-01, 2026-04-11.</p>
+        </article>
+
+        <article class="panel">
+          <span class="tag gold">Execution</span>
+          <h3>Controlled volume beats ego load.</h3>
+          <p>
+            The repeated pattern is moderate-to-heavy weights, strict form, 8-12 reps for most upper
+            body work, higher reps for quads, short rests, constant tension, and straight-set
+            progression.
+          </p>
+          <p class="source-line">Core sources: 2026-05-20, 2026-02-14, 2026-02-28, 2025-09-27.</p>
+        </article>
+
+        <article class="panel">
+          <span class="tag blue">Nutrition</span>
+          <h3>High protein, medium fat, low carb.</h3>
+          <p>
+            He repeatedly favors animal-centered protein, enough dietary fat for hormones and
+            satiety, limited carbohydrates, fewer substantial meals, and simple consistency over
+            supplement complexity.
+          </p>
+          <p class="source-line">Core sources: 2026-01-21, 2026-06-24, 2025-04-19, 2025-10-11.</p>
+        </article>
+      </div>
+
+      <div class="callout" style="margin-top: 18px;">
+        <strong>The practical translation</strong>
+        For most non-beginner natural lifters, the Nash-style plan is a four-day bodybuilding split,
+        each major muscle trained once weekly, with 20-30 target sets for large muscles only after
+        building up to it, 1-2 reps in reserve on most sets, 30-60 seconds rest for upper body, 90-120
+        seconds for legs, and a high-protein low-carb diet that supports recovery without bulking up
+        on fat.
+      </div>
+    </section>
+
+    <section id="gym">
+      <div class="section-head">
+        <div>
+          <h2>Gym Plan</h2>
+        </div>
+        <p class="section-note">
+          This is the repeatable plan implied across the recent transcripts, with the most explicit
+          split coming from "The Only Training Split Most People Need."
+        </p>
+      </div>
+
+      <div class="grid two">
+        <article class="panel">
+          <span class="tag green">Default split</span>
+          <h3>Four days, each muscle once weekly</h3>
+          <table class="split-table">
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Session</th>
+                <th>Reasoning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="day">D1</span></td>
+                <td>Chest and biceps</td>
+                <td>Focused upper session without turning it into a full upper-body workout.</td>
+              </tr>
+              <tr>
+                <td><span class="day">D2</span></td>
+                <td>Legs and calves</td>
+                <td>Large-muscle session with more reps, longer rests, and full recovery afterward.</td>
+              </tr>
+              <tr>
+                <td><span class="day">D3</span></td>
+                <td>Rest</td>
+                <td>Recovery for joints, connective tissue, and central nervous system.</td>
+              </tr>
+              <tr>
+                <td><span class="day">D4</span></td>
+                <td>Back and abs</td>
+                <td>A dedicated back day keeps pulling work from being diluted after other muscles.</td>
+              </tr>
+              <tr>
+                <td><span class="day">D5</span></td>
+                <td>Shoulders and triceps</td>
+                <td>Separate pressing assistance muscles from chest day by several days.</td>
+              </tr>
+              <tr>
+                <td><span class="day">D6-7</span></td>
+                <td>Rest</td>
+                <td>The split is meant to be sustainable for people with normal lives.</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="panel">
+          <span class="tag blue">Advanced option</span>
+          <h3>Five-day split for lifters who can recover</h3>
+          <ul>
+            <li>Day 1: Chest and abs.</li>
+            <li>Day 2: Back.</li>
+            <li>Day 3: Legs.</li>
+            <li>Day 4: Off.</li>
+            <li>Day 5: Shoulders.</li>
+            <li>Day 6: Arms.</li>
+            <li>Day 7: Off.</li>
+          </ul>
+          <p class="source-line">
+            Nash presents this as suitable for advanced lifters, bodybuilders with more gym time, or
+            people who need more focus per muscle group. It is not his default for the majority.
+          </p>
+        </article>
+      </div>
+
+      <div class="grid four" style="margin-top: 14px;">
+        <article class="panel flat">
+          <span class="tag green">Sets</span>
+          <p class="big-number">20-30</p>
+          <p>target sets for large muscle groups once advanced enough.</p>
+          <p class="micro">Beginners start closer to 10-12; intermediates often 12-16.</p>
+        </article>
+        <article class="panel flat">
+          <span class="tag gold">Reps</span>
+          <p class="big-number">8-12</p>
+          <p>upper body baseline rep range.</p>
+          <p class="micro">Quads are usually 12-20 or higher.</p>
+        </article>
+        <article class="panel flat">
+          <span class="tag blue">Rest</span>
+          <p class="big-number">30-60s</p>
+          <p>between upper-body sets.</p>
+          <p class="micro">Legs often need 90-120 seconds.</p>
+        </article>
+        <article class="panel flat">
+          <span class="tag red">Failure</span>
+          <p class="big-number">1-2</p>
+          <p>reps short of failure on most sets.</p>
+          <p class="micro">Failure is occasional, not the training identity.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="programs">
+      <div class="section-head">
+        <div>
+          <h2>Detailed Programs</h2>
+        </div>
+        <p class="section-note">
+          Separate printable pages with exercise order, sets, reps, rest periods, progression rules,
+          and substitutions for the two splits Nash describes most clearly.
+        </p>
+      </div>
+
+      <div class="grid two">
+        <article class="panel">
+          <span class="tag green">Most people</span>
+          <h3>Four-day split</h3>
+          <p>
+            Chest + biceps, legs + calves, back + abs, and shoulders + triceps, with three recovery
+            days each week. This is the default program Nash presents for the majority of lifters.
+          </p>
+          <p class="source-line"><a href="/nash-jocic-codex/nash-jocic-4-day-program.html">Open the detailed 4-day program</a></p>
+        </article>
+
+        <article class="panel">
+          <span class="tag blue">Advanced option</span>
+          <h3>Five-day split</h3>
+          <p>
+            Chest + abs, back, legs, shoulders, and arms, with two recovery days. This gives advanced
+            lifters more space for focused volume without training each muscle twice weekly.
+          </p>
+          <p class="source-line"><a href="/nash-jocic-codex/nash-jocic-5-day-program.html">Open the detailed 5-day program</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="weekly-template">
+      <div class="section-head">
+        <div>
+          <h2>Weekly Template</h2>
+        </div>
+        <p class="section-note">
+          A practical template assembled from the repeated principles and exercise examples in the
+          transcripts. Build up volume gradually.
+        </p>
+      </div>
+
+      <table class="program-table">
+        <thead>
+          <tr>
+            <th>Workout</th>
+            <th>Exercises Nash repeatedly favors</th>
+            <th>Working target</th>
+            <th>How to progress</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Chest + biceps</strong></td>
+            <td>
+              Bench press or dumbbell press, incline or decline press, dumbbell flyes or crossover.
+              Barbell curls, machine curls, hammer curls.
+            </td>
+            <td>
+              Chest 16-25 sets; biceps 10-16 sets. Use 8-12 reps for most work.
+            </td>
+            <td>
+              Straight sets. Add weight only after the top rep range is surpassed with strict form.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Legs + calves</strong></td>
+            <td>
+              Squats, leg press, leg extensions, leg curls, lunges or straight-leg deadlift.
+              Standing and seated calf raises.
+            </td>
+            <td>
+              Quads 20-30 sets when advanced; hamstrings 5-10 sets; calves 8-12 sets. Quads 12-20+
+              reps.
+            </td>
+            <td>
+              Keep range full and controlled. If breathing limits form, rest longer, not sloppier.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Back + abs</strong></td>
+            <td>
+              Pull-ups or pulldowns, barbell rows, T-bar rows, seated cable rows, dumbbell rows.
+              Hanging leg raises or crunches for abs.
+            </td>
+            <td>
+              Back 16-25 sets; abs 6-10 sets. Most back work stays in 8-12 reps.
+            </td>
+            <td>
+              Pull with the back, not the arms. Full stretch and contraction matter more than load.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Shoulders + triceps</strong></td>
+            <td>
+              Shoulder press, lateral raises, bent-over lateral raises, upright rows. Triceps
+              pushdowns and French press.
+            </td>
+            <td>
+              Shoulders 16-20 sets; triceps 10-16 sets. Use 8-12 reps, sometimes higher on raises.
+            </td>
+            <td>
+              Avoid turning shoulder work into ego pressing. Maintain continuous deltoid tension.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="grid three" style="margin-top: 14px;">
+        <article class="panel">
+          <span class="tag gold">Tempo</span>
+          <h3>Use time under tension</h3>
+          <p>
+            The common prescription is controlled reps, often about 3-4 seconds per rep, especially
+            slowing the eccentric. Most working sets should land roughly in the 30-70 second
+            hypertrophy window.
+          </p>
+        </article>
+
+        <article class="panel">
+          <span class="tag blue">Progression</span>
+          <h3>Prefer straight sets</h3>
+          <p>
+            He argues for straight sets over pyramids: choose a working weight, keep it across sets,
+            let reps fall naturally, and track whether the first set eventually exceeds the target
+            range.
+          </p>
+        </article>
+
+        <article class="panel">
+          <span class="tag red">Avoid</span>
+          <h3>Do not chase powerlifting signals</h3>
+          <p>
+            Long rests, very low reps, partial reps, bouncing, forced reps, and frequent failure are
+            treated as the common reasons people get stronger without looking more muscular.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="nutrition">
+      <div class="section-head">
+        <div>
+          <h2>Nutrition Set</h2>
+        </div>
+        <p class="section-note">
+          Nash's nutrition advice is assertive and sometimes controversial. The summary below reports
+          his view; it is not a medical endorsement.
+        </p>
+      </div>
+
+      <div class="grid two">
+        <article class="panel">
+          <span class="tag blue">Macro pattern</span>
+          <h3>High protein, medium fat, low carbohydrate</h3>
+          <div class="checklist">
+            <div class="check">
+              <div class="mark">1</div>
+              <p><strong>Protein first.</strong> He repeatedly recommends at least 2 g protein per kg body weight for natural lifters, with higher intakes used by serious or larger bodybuilders.</p>
+            </div>
+            <div class="check">
+              <div class="mark">2</div>
+              <p><strong>Fat supports the plan.</strong> A common rule in the transcripts is protein-to-fat around 1:0.5, adjusted lower if fat loss is the priority.</p>
+            </div>
+            <div class="check">
+              <div class="mark">3</div>
+              <p><strong>Carbs are limited.</strong> He often frames 70-100 g/day as a ceiling for many natural bodybuilders, with some people going lower or near zero.</p>
+            </div>
+            <div class="check">
+              <div class="mark">4</div>
+              <p><strong>Meal frequency is flexible.</strong> He usually prefers 2-4 substantial meals instead of 6-7 small meals.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <span class="tag green">Food list</span>
+          <h3>Foods he returns to most</h3>
+          <ul>
+            <li>Eggs, especially whole eggs, are presented as a cornerstone food.</li>
+            <li>Red meat, lean beef mince, steak, liver, chicken, turkey, tuna, salmon, sardines, and other fish.</li>
+            <li>Cottage cheese, yogurt, cheese, whey protein, and sometimes slower-release protein before bed.</li>
+            <li>Salads, pickled vegetables, broccoli, cauliflower, spinach, and similar low-carb vegetables.</li>
+            <li>Carbohydrates, when used: sweet potato, rice, pineapple, melon, or fruit in controlled amounts.</li>
+            <li>Fats: egg yolks, animal fat, butter, lard, coconut oil for cooking, olive oil on salads, and fish oil.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="flow" style="margin-top: 14px;">
+        <article class="flow-step" data-step="1">
+          <h3>Meal count</h3>
+          <p>Pick 2-4 substantial meals that you can repeat without snacking all day.</p>
+        </article>
+        <article class="flow-step" data-step="2">
+          <h3>Protein base</h3>
+          <p>Build each meal around animal protein first, then add fat and optional vegetables.</p>
+        </article>
+        <article class="flow-step" data-step="3">
+          <h3>Carb control</h3>
+          <p>Use carbs as a tool, not the base of the diet. Keep them lower when fat loss matters.</p>
+        </article>
+        <article class="flow-step" data-step="4">
+          <h3>Consistency</h3>
+          <p>Repeat simple meals. He repeatedly rejects cheat days and accidental bulking.</p>
+        </article>
+      </div>
+
+      <div class="grid two" style="margin-top: 14px;">
+        <article class="meal-block">
+          <p class="kicker">Training day example</p>
+          <h3>Simple Nash-style day</h3>
+          <ul>
+            <li>Meal 1: whole eggs plus extra egg whites and cottage cheese.</li>
+            <li>Meal 2: chicken, beef, or fish with salad; optional sweet potato or rice.</li>
+            <li>Post-workout: whey in water, or a whole-food protein meal after waiting about an hour.</li>
+            <li>Dinner: lean beef, chicken, fish, or eggs with salad; optional controlled carbs if performance needs them.</li>
+            <li>Optional late meal: yogurt, cottage cheese, casein, or mixed protein if daily protein is short.</li>
+          </ul>
+        </article>
+
+        <article class="meal-block">
+          <p class="kicker">Rest day adjustment</p>
+          <h3>Lower demand, lower intake</h3>
+          <ul>
+            <li>Keep protein high.</li>
+            <li>Reduce or remove workout carbs.</li>
+            <li>Skip the post-workout shake if there is no workout.</li>
+            <li>Use fat as needed for satiety, but reduce it when fat loss stalls.</li>
+            <li>Keep meals boring enough to be repeatable.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="grid three" style="margin-top: 14px;">
+        <article class="panel">
+          <span class="tag gold">Pre-workout</span>
+          <h3>Protein plus fat, 1.5-2 hours before</h3>
+          <p>
+            For staying lean, he argues against large pre-workout carb meals and prefers a high
+            protein, medium fat meal that keeps energy stable.
+          </p>
+        </article>
+
+        <article class="panel">
+          <span class="tag blue">Post-workout</span>
+          <h3>Do not panic about the window</h3>
+          <p>
+            He often advises waiting about an hour, then eating high protein with optional moderate
+            carbs. Whey in water is acceptable, especially when whole food is not practical.
+          </p>
+        </article>
+
+        <article class="panel">
+          <span class="tag green">Supplements</span>
+          <h3>Supplement the diet, not replace it</h3>
+          <p>
+            His recurring essentials are vitamin D3 with K2 and magnesium, omega-3/fish oil, vitamin
+            C, electrolytes during training, and optional creatine if food intake is low in red meat
+            or fish.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="recovery">
+      <div class="section-head">
+        <div>
+          <h2>Recovery And Fat Loss</h2>
+        </div>
+        <p class="section-note">
+          The recovery recommendations are part of the plan, not a side note.
+        </p>
+      </div>
+
+      <div class="grid three">
+        <article class="panel">
+          <span class="tag green">Sleep</span>
+          <h3>7-9 hours</h3>
+          <p>
+            Nash repeatedly ties growth hormone, CNS recovery, and muscle repair to sleep. Poor sleep
+            is treated as a direct recovery blocker.
+          </p>
+        </article>
+
+        <article class="panel">
+          <span class="tag blue">Walking</span>
+          <h3>Outdoor walks beat treadmill cardio</h3>
+          <p>
+            He prefers outdoor walking for stress reduction, blood pressure, nitric oxide, insulin
+            sensitivity, and low-impact fat loss. A common target is 30-60 minutes several times per
+            week.
+          </p>
+        </article>
+
+        <article class="panel">
+          <span class="tag red">Cortisol</span>
+          <h3>Lower chronic stress</h3>
+          <p>
+            High chronic cortisol is framed as a major reason for belly fat, stalled muscle growth,
+            poor recovery, sleep disruption, and fatigue.
+          </p>
+        </article>
+      </div>
+
+      <div class="grid two" style="margin-top: 14px;">
+        <article class="panel warning">
+          <span class="tag red">Common failure pattern</span>
+          <h3>What he says keeps people small</h3>
+          <ul>
+            <li>Training each muscle too frequently before connective tissue and CNS recover.</li>
+            <li>Every set to failure or beyond failure.</li>
+            <li>Long rests chosen mainly to lift heavier weights.</li>
+            <li>Very low reps, partial reps, bouncing, or momentum replacing tension.</li>
+            <li>High-carb eating that makes the lifter heavier but not leaner.</li>
+            <li>Too little protein and too little attention to sleep and stress.</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <span class="tag green">Decision rules</span>
+          <h3>How to self-correct</h3>
+          <ul>
+            <li>If joints ache or motivation drops, reduce frequency, failure, or load before adding more work.</li>
+            <li>If sets are shorter than 20 seconds, lower the weight or slow the rep down.</li>
+            <li>If progress stalls, improve form, tempo, reps, total quality sets, or exercise order before chasing load.</li>
+            <li>If fat gain appears, reduce carbs first, then adjust fats while keeping protein high.</li>
+            <li>If energy is unstable, test fewer meals and lower-carb breakfasts.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="section-head">
+        <div>
+          <h2>Source Notes</h2>
+        </div>
+        <p class="section-note">
+          Main transcripts used for the synthesis. Links open the corresponding YouTube video.
+        </p>
+      </div>
+
+      <table class="source-table">
+        <thead>
+          <tr>
+            <th>Theme</th>
+            <th>Video</th>
+            <th>Local transcript</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Split and frequency</td>
+            <td><a href="https://www.youtube.com/watch?v=K7palD-BiOA">THE ONLY TRAINING SPLIT MOST PEOPLE NEED</a></td>
+            <td><code>2026-06-17_K7palD-BiOA...</code></td>
+          </tr>
+          <tr>
+            <td>Natural lifter system</td>
+            <td><a href="https://www.youtube.com/watch?v=sOjP7Kyxwe8">THE BEST WAY TO TRAIN AS A NATURAL BODYBUILDER</a></td>
+            <td><code>2026-06-08_sOjP7Kyxwe8...</code></td>
+          </tr>
+          <tr>
+            <td>Natural lifter mistakes</td>
+            <td><a href="https://www.youtube.com/watch?v=CMg-esgOjw8">3 MISTAKES KEEPING NATURAL BODYBUILDERS SMALL</a></td>
+            <td><code>2026-07-01_CMg-esgOjw8...</code></td>
+          </tr>
+          <tr>
+            <td>Volume and sets</td>
+            <td><a href="https://www.youtube.com/watch?v=6K9rRbp14NY">Why High Volume Builds Muscle</a></td>
+            <td><code>2026-04-22_6K9rRbp14NY...</code></td>
+          </tr>
+          <tr>
+            <td>Set targets</td>
+            <td><a href="https://www.youtube.com/watch?v=ly0GMRqQbjs">Still Small? You're Not Doing Enough Sets</a></td>
+            <td><code>2026-03-21_ly0GMRqQbjs...</code></td>
+          </tr>
+          <tr>
+            <td>Rep ranges</td>
+            <td><a href="https://www.youtube.com/watch?v=OTYjajuKCOw">Heavy Weights vs High Reps</a></td>
+            <td><code>2026-05-20_OTYjajuKCOw...</code></td>
+          </tr>
+          <tr>
+            <td>Rest intervals</td>
+            <td><a href="https://www.youtube.com/watch?v=NNydOVj-ZyE">Resting Too Long Between Sets?</a></td>
+            <td><code>2026-02-14_NNydOVj-ZyE...</code></td>
+          </tr>
+          <tr>
+            <td>Progression</td>
+            <td><a href="https://www.youtube.com/watch?v=3ANS40e-QHA">Straight Sets vs Pyramid Sets</a></td>
+            <td><code>2026-02-28_3ANS40e-QHA...</code></td>
+          </tr>
+          <tr>
+            <td>Exercise selection</td>
+            <td><a href="https://www.youtube.com/watch?v=cbdCYiQ5lLc">BEST Exercise for Every Muscle Group</a></td>
+            <td><code>2025-07-23_cbdCYiQ5lLc...</code></td>
+          </tr>
+          <tr>
+            <td>Nutrition baseline</td>
+            <td><a href="https://www.youtube.com/watch?v=Cr5iEUnK_Ks">Natural Lifters Are Eating Wrong</a></td>
+            <td><code>2026-01-21_Cr5iEUnK_Ks...</code></td>
+          </tr>
+          <tr>
+            <td>Protein intake</td>
+            <td><a href="https://www.youtube.com/watch?v=F9ZaD1RM0sk">THE 30g PROTEIN LIMIT IS A MYTH</a></td>
+            <td><code>2026-06-24_F9ZaD1RM0sk...</code></td>
+          </tr>
+          <tr>
+            <td>Meal frequency</td>
+            <td><a href="https://www.youtube.com/watch?v=S99oX74W7Jc">Stop Eating 6 Meals a Day</a></td>
+            <td><code>2025-10-11_S99oX74W7Jc...</code></td>
+          </tr>
+          <tr>
+            <td>Personal meal examples</td>
+            <td><a href="https://www.youtube.com/watch?v=r8K_Z2zaNKE">What I Eat: High Protein Low Carb Meal Plan</a></td>
+            <td><code>2025-04-19_r8K_Z2zaNKE...</code></td>
+          </tr>
+          <tr>
+            <td>Pre/post workout food</td>
+            <td><a href="https://www.youtube.com/watch?v=r-ke8MdOtx4">What to Eat Before and After a Workout</a></td>
+            <td><code>2025-06-14_r-ke8MdOtx4...</code></td>
+          </tr>
+          <tr>
+            <td>Recovery</td>
+            <td><a href="https://www.youtube.com/watch?v=3VAC7w2OtXQ">You're Recovering Wrong</a></td>
+            <td><code>2026-04-11_3VAC7w2OtXQ...</code></td>
+          </tr>
+          <tr>
+            <td>Walking and cortisol</td>
+            <td><a href="https://www.youtube.com/watch?v=b8cpZxwvAUs">Walking Is More Powerful Than Cardio</a></td>
+            <td><code>2026-01-14_b8cpZxwvAUs...</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="footer-note">
+        Method note: I used the downloaded <code>.txt</code> transcripts rather than the matching
+        <code>.vtt</code> files to avoid duplicate captions. The source corpus was filtered by
+        date-prefixed filenames from 2024-07-04 through 2026-07-04.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
