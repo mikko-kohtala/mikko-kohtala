@@ -62,4 +62,3 @@ coverImage: /path/to/image.jpg # optional
 - Tags are automatically converted to kebab-case
 - Cover images generate thumbnails via `scripts/generate-thumbnails.ts`
 - Environment variables use `@t3-oss/env-nextjs` for type safety (see `env.ts`)
-- Tailwind classes are sorted automatically by oxfmt (`sortTailwindcss`, aware of the `cn` helper)
