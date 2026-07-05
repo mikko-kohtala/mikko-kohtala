@@ -7,8 +7,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```bash
 bun dev      # Start dev server with Turbopack
 bun build    # Production build
-bun check    # Run Biome linter + TypeScript type check
-bun lint     # Run Biome linter/formatter only
+bun check    # Run oxfmt + oxlint (autofix) + TypeScript type check
+bun lint     # Run oxlint with autofix
+bun format   # Format with oxfmt
 ```
 
 ## Tech Stack
@@ -16,7 +17,8 @@ bun lint     # Run Biome linter/formatter only
 - **Framework**: Next.js 16 with App Router, React 19, TypeScript
 - **Styling**: Tailwind CSS 4 with `next-themes` for dark mode
 - **UI Components**: shadcn/ui (new-york style)
-- **Linting/Formatting**: Biome (extends ultracite config, line width 120)
+- **Linting**: oxlint (oxc) — config in `.oxlintrc.json`
+- **Formatting**: oxfmt (oxc, print width 120) — config in `.oxfmtrc.json`
 - **Package Manager**: Bun
 
 ## Architecture
@@ -60,4 +62,4 @@ coverImage: /path/to/image.jpg # optional
 - Tags are automatically converted to kebab-case
 - Cover images generate thumbnails via `scripts/generate-thumbnails.ts`
 - Environment variables use `@t3-oss/env-nextjs` for type safety (see `env.ts`)
-- Tailwind classes should be sorted (Biome `useSortedClasses` warning enabled)
+- Tailwind classes are sorted automatically by oxfmt (`sortTailwindcss`, aware of the `cn` helper)

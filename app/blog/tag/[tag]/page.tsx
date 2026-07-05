@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+
 import { env } from "@/env";
 import { formatDate, getAllTags, getPostsByTag } from "@/lib/markdown";
 
@@ -83,7 +84,7 @@ export default async function TagPage({ params }: TagPageProps) {
         </nav>
 
         <header className="mb-12">
-          <h1 className="mb-4 font-bold text-3xl">
+          <h1 className="mb-4 text-3xl font-bold">
             <span className="text-primary">#</span> {tag}
           </h1>
           <p className="text-muted-foreground">
@@ -92,7 +93,7 @@ export default async function TagPage({ params }: TagPageProps) {
         </header>
 
         <section className="mb-12">
-          <h2 className="mb-6 font-bold text-lg">
+          <h2 className="mb-6 text-lg font-bold">
             <span className="text-accent">[posts]</span>
           </h2>
 
@@ -106,7 +107,6 @@ export default async function TagPage({ params }: TagPageProps) {
                   <div className="flex gap-4">
                     {post.coverImageThumbnail && (
                       <div className="relative h-20 w-32 shrink-0 overflow-hidden rounded">
-                        {/** biome-ignore lint/correctness/useImageSize: ok */}
                         <img
                           alt={`Cover image for ${post.title}`}
                           className="h-full w-full object-cover transition-transform group-hover:scale-105"
@@ -114,7 +114,7 @@ export default async function TagPage({ params }: TagPageProps) {
                         />
                         {post.isDraft && (
                           <div className="absolute top-1 left-1">
-                            <span className="rounded-full border border-orange-500/30 bg-orange-500/20 px-1 py-0.5 font-bold text-orange-400 text-xs">
+                            <span className="rounded-full border border-orange-500/30 bg-orange-500/20 px-1 py-0.5 text-xs font-bold text-orange-400">
                               DRAFT
                             </span>
                           </div>
@@ -125,14 +125,14 @@ export default async function TagPage({ params }: TagPageProps) {
                     <div className="min-w-0 flex-1">
                       <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                         <div className="flex items-center gap-2">
-                          <h3 className="font-bold text-lg transition-colors group-hover:text-primary">{post.title}</h3>
+                          <h3 className="text-lg font-bold transition-colors group-hover:text-primary">{post.title}</h3>
                           {post.isDraft && !post.coverImageThumbnail && (
-                            <span className="rounded-full border border-orange-500/30 bg-orange-500/20 px-2 py-1 font-bold text-orange-400 text-xs">
+                            <span className="rounded-full border border-orange-500/30 bg-orange-500/20 px-2 py-1 text-xs font-bold text-orange-400">
                               DRAFT
                             </span>
                           )}
                         </div>
-                        <div className="shrink-0 text-muted-foreground text-sm">
+                        <div className="shrink-0 text-sm text-muted-foreground">
                           <span className="text-accent">[</span>
                           {formatDate(post.date)}
                           <span className="text-accent">]</span>
@@ -169,7 +169,7 @@ export default async function TagPage({ params }: TagPageProps) {
         </section>
 
         <section className="mb-12">
-          <h2 className="mb-4 font-bold text-lg">
+          <h2 className="mb-4 text-lg font-bold">
             <span className="text-accent">[other tags]</span>
           </h2>
           <div className="flex flex-wrap gap-2">
@@ -188,7 +188,7 @@ export default async function TagPage({ params }: TagPageProps) {
           </div>
         </section>
 
-        <footer className="border-border border-t pt-8">
+        <footer className="border-t border-border pt-8">
           <div className="flex gap-4">
             <Link
               className="inline-block border border-border px-4 py-2 transition-colors hover:border-primary"

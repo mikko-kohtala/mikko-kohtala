@@ -2,7 +2,9 @@
 
 import fs from "node:fs";
 import path from "node:path";
+
 import matter from "gray-matter";
+
 import { ensureThumbnailsExist } from "../lib/images";
 
 const CONTENT_DIRS = [path.join(process.cwd(), "content/blog"), path.join(process.cwd(), "content/drafts")];
@@ -31,9 +33,9 @@ async function generateAllThumbnails() {
       }
 
       // Extract slug from filename
-      const fileNameWithoutExt = file.replace(/\.md$/, "");
-      const match = fileNameWithoutExt.match(/^\d{4}-\d{2}-\d{2}-(.+)$/);
-      const slug = match ? match[1] : fileNameWithoutExt;
+      const fileNameWithoutExt = file.replace(/\.md$/u, "");
+      const match = fileNameWithoutExt.match(/^\d{4}-\d{2}-\d{2}-(?<slug>.+)$/u);
+      const slug = match?.groups?.slug ?? fileNameWithoutExt;
 
       try {
         console.log(`📝 Processing: ${file}`);

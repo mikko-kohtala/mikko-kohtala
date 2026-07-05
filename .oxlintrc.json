@@ -1,0 +1,88 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "react-perf", "typescript", "jsx-a11y", "nextjs", "import", "unicorn", "oxc", "promise", "node"],
+  // Strict: every stable category is an error. Individual opt-outs below.
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "perf": "error",
+    "pedantic": "error",
+    "style": "error"
+  },
+  "env": {
+    "builtin": true,
+    "browser": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "19.0.0"
+    }
+  },
+  "ignorePatterns": [".next", "next-env.d.ts"],
+  "rules": {
+    // Modern JSX runtime (Next.js) — no `import React` needed
+    "react/react-in-jsx-scope": "off",
+
+    // Deliberate choices carried over from the previous Biome config
+    "nextjs/no-img-element": "off",
+    "jsx-a11y/img-redundant-alt": "off",
+    "eslint/no-magic-numbers": "off",
+    "eslint/require-await": "off",
+    "typescript/consistent-type-definitions": "off",
+
+    // Import ordering is owned by the formatter (oxfmt `sortImports`)
+    "eslint/sort-imports": "off",
+
+    // Export-style rules that contradict each other and Next.js conventions
+    // (pages require default exports; libs export named symbols)
+    "import/no-named-export": "off",
+    "import/prefer-default-export": "off",
+    "import/group-exports": "off",
+    "import/exports-last": "off",
+    "import/no-unassigned-import": "off",
+
+    // Build-time static generation relies on synchronous fs + Node built-ins
+    "node/no-sync": "off",
+    "import/no-nodejs-modules": "off",
+
+    // Impractical for a Tailwind / JSX UI
+    "react/jsx-max-depth": "off",
+    "eslint/no-ternary": "off",
+    "eslint/sort-keys": "off",
+    "eslint/func-style": "off",
+    "eslint/id-length": "off",
+    "unicorn/no-null": "off",
+
+    // Size / complexity caps don't suit long page components
+    "eslint/max-lines-per-function": "off",
+    "eslint/max-lines": "off",
+    "eslint/max-statements": "off",
+    "eslint/max-depth": "off",
+
+    // Inline handlers/objects are fine at this scale (not worth useCallback churn)
+    "react-perf/jsx-no-new-function-as-prop": "off",
+    "react-perf/jsx-no-new-object-as-prop": "off",
+
+    // Prop spreading is how thin wrapper components forward props (e.g. ThemeProvider)
+    "react/jsx-props-no-spreading": "off",
+
+    // Conflicts with no-duplicate-imports on mixed value+type imports; both forms are fine
+    "import/consistent-type-specifier-style": "off",
+
+    // Tuned: allow Next.js font loaders like Geist() to be called without `new`
+    "eslint/new-cap": ["error", { "capIsNew": false }]
+  },
+  "overrides": [
+    {
+      // Build/CLI scripts: sequential awaits, promise chains, and `continue` are fine here
+      "files": ["scripts/**"],
+      "rules": {
+        "eslint/no-await-in-loop": "off",
+        "eslint/no-continue": "off",
+        "promise/prefer-await-to-then": "off",
+        "unicorn/prefer-top-level-await": "off"
+      }
+    }
+  ]
+}

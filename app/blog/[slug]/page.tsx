@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+
 import { Markdown } from "@/components/markdown";
 import { SocialShare } from "@/components/social-share";
 import { env } from "@/env";
@@ -82,7 +83,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <article>
           {post.coverImageThumbnail && (
             <div className="relative mb-8 aspect-video overflow-hidden rounded-lg">
-              {/** biome-ignore lint/correctness/useImageSize: ok */}
               <img
                 alt={`Cover image for ${post.title}`}
                 className="h-full w-full object-cover"
@@ -90,7 +90,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               />
               {post.isDraft && (
                 <div className="absolute top-4 left-4">
-                  <span className="rounded-full border border-orange-500/30 bg-orange-500/20 px-3 py-1 font-bold text-orange-400 text-sm">
+                  <span className="rounded-full border border-orange-500/30 bg-orange-500/20 px-3 py-1 text-sm font-bold text-orange-400">
                     DRAFT
                   </span>
                 </div>
@@ -98,19 +98,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
           )}
 
-          <header className="mb-8 border-border border-b pb-8">
+          <header className="mb-8 border-b border-border pb-8">
             <div className="mb-4 flex items-center gap-3">
-              <h1 className="font-bold text-3xl">
+              <h1 className="text-3xl font-bold">
                 <span className="text-primary">#</span> {post.title}
               </h1>
               {post.isDraft && !post.coverImageThumbnail && (
-                <span className="rounded-full border border-orange-500/30 bg-orange-500/20 px-3 py-1 font-bold text-orange-400 text-sm">
+                <span className="rounded-full border border-orange-500/30 bg-orange-500/20 px-3 py-1 text-sm font-bold text-orange-400">
                   DRAFT
                 </span>
               )}
             </div>
 
-            <div className="mb-4 flex flex-wrap gap-4 text-muted-foreground text-sm">
+            <div className="mb-4 flex flex-wrap gap-4 text-sm text-muted-foreground">
               <div>
                 <span className="text-accent">[date]</span>
                 <span className="ml-2">{formatDate(post.date)}</span>
@@ -152,7 +152,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <Markdown html={post.contentHtml || ""} />
         </article>
 
-        <footer className="mt-12 border-border border-t pt-8">
+        <footer className="mt-12 border-t border-border pt-8">
           <Link
             className="inline-block border border-border px-4 py-2 transition-colors hover:border-primary"
             href="/blog"

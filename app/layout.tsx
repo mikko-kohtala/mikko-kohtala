@@ -1,7 +1,9 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import type { Metadata } from "next";
+
+import "./globals.css";
+import { Geist, Geist_Mono } from "next/font/google";
+
 import { ThemeProvider } from "./components/theme-provider";
 import { ThemeToggle } from "./components/theme-toggle";
 
@@ -52,7 +54,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange enableSystem={true}>
+        <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange enableSystem>
           <ThemeToggle />
           {children}
         </ThemeProvider>

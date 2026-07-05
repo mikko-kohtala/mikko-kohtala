@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import { env } from "@/env";
 import { formatDate, getRecentPosts } from "@/lib/markdown";
 
@@ -21,10 +22,10 @@ export default function Home() {
               width={120}
             />
             <div className="text-center sm:text-left">
-              <h1 className="mb-4 font-bold text-4xl">
+              <h1 className="mb-4 text-4xl font-bold">
                 <span className="text-primary">~</span>/mikko-kohtala
               </h1>
-              <p className="text-muted-foreground text-sm">
+              <p className="text-sm text-muted-foreground">
                 <span className="terminal-prompt">location</span>
                 <span className="ml-2 text-foreground">Tampere, Finland</span>
               </p>
@@ -56,7 +57,7 @@ export default function Home() {
         </header>
 
         <section className="mb-12">
-          <h2 className="mb-4 font-bold text-xl">
+          <h2 className="mb-4 text-xl font-bold">
             <span className="text-primary">$</span> projects
           </h2>
           <div className="mb-8">
@@ -69,7 +70,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <h2 className="mb-4 font-bold text-xl">
+          <h2 className="mb-4 text-xl font-bold">
             <span className="text-primary">$</span> connect
           </h2>
           <nav className="grid grid-cols-1 gap-4 sm:grid-cols-3">
@@ -106,13 +107,13 @@ export default function Home() {
         </section>
 
         <section className="mb-12">
-          <h2 className="mb-4 font-bold text-xl">
+          <h2 className="mb-4 text-xl font-bold">
             <span className="text-primary">$</span> blog
           </h2>
           <p className="mb-4 text-muted-foreground">Thoughts on software development, AI, and life in general.</p>
           <div className="mb-6">
             <Link
-              className="mb-4 inline-block text-muted-foreground text-sm transition-colors hover:text-primary"
+              className="mb-4 inline-block text-sm text-muted-foreground transition-colors hover:text-primary"
               href="/blog"
             >
               <span className="text-accent">→</span> View all posts
@@ -129,7 +130,6 @@ export default function Home() {
                   <div className="flex gap-3">
                     {post.coverImageThumbnail && (
                       <div className="relative h-12 w-20 shrink-0 overflow-hidden rounded">
-                        {/** biome-ignore lint/correctness/useImageSize: ok */}
                         <img
                           alt={`Cover image for ${post.title}`}
                           className="h-full w-full object-cover transition-transform group-hover:scale-105"
@@ -137,7 +137,7 @@ export default function Home() {
                         />
                         {post.isDraft && (
                           <div className="absolute top-0.5 left-0.5">
-                            <span className="rounded-full border border-orange-500/30 bg-orange-500/20 px-1 py-0.5 font-bold text-orange-400 text-xs">
+                            <span className="rounded-full border border-orange-500/30 bg-orange-500/20 px-1 py-0.5 text-xs font-bold text-orange-400">
                               DRAFT
                             </span>
                           </div>
@@ -150,14 +150,14 @@ export default function Home() {
                         <div className="flex items-center gap-2">
                           <h3 className="mb-1 font-bold transition-colors group-hover:text-primary">{post.title}</h3>
                           {post.isDraft && !post.coverImageThumbnail && (
-                            <span className="rounded-full border border-orange-500/30 bg-orange-500/20 px-1 py-0.5 font-bold text-orange-400 text-xs">
+                            <span className="rounded-full border border-orange-500/30 bg-orange-500/20 px-1 py-0.5 text-xs font-bold text-orange-400">
                               DRAFT
                             </span>
                           )}
                         </div>
-                        <p className="line-clamp-2 text-muted-foreground text-sm">{post.description}</p>
+                        <p className="line-clamp-2 text-sm text-muted-foreground">{post.description}</p>
                       </div>
-                      <div className="shrink-0 text-muted-foreground text-xs">
+                      <div className="shrink-0 text-xs text-muted-foreground">
                         <span className="text-accent">[</span>
                         {formatDate(post.date)}
                         <span className="text-accent">]</span>

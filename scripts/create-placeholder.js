@@ -1,4 +1,3 @@
-const _fs = require("node:fs");
 const sharp = require("sharp");
 
 async function createPlaceholder() {

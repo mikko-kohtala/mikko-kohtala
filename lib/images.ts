@@ -1,8 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
+
 import sharp from "sharp";
 
-const _IMAGES_DIR = path.join(process.cwd(), "public/images/blog");
 const THUMBNAILS_DIR = path.join(process.cwd(), "public/images/blog/thumbnails");
 
 export interface ImageVariant {
@@ -33,20 +33,22 @@ export async function generateThumbnails(originalImagePath: string, slug: string
     fs.mkdirSync(THUMBNAILS_DIR, { recursive: true });
   }
 
-  for (const [variantName, variant] of Object.entries(IMAGE_VARIANTS)) {
-    const outputFileName = `${slug}${variant.suffix}.webp`;
-    const outputPath = path.join(THUMBNAILS_DIR, outputFileName);
+  await Promise.all(
+    Object.entries(IMAGE_VARIANTS).map(async ([variantName, variant]) => {
+      const outputFileName = `${slug}${variant.suffix}.webp`;
+      const outputPath = path.join(THUMBNAILS_DIR, outputFileName);
 
-    await sharp(originalImagePath)
-      .resize(variant.width, variant.height, {
-        fit: "cover",
-        position: "center",
-      })
-      .webp({ quality: 85 })
-      .toFile(outputPath);
+      await sharp(originalImagePath)
+        .resize(variant.width, variant.height, {
+          fit: "cover",
+          position: "center",
+        })
+        .webp({ quality: 85 })
+        .toFile(outputPath);
 
-    results[variantName] = `/images/blog/thumbnails/${outputFileName}`;
-  }
+      results[variantName] = `/images/blog/thumbnails/${outputFileName}`;
+    }),
+  );
 
   return results;
 }
@@ -56,7 +58,9 @@ export async function generateThumbnails(originalImagePath: string, slug: string
  */
 export function getCoverImagePath(slug: string, variant: keyof typeof IMAGE_VARIANTS = "card"): string | null {
   const variantConfig = IMAGE_VARIANTS[variant];
-  if (!variantConfig) return null;
+  if (!variantConfig) {
+    return null;
+  }
 
   const thumbnailPath = path.join(THUMBNAILS_DIR, `${slug}${variantConfig.suffix}.webp`);
 
@@ -71,7 +75,9 @@ export function getCoverImagePath(slug: string, variant: keyof typeof IMAGE_VARI
  * Get the original cover image path for a blog post
  */
 export function getOriginalCoverImagePath(coverImage: string): string | null {
-  if (!coverImage) return null;
+  if (!coverImage) {
+    return null;
+  }
 
   const originalPath = path.join(process.cwd(), "public", coverImage);
 
@@ -86,7 +92,9 @@ export function getOriginalCoverImagePath(coverImage: string): string | null {
  * Check if thumbnails exist for a cover image, generate them if they don't
  */
 export async function ensureThumbnailsExist(coverImage: string, slug: string): Promise<Record<string, string>> {
-  if (!coverImage) return {};
+  if (!coverImage) {
+    return {};
+  }
 
   const originalPath = path.join(process.cwd(), "public", coverImage);
 
@@ -105,7 +113,7 @@ export async function ensureThumbnailsExist(coverImage: string, slug: string): P
       existingVariants[variantName] = webPath;
     } else {
       // If any variant is missing, regenerate all
-      return await generateThumbnails(originalPath, slug);
+      return generateThumbnails(originalPath, slug);
     }
   }
 

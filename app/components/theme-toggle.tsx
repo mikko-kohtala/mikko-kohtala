@@ -13,7 +13,7 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <button className="fixed top-4 right-4 border border-border px-3 py-2 font-mono text-muted-foreground text-sm">
+      <button className="fixed top-4 right-4 border border-border px-3 py-2 font-mono text-sm text-muted-foreground">
         <span className="opacity-0">[theme]</span>
       </button>
     );

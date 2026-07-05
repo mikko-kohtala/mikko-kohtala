@@ -95,7 +95,7 @@ export default function AppsPage() {
     <div className="min-h-screen p-8 font-mono">
       <div className="mx-auto max-w-4xl">
         <header className="mb-12">
-          <h1 className="mb-2 font-bold text-3xl">
+          <h1 className="mb-2 text-3xl font-bold">
             <span className="text-primary">~/</span>apps
           </h1>
           <p className="text-muted-foreground">A collection of tools and applications I&apos;ve built.</p>
@@ -108,14 +108,14 @@ export default function AppsPage() {
               key={app.name}
             >
               <div className="mb-4 flex items-start justify-between">
-                <h2 className="font-bold text-xl">
+                <h2 className="text-xl font-bold">
                   <span className="mr-2 text-accent">[{String(index + 1).padStart(2, "0")}]</span>
                   {app.name}
                 </h2>
-                <span className="bg-primary px-2 py-1 text-primary-foreground text-xs">{app.status}</span>
+                <span className="bg-primary px-2 py-1 text-xs text-primary-foreground">{app.status}</span>
               </div>
 
-              <p className="mb-4 text-muted-foreground leading-relaxed">{app.description}</p>
+              <p className="mb-4 leading-relaxed text-muted-foreground">{app.description}</p>
 
               <div className="flex flex-wrap gap-2">
                 {app.tech.map((tech) => (
@@ -127,7 +127,7 @@ export default function AppsPage() {
                   </span>
                 ))}
                 {app.tags?.map((tag) => (
-                  <span className="border border-accent bg-accent/10 px-2 py-1 text-accent text-xs" key={tag}>
+                  <span className="border border-accent bg-accent/10 px-2 py-1 text-xs text-accent" key={tag}>
                     {tag}
                   </span>
                 ))}
@@ -137,7 +137,7 @@ export default function AppsPage() {
                 <div className="mt-4 flex gap-4 text-sm">
                   {Object.entries(app.links).map(([key, url]) => (
                     <a
-                      className="border-accent/50 border-b text-accent transition-colors hover:border-accent"
+                      className="border-b border-accent/50 text-accent transition-colors hover:border-accent"
                       href={url}
                       key={key}
                       rel="noopener noreferrer"
@@ -150,7 +150,7 @@ export default function AppsPage() {
               )}
 
               {app.appStoreUrl !== undefined && (
-                <div className="mt-4 flex items-start border-border border-t pt-4">
+                <div className="mt-4 flex items-start border-t border-border pt-4">
                   {app.appStoreUrl ? (
                     <Link href={app.appStoreUrl} rel="noopener noreferrer" target="_blank">
                       <Image
@@ -170,7 +170,7 @@ export default function AppsPage() {
                         src="/app-store-badge.svg"
                         width={120}
                       />
-                      <span className="mt-1 text-muted-foreground text-xs">Coming Soon</span>
+                      <span className="mt-1 text-xs text-muted-foreground">Coming Soon</span>
                     </div>
                   )}
                 </div>
@@ -179,8 +179,8 @@ export default function AppsPage() {
           ))}
         </div>
 
-        <section className="mt-12 border-border border-t pt-8">
-          <h2 className="mb-6 font-bold text-xl">
+        <section className="mt-12 border-t border-border pt-8">
+          <h2 className="mb-6 text-xl font-bold">
             <span className="text-primary">~/</span>coming-up
           </h2>
           <div className="space-y-6">
@@ -190,18 +190,18 @@ export default function AppsPage() {
                 key={app.name}
               >
                 <div className="mb-4 flex items-start justify-between">
-                  <h3 className="font-bold text-lg">
+                  <h3 className="text-lg font-bold">
                     <span className="mr-2 text-accent/70">[{String(index + 1).padStart(2, "0")}]</span>
                     {app.name}
                   </h3>
-                  <span className="bg-muted px-2 py-1 text-muted-foreground text-xs">{app.status}</span>
+                  <span className="bg-muted px-2 py-1 text-xs text-muted-foreground">{app.status}</span>
                 </div>
 
-                <p className="mb-4 text-muted-foreground leading-relaxed">{app.description}</p>
+                <p className="mb-4 leading-relaxed text-muted-foreground">{app.description}</p>
 
                 <div className="flex flex-wrap gap-2">
                   {app.tech.map((tech) => (
-                    <span className="border border-border/50 px-2 py-1 text-muted-foreground text-xs" key={tech}>
+                    <span className="border border-border/50 px-2 py-1 text-xs text-muted-foreground" key={tech}>
                       {tech}
                     </span>
                   ))}
@@ -211,8 +211,8 @@ export default function AppsPage() {
           </div>
         </section>
 
-        <footer className="mt-12 border-border border-t pt-8">
-          <p className="text-muted-foreground text-sm">
+        <footer className="mt-12 border-t border-border pt-8">
+          <p className="text-sm text-muted-foreground">
             <span className="terminal-prompt">More updates coming soon</span>
             <span className="terminal-cursor">_</span>
           </p>

@@ -15,10 +15,10 @@ export default function CvPage() {
     <div className="min-h-screen p-8 font-mono">
       <div className="mx-auto max-w-4xl space-y-12">
         <header className="border border-border p-6">
-          <h1 className="mb-2 font-bold text-3xl">
+          <h1 className="mb-2 text-3xl font-bold">
             <span className="text-primary">~/</span>cv
           </h1>
-          <p className="font-semibold text-lg">AI-native Fullstack Software Developer</p>
+          <p className="text-lg font-semibold">AI-native Fullstack Software Developer</p>
           <div className="mt-4 grid gap-3 text-sm sm:grid-cols-3">
             <div>
               <span className="terminal-prompt">email</span>
@@ -44,10 +44,10 @@ export default function CvPage() {
         </header>
 
         <section>
-          <h2 className="mb-4 font-bold text-xl">
+          <h2 className="mb-4 text-xl font-bold">
             <span className="text-primary">$</span> summary
           </h2>
-          <div className="space-y-4 border border-border p-6 text-muted-foreground leading-relaxed">
+          <div className="space-y-4 border border-border p-6 leading-relaxed text-muted-foreground">
             <p>
               Mikko has worked as a software developer across a broad range of projects, including both in-house
               development and client-facing solutions. He has designed and built software across sectors such as B2B
@@ -72,7 +72,7 @@ export default function CvPage() {
         </section>
 
         <section>
-          <h2 className="mb-4 font-bold text-xl">
+          <h2 className="mb-4 text-xl font-bold">
             <span className="text-primary">$</span> languages
           </h2>
           <div className="border border-border p-6">
@@ -84,19 +84,19 @@ export default function CvPage() {
         </section>
 
         <section>
-          <h2 className="mb-4 font-bold text-xl">
+          <h2 className="mb-4 text-xl font-bold">
             <span className="text-primary">$</span> experience
           </h2>
           <div className="space-y-6">
             <article className="border border-border p-6">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
                 <div>
-                  <h3 className="font-bold text-lg">Technical AI Lead Consultant</h3>
+                  <h3 className="text-lg font-bold">Technical AI Lead Consultant</h3>
                   <p className="text-muted-foreground">Aimbition</p>
                 </div>
-                <div className="text-muted-foreground text-sm">Nov 2025 - Present</div>
+                <div className="text-sm text-muted-foreground">Nov 2025 - Present</div>
               </div>
-              <ul className="mt-4 space-y-2 text-muted-foreground text-sm">
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="before:mr-2 before:text-accent before:content-['→']">
                   Guiding organizations through practical AI adoption and software modernization initiatives.
                 </li>
@@ -117,12 +117,12 @@ export default function CvPage() {
             <article className="border border-border p-6">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
                 <div>
-                  <h3 className="font-bold text-lg">Senior Software Developer</h3>
+                  <h3 className="text-lg font-bold">Senior Software Developer</h3>
                   <p className="text-muted-foreground">Knowit (Large Finnish industrial company)</p>
                 </div>
-                <div className="text-muted-foreground text-sm">Mar 2025 - Nov 2025</div>
+                <div className="text-sm text-muted-foreground">Mar 2025 - Nov 2025</div>
               </div>
-              <ul className="mt-4 space-y-2 text-muted-foreground text-sm">
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="before:mr-2 before:text-accent before:content-['→']">
                   Developing solutions to optimize factory operations through data-driven insights and predictive
                   analytics.
@@ -141,12 +141,12 @@ export default function CvPage() {
             <article className="border border-border p-6">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
                 <div>
-                  <h3 className="font-bold text-lg">Lead Developer</h3>
+                  <h3 className="text-lg font-bold">Lead Developer</h3>
                   <p className="text-muted-foreground">Inderes</p>
                 </div>
-                <div className="text-muted-foreground text-sm">Sep 2023 - Mar 2025</div>
+                <div className="text-sm text-muted-foreground">Sep 2023 - Mar 2025</div>
               </div>
-              <ul className="mt-4 space-y-2 text-muted-foreground text-sm">
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="before:mr-2 before:text-accent before:content-['→']">
                   Led the IR Software team delivering IR Suite, a B2B investor relations platform used by listed
                   companies to manage regulatory announcements.
@@ -160,12 +160,12 @@ export default function CvPage() {
             <article className="border border-border p-6">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
                 <div>
-                  <h3 className="font-bold text-lg">Senior Software Developer</h3>
+                  <h3 className="text-lg font-bold">Senior Software Developer</h3>
                   <p className="text-muted-foreground">Inderes</p>
                 </div>
-                <div className="text-muted-foreground text-sm">Feb 2022 - Sep 2023</div>
+                <div className="text-sm text-muted-foreground">Feb 2022 - Sep 2023</div>
               </div>
-              <ul className="mt-4 space-y-2 text-muted-foreground text-sm">
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="before:mr-2 before:text-accent before:content-['→']">
                   Architected and implemented the new Videosync virtual event platform used by 400+ Nordic listed
                   companies.
@@ -176,12 +176,12 @@ export default function CvPage() {
             <article className="border border-border p-6">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
                 <div>
-                  <h3 className="font-bold text-lg">Senior Software Developer</h3>
+                  <h3 className="text-lg font-bold">Senior Software Developer</h3>
                   <p className="text-muted-foreground">Futurice (Kone)</p>
                 </div>
-                <div className="text-muted-foreground text-sm">Nov 2021 - Feb 2022</div>
+                <div className="text-sm text-muted-foreground">Nov 2021 - Feb 2022</div>
               </div>
-              <ul className="mt-4 space-y-2 text-muted-foreground text-sm">
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="before:mr-2 before:text-accent before:content-['→']">
                   Worked on infrastructure and backend for an IoT data platform aggregating elevator monitoring data.
                 </li>
@@ -191,12 +191,12 @@ export default function CvPage() {
             <article className="border border-border p-6">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
                 <div>
-                  <h3 className="font-bold text-lg">Senior Software Developer</h3>
+                  <h3 className="text-lg font-bold">Senior Software Developer</h3>
                   <p className="text-muted-foreground">Futurice (Kone)</p>
                 </div>
-                <div className="text-muted-foreground text-sm">Aug 2020 - Oct 2021</div>
+                <div className="text-sm text-muted-foreground">Aug 2020 - Oct 2021</div>
               </div>
-              <ul className="mt-4 space-y-2 text-muted-foreground text-sm">
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="before:mr-2 before:text-accent before:content-['→']">
                   Collaborated in a multi-vendor team to architect and build a multi-region B2B API portal for managing
                   access to elevator and building assets.
@@ -210,12 +210,12 @@ export default function CvPage() {
             <article className="border border-border p-6">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
                 <div>
-                  <h3 className="font-bold text-lg">Senior Software Developer</h3>
+                  <h3 className="text-lg font-bold">Senior Software Developer</h3>
                   <p className="text-muted-foreground">Futurice (VR)</p>
                 </div>
-                <div className="text-muted-foreground text-sm">Feb 2019 - Aug 2020</div>
+                <div className="text-sm text-muted-foreground">Feb 2019 - Aug 2020</div>
               </div>
-              <ul className="mt-4 space-y-2 text-muted-foreground text-sm">
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="before:mr-2 before:text-accent before:content-['→']">
                   Maintained and developed ticket vending machines, spanning embedded touchscreen systems, payment
                   terminals, and ticket printing.
@@ -229,12 +229,12 @@ export default function CvPage() {
             <article className="border border-border p-6">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
                 <div>
-                  <h3 className="font-bold text-lg">Software Developer</h3>
+                  <h3 className="text-lg font-bold">Software Developer</h3>
                   <p className="text-muted-foreground">Black Woodpecker Software</p>
                 </div>
-                <div className="text-muted-foreground text-sm">Nov 2017 - Dec 2019</div>
+                <div className="text-sm text-muted-foreground">Nov 2017 - Dec 2019</div>
               </div>
-              <ul className="mt-4 space-y-2 text-muted-foreground text-sm">
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="before:mr-2 before:text-accent before:content-['→']">
                   Early team member shipping multiple greenfield products from concept to production before the company
                   was acquired by Euronext.
@@ -255,12 +255,12 @@ export default function CvPage() {
             <article className="border border-border p-6">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
                 <div>
-                  <h3 className="font-bold text-lg">Software Developer</h3>
+                  <h3 className="text-lg font-bold">Software Developer</h3>
                   <p className="text-muted-foreground">Vilkas Group</p>
                 </div>
-                <div className="text-muted-foreground text-sm">Aug 2015 - Nov 2017</div>
+                <div className="text-sm text-muted-foreground">Aug 2015 - Nov 2017</div>
               </div>
-              <ul className="mt-4 space-y-2 text-muted-foreground text-sm">
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="before:mr-2 before:text-accent before:content-['→']">
                   Developed and maintained an e-commerce platform for Nordic customers, integrating Verifone online
                   payment terminal services.
@@ -271,7 +271,7 @@ export default function CvPage() {
         </section>
 
         <section>
-          <h2 className="mb-4 font-bold text-xl">
+          <h2 className="mb-4 text-xl font-bold">
             <span className="text-primary">$</span> education
           </h2>
           <div className="space-y-4">
@@ -281,14 +281,14 @@ export default function CvPage() {
                   <h3 className="font-bold">Electronics and Embedded Systems, Information Technology</h3>
                   <p className="text-muted-foreground">Tampere University of Technology</p>
                 </div>
-                <div className="text-muted-foreground text-sm">Mar 2008 - Mar 2015</div>
+                <div className="text-sm text-muted-foreground">Mar 2008 - Mar 2015</div>
               </div>
             </article>
           </div>
         </section>
 
         <section>
-          <h2 className="mb-4 font-bold text-xl">
+          <h2 className="mb-4 text-xl font-bold">
             <span className="text-primary">$</span> certificates
           </h2>
           <div className="space-y-4">
@@ -296,31 +296,31 @@ export default function CvPage() {
               <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
                 <div>
                   <h3 className="font-semibold">AWS Certified Solutions Architect - Associate</h3>
-                  <p className="text-muted-foreground text-sm">Amazon Web Services Training and Certification</p>
+                  <p className="text-sm text-muted-foreground">Amazon Web Services Training and Certification</p>
                 </div>
-                <div className="text-muted-foreground text-xs">Oct 2021 - Oct 2024</div>
+                <div className="text-xs text-muted-foreground">Oct 2021 - Oct 2024</div>
               </div>
             </article>
             <article className="border border-border p-6">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
                 <div>
                   <h3 className="font-semibold">AWS Certified Cloud Practitioner</h3>
-                  <p className="text-muted-foreground text-sm">Amazon Web Services Training and Certification</p>
+                  <p className="text-sm text-muted-foreground">Amazon Web Services Training and Certification</p>
                 </div>
-                <div className="text-muted-foreground text-xs">Oct 2021 - Oct 2024</div>
+                <div className="text-xs text-muted-foreground">Oct 2021 - Oct 2024</div>
               </div>
             </article>
           </div>
         </section>
 
         <section>
-          <h2 className="mb-4 font-bold text-xl">
+          <h2 className="mb-4 text-xl font-bold">
             <span className="text-primary">$</span> skills
           </h2>
           <div className="grid gap-6 sm:grid-cols-2">
             <article className="border border-border p-6">
               <h3 className="mb-3 font-semibold">Languages & Core</h3>
-              <ul className="space-y-2 text-muted-foreground text-sm">
+              <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="before:mr-2 before:text-accent before:content-['→']">TypeScript</li>
                 <li className="before:mr-2 before:text-accent before:content-['→']">JavaScript</li>
 
@@ -331,7 +331,7 @@ export default function CvPage() {
 
             <article className="border border-border p-6">
               <h3 className="mb-3 font-semibold">Frontend</h3>
-              <ul className="space-y-2 text-muted-foreground text-sm">
+              <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="before:mr-2 before:text-accent before:content-['→']">React</li>
                 <li className="before:mr-2 before:text-accent before:content-['→']">Next.js</li>
                 <li className="before:mr-2 before:text-accent before:content-['→']">React Native</li>
@@ -341,7 +341,7 @@ export default function CvPage() {
 
             <article className="border border-border p-6">
               <h3 className="mb-3 font-semibold">AI & Generative AI</h3>
-              <ul className="space-y-2 text-muted-foreground text-sm">
+              <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="before:mr-2 before:text-accent before:content-['→']">
                   AI-assisted development tools: Cursor, Claude Code, GitHub Copilot, Codex
                 </li>
@@ -359,7 +359,7 @@ export default function CvPage() {
 
             <article className="border border-border p-6">
               <h3 className="mb-3 font-semibold">Backend & Data</h3>
-              <ul className="space-y-2 text-muted-foreground text-sm">
+              <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="before:mr-2 before:text-accent before:content-['→']">Node.js</li>
                 <li className="before:mr-2 before:text-accent before:content-['→']">PostgreSQL</li>
                 <li className="before:mr-2 before:text-accent before:content-['→']">SQL</li>
@@ -369,7 +369,7 @@ export default function CvPage() {
 
             <article className="border border-border p-6">
               <h3 className="mb-3 font-semibold">Cloud & Infrastructure</h3>
-              <ul className="space-y-2 text-muted-foreground text-sm">
+              <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="before:mr-2 before:text-accent before:content-['→']">AWS</li>
                 <li className="before:mr-2 before:text-accent before:content-['→']">AWS CDK</li>
                 <li className="before:mr-2 before:text-accent before:content-['→']">Google Cloud Platform</li>
@@ -382,7 +382,7 @@ export default function CvPage() {
 
             <article className="border border-border p-6">
               <h3 className="mb-3 font-semibold">DevOps & Tools</h3>
-              <ul className="space-y-2 text-muted-foreground text-sm">
+              <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="before:mr-2 before:text-accent before:content-['→']">CI/CD</li>
                 <li className="before:mr-2 before:text-accent before:content-['→']">GitHub Actions</li>
                 <li className="before:mr-2 before:text-accent before:content-['→']">Git</li>
@@ -392,7 +392,7 @@ export default function CvPage() {
 
             <article className="border border-border p-6">
               <h3 className="mb-3 font-semibold">Professional Practices</h3>
-              <ul className="space-y-2 text-muted-foreground text-sm">
+              <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="before:mr-2 before:text-accent before:content-['→']">Software Architecture</li>
                 <li className="before:mr-2 before:text-accent before:content-['→']">API Design & Management</li>
                 <li className="before:mr-2 before:text-accent before:content-['→']">Project Management</li>
@@ -403,7 +403,7 @@ export default function CvPage() {
           </div>
         </section>
 
-        <footer className="border-border border-t pt-8 text-muted-foreground text-xs">
+        <footer className="border-t border-border pt-8 text-xs text-muted-foreground">
           <p>Last updated January 2025</p>
         </footer>
       </div>

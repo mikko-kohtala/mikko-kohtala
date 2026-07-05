@@ -11,15 +11,15 @@ export function Markdown({ html, className }: MarkdownProps) {
     <div
       className={cn(
         // Base typography
-        "prose dark:prose-invert max-w-none",
+        "prose max-w-none dark:prose-invert",
         // Headings
-        "prose-headings:font-bold prose-headings:font-mono",
-        "prose-h2:mt-8 prose-h3:mt-6 prose-h2:mb-4 prose-h3:mb-3",
+        "prose-headings:font-mono prose-headings:font-bold",
+        "prose-h2:mt-8 prose-h2:mb-4 prose-h3:mt-6 prose-h3:mb-3",
         "prose-h2:text-xl prose-h3:text-lg",
         // Paragraphs & lists
         "prose-p:mb-6 prose-p:leading-relaxed",
-        "prose-li:mb-2 prose-ol:mb-6 prose-ul:mb-6",
-        "prose-ol:list-decimal prose-ul:list-disc prose-ol:pl-6 prose-ul:pl-6",
+        "prose-ol:mb-6 prose-ul:mb-6 prose-li:mb-2",
+        "prose-ol:list-decimal prose-ol:pl-6 prose-ul:list-disc prose-ul:pl-6",
         // Code & blockquotes
         "prose-code:rounded prose-code:bg-card prose-pre:bg-card",
         "prose-pre:border prose-pre:border-border",
@@ -31,7 +31,7 @@ export function Markdown({ html, className }: MarkdownProps) {
         "prose-strong:font-bold prose-strong:text-foreground",
         // Remove backticks added by some renderers
         "prose-code:before:content-[''] prose-code:after:content-['']",
-        className
+        className,
       )}
       dangerouslySetInnerHTML={{ __html: html }}
     />

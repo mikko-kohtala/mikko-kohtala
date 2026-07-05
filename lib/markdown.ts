@@ -1,10 +1,12 @@
 import fs from "node:fs";
 import path from "node:path";
+
 import { format, parseISO } from "date-fns";
 import matter from "gray-matter";
 import readingTime from "reading-time";
 import { remark } from "remark";
 import html from "remark-html";
+
 import { getCoverImagePath } from "./images";
 
 const postsDirectory = path.join(process.cwd(), "content/blog");
@@ -14,8 +16,8 @@ const draftsDirectory = path.join(process.cwd(), "content/drafts");
 function toKebabCase(tag: string): string {
   return tag
     .toLowerCase()
-    .replace(/\s+/g, "-")
-    .replace(/[^a-z0-9-]/g, "");
+    .replaceAll(/\s+/gu, "-")
+    .replaceAll(/[^a-z0-9-]/gu, "");
 }
 
 export interface PostMetadata {
@@ -46,9 +48,9 @@ function getPostsFromDirectory(directory: string, isDraftsDir = false): PostMeta
     .filter((fileName) => fileName.endsWith(".md"))
     .map((fileName) => {
       // Extract slug from YYYY-MM-DD-slug.md format
-      const fileNameWithoutExt = fileName.replace(/\.md$/, "");
-      const match = fileNameWithoutExt.match(/^\d{4}-\d{2}-\d{2}-(.+)$/);
-      const slug = match ? match[1] : fileNameWithoutExt;
+      const fileNameWithoutExt = fileName.replace(/\.md$/u, "");
+      const match = fileNameWithoutExt.match(/^\d{4}-\d{2}-\d{2}-(?<slug>.+)$/u);
+      const slug = match?.groups?.slug ?? fileNameWithoutExt;
 
       const fullPath = path.join(directory, fileName);
       const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -62,12 +64,21 @@ function getPostsFromDirectory(directory: string, isDraftsDir = false): PostMeta
       // Convert tags to kebab-case
       const tags = data.tags ? data.tags.map((tag: string) => toKebabCase(tag)) : [];
 
+      const { title, date, description, author, coverImage } = data as Omit<
+        PostMetadata,
+        "slug" | "readingTime" | "isDraft" | "coverImageThumbnail" | "tags"
+      >;
+
       return {
+        title,
+        date,
+        description,
+        author,
+        coverImage,
         slug,
         readingTime: stats.text,
         isDraft: isDraftsDir,
         coverImageThumbnail,
-        ...(data as Omit<PostMetadata, "slug" | "readingTime" | "isDraft" | "coverImageThumbnail" | "tags">),
         tags,
       };
     });
@@ -79,8 +90,8 @@ export function getAllPosts(includeDrafts = false): PostMetadata[] {
   const publishedPosts = getPostsFromDirectory(postsDirectory, false);
   const draftPosts = includeDrafts ? getPostsFromDirectory(draftsDirectory, true) : [];
 
-  const allPosts = [...publishedPosts, ...draftPosts].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  const allPosts = [...publishedPosts, ...draftPosts].toSorted(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
 
   return allPosts;
@@ -95,10 +106,11 @@ export async function getPostBySlug(slug: string, isDraft = false): Promise<Post
 
   // Find the file with the date prefix
   const files = fs.existsSync(directory) ? fs.readdirSync(directory) : [];
-  const matchingFile = files.find((file) => {
-    // Match either YYYY-MM-DD-slug.md or just slug.md
-    return file.endsWith(`-${slug}.md`) || file === `${slug}.md`;
-  });
+  const matchingFile = files.find(
+    (file) =>
+      // Match either YYYY-MM-DD-slug.md or just slug.md
+      file.endsWith(`-${slug}.md`) || file === `${slug}.md`,
+  );
 
   if (!matchingFile) {
     // Try the other directory
@@ -158,7 +170,7 @@ export function getAllTags(includeDrafts = false): string[] {
     }
   }
 
-  return Array.from(tagSet).sort();
+  return [...tagSet].toSorted();
 }
 
 export function formatDate(dateString: string): string {
