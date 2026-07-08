@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>As Oy Tampereen Melbankukka – Talouskatsaus 1–6/2026</title>
+<style>
+  :root{
+    --ink:#1a2332; --muted:#5c6b7f; --line:#e3e8ef; --bg:#f6f8fa;
+    --green:#1a7f4e; --green-bg:#e8f5ee; --red:#b3362b; --red-bg:#fbeae8;
+    --amber:#9a6700; --amber-bg:#fff4d6; --blue:#1c5d99; --blue-bg:#e9f2fa;
+  }
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);margin:0;line-height:1.55}
+  .wrap{max-width:960px;margin:0 auto;padding:32px 20px 64px}
+  header h1{font-size:26px;margin:0 0 4px}
+  header p{color:var(--muted);margin:0}
+  h2{font-size:19px;margin:40px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+  h3{font-size:15px;margin:20px 0 8px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:20px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+  .card .label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+  .card .value{font-size:23px;font-weight:700;margin-top:2px}
+  .card .sub{font-size:12px;color:var(--muted)}
+  .pos{color:var(--green)} .neg{color:var(--red)}
+  table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:14px}
+  th,td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line)}
+  th{background:#eef1f5;font-size:12px;text-transform:uppercase;letter-spacing:.03em;color:var(--muted)}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  tr:last-child td{border-bottom:none}
+  tr.total td{font-weight:700;background:#f2f5f8}
+  .flag{border-left:4px solid;border-radius:8px;padding:12px 16px;margin:12px 0;background:#fff}
+  .flag h3{margin:0 0 4px}
+  .flag p{margin:4px 0;font-size:14px}
+  .flag.red{border-color:var(--red);background:var(--red-bg)}
+  .flag.amber{border-color:var(--amber);background:var(--amber-bg)}
+  .flag.blue{border-color:var(--blue);background:var(--blue-bg)}
+  .flag.green{border-color:var(--green);background:var(--green-bg)}
+  .tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;margin-right:6px;text-transform:uppercase;letter-spacing:.04em}
+  .tag.red{background:var(--red);color:#fff}
+  .tag.amber{background:var(--amber);color:#fff}
+  .tag.blue{background:var(--blue);color:#fff}
+  .tag.green{background:var(--green);color:#fff}
+  .bar{background:#e9edf2;border-radius:4px;height:10px;min-width:90px;position:relative;overflow:hidden}
+  .bar i{position:absolute;left:0;top:0;bottom:0;background:var(--blue);border-radius:4px}
+  .bar.warn i{background:var(--amber)}
+  .note{font-size:12.5px;color:var(--muted)}
+  footer{margin-top:48px;font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>As Oy Tampereen Melbankukka — talouskatsaus</h1>
+  <p>Tilikausi 1.1.–31.12.2026 · kirjanpito ajettu 26.6.2026 saakka · laadittu 8.7.2026</p>
+</header>
+
+<div class="cards">
+  <div class="card"><div class="label">Pankkitili 7.7.2026</div><div class="value">29 220,11 €</div><div class="sub">≈ 3,5 kk hoitokulut puskurina</div></div>
+  <div class="card"><div class="label">Hoitokate 1–6/2026 (kirjattu)</div><div class="value pos">+3 520,29 €</div><div class="sub">korjattuna +7 918,16 € (ks. löydös 1)</div></div>
+  <div class="card"><div class="label">Tuotot 1–6/2026</div><div class="value">54 873,60 €</div><div class="sub">49 % vuosibudjetista (111 591 €)</div></div>
+  <div class="card"><div class="label">Hoitokulut 1–6/2026</div><div class="value">51 353,31 €</div><div class="sub">sis. 4 397,87 € tuplakirjauksen</div></div>
+</div>
+
+<h2>Yhteenveto</h2>
+<p>Talous on kokonaisuutena hyvässä kunnossa: vastikkeet kertyvät budjetin mukaisesti, kulut ovat linjassa talousarvion kanssa ja lauha alkuvuosi piti lämmityskulut kurissa. Laskuaineisto (80 ostolaskua) on siisti — kaikki laskut on hyväksytty ja ne täsmäävät pankkitilin tapahtumiin. Aineistosta löytyi kuitenkin <strong>yksi selvä kirjanpitovirhe</strong> (alla), joka kannattaa pyytää isännöitsijää/kirjanpitäjää korjaamaan.</p>
+
+<h2>Löydökset — löytyikö jotain outoa?</h2>
+
+<div class="flag red">
+  <h3><span class="tag red">Virhe</span>Tampereen Energian joulukuun lasku kirjattu kuluksi kahteen kertaan (4 397,87 €)</h3>
+  <p>Joulukuun 2025 kaukolämpölasku (4 397,87 €) sisältyi 31.12.2025 ostovelkoihin, eli se on jo kirjattu <em>vuoden 2025 kuluksi</em>. Kun lasku maksettiin 19.1.2026 (tosite 00018), maksu kirjattiin kuitenkin uudelleen kuluksi tileille 5700 Lämmitys (3 992,87 €) ja 6531 Lämmönjakokeskus kk-maksu (405,00 €) — ei ostovelkojen vähennykseksi.</p>
+  <p><strong>Seuraukset:</strong> vuoden 2026 lämmityskulut näyttävät 4 397,87 € liian suurilta, ja taseeseen jää roikkumaan aiheeton ostovelka 4 397,87 € (tilin 2850 koko loppusaldo). Muut avaavan taseen ostovelat (Väre, Tre Energia sähkönsiirto, Tre Vesi, Pirkanmaan Jätehuolto) kuitattiin oikein tammikuussa.</p>
+  <p><strong>Korjausehdotus:</strong> muistiotosite, jolla debet 2850 Ostovelat 4 397,87 € / kredit 5700 Lämmitys 3 992,87 € ja 6531 kk-maksu 405,00 €. Korjauksen jälkeen hoitokate 1–6/2026 on +7 918,16 €.</p>
+</div>
+
+<div class="flag amber">
+  <h3><span class="tag amber">Huomio</span>Kiinteistövero puuttuu vielä kirjanpidosta</h3>
+  <p>Kiinteistöveron 1. erä 4 176,59 € erääntyi 6.7.2026 ja on maksettu tililtä, mutta kirjanpito päättyy 26.6., joten kulua ei vielä näy tuloslaskelmassa (tili 6300 tyhjä). Koko vuoden vero on n. 8 353 € (budjetti 8 600 €) — 2. erä erääntyy loppuvuonna. Tämä ei ole virhe, mutta selittää miksi puolivuotistulos näyttää todellista paremmalta.</p>
+</div>
+
+<div class="flag green">
+  <h3><span class="tag green">Tarkistettu</span>Kaksi samansuuruista Nokian Kilpipainon laskua — ei tuplalasku</h3>
+  <p>Kaksi 17,48 € laskua (eräpäivät 24.6. ja 14.7.) näyttivät duplikaatilta, mutta laskujen sisältö tarkistettiin: kyse on eri postilaatikkokilvistä (Milán ja Koivisto/Penttilä). Pienempi huomio: kilvet on kirjattu tilille 6462 "Ikkunoiden ja ovien korjaus", johon ne eivät luontevasti kuulu — merkitykseltään vähäinen.</p>
+</div>
+
+<div class="flag blue">
+  <h3><span class="tag blue">Havainto</span>Pienempiä huomioita</h3>
+  <p>• Huoneisto 017 (kp 007) maksaa vastikkeita epäsäännöllisesti (mm. huhtikuulta ei suoritusta, toukokuussa vain 38,00 €, kesäkuussa 468,25 €) — reskontra on kokonaisuutena kuitenkin plussalla (saamiset −681,65 € eli ennakkoa maksettu enemmän kuin avoinna).</p>
+  <p>• Tili 2999 Siirtovelat näyttää +5,00 € debet-saldoa (Tamis-muistutusmaksun kirjaus) — velkatilillä ei kuuluisi olla debet-saldoa; kosmeettinen.</p>
+  <p>• Kaikki 80 ostolaskua on hyväksynyt yksin isännöitsijä (Tero Suomela). Hallitus voi halutessaan sopia esim. suurten laskujen kaksoishyväksynnästä.</p>
+  <p>• Hallituspalkkiot maksettu yhtiökokouspäätöksen mukaisesti (pj 400 €, jäsenet 300 €, yht. 1 000 €) ja ennakonpidätys 157,50 € tilitetty oikein.</p>
+</div>
+
+<h2>Pankkitilin täsmäytys</h2>
+<table>
+  <tr><th>Erä</th><th class="num">€</th></tr>
+  <tr><td>Kirjanpidon saldo 26.6.2026 (tili 1910)</td><td class="num">32 840,60</td></tr>
+  <tr><td>− Pirkanmaan Jätehuolto, erääntyi 30.6. (ei vielä kirjattu)</td><td class="num">−294,75</td></tr>
+  <tr><td>− Kiinteistövero erä 1, erääntyi 6.7. (ei vielä kirjattu)</td><td class="num">−4 176,59</td></tr>
+  <tr><td>= Laskennallinen saldo</td><td class="num">28 369,26</td></tr>
+  <tr><td>+ Heinäkuun alun vastikesuorituksia (kirjautuvat seuraavassa ajossa)</td><td class="num">+850,85</td></tr>
+  <tr class="total"><td>Tilin saldo 7.7.2026</td><td class="num">29 220,11</td></tr>
+</table>
+<p class="note">Saldo täsmää kirjanpitoon, kun huomioidaan kesä-heinäkuun vaihteen vielä kirjaamattomat tapahtumat. Heinäkuussa erääntyy lisäksi: Tamis 641,21 € (8.7.), Kotikatu 47,82 € (10.7.), Kilpipaino 17,48 € (14.7.) ja Tre Energia 1 324,93 € (16.7.) — yhteensä 2 031,44 €. Vastikkeita kertyy vastaavasti ~9 200 €/kk.</p>
+
+<h2>Toteuma vs. talousarvio 2026 (tammi–kesäkuu)</h2>
+<table>
+  <tr><th>Kuluryhmä</th><th class="num">Toteuma 1–6</th><th class="num">Budjetti 2026</th><th class="num">Käytetty</th><th></th></tr>
+  <tr><td>Henkilöstökulut (hallituspalkkiot)</td><td class="num">1 000,00</td><td class="num">1 000</td><td class="num">100 %</td><td><div class="bar"><i style="width:100%"></i></div></td></tr>
+  <tr><td>Hallinto</td><td class="num">6 941,66</td><td class="num">11 500</td><td class="num">60 %</td><td><div class="bar"><i style="width:60%"></i></div></td></tr>
+  <tr><td>Käyttö ja huolto</td><td class="num">5 596,09</td><td class="num">11 500</td><td class="num">49 %</td><td><div class="bar"><i style="width:49%"></i></div></td></tr>
+  <tr><td>Ulkoalueiden hoito</td><td class="num">1 771,93</td><td class="num">3 800</td><td class="num">47 %</td><td><div class="bar"><i style="width:47%"></i></div></td></tr>
+  <tr><td>Lämmitys (kirjattu)*</td><td class="num">22 377,88</td><td class="num">31 400</td><td class="num">71 %</td><td><div class="bar warn"><i style="width:71%"></i></div></td></tr>
+  <tr><td>Lämmitys (korjattuna, ilman 12/25 laskua)</td><td class="num">18 385,01</td><td class="num">31 400</td><td class="num">59 %</td><td><div class="bar"><i style="width:59%"></i></div></td></tr>
+  <tr><td>Vesi ja jätevesi (Q2 laskuttamatta)</td><td class="num">2 633,27</td><td class="num">9 800</td><td class="num">27 %</td><td><div class="bar"><i style="width:27%"></i></div></td></tr>
+  <tr><td>Sähkö</td><td class="num">284,20</td><td class="num">1 000</td><td class="num">28 %</td><td><div class="bar"><i style="width:28%"></i></div></td></tr>
+  <tr><td>Jätehuolto</td><td class="num">1 750,79</td><td class="num">5 250</td><td class="num">33 %</td><td><div class="bar"><i style="width:33%"></i></div></td></tr>
+  <tr><td>Vahinkovakuutukset (Q1–Q3 maksettu)</td><td class="num">4 164,70</td><td class="num">5 361</td><td class="num">78 %</td><td><div class="bar"><i style="width:78%"></i></div></td></tr>
+  <tr><td>Kiinteistövero (erä 1 maksettu 6.7.)</td><td class="num">0,00</td><td class="num">8 600</td><td class="num">0 %</td><td><div class="bar"><i style="width:0%"></i></div></td></tr>
+  <tr><td>Korjaukset (sis. lämmönvaihtimen kk-maksu)</td><td class="num">4 446,63</td><td class="num">22 380</td><td class="num">20 %</td><td><div class="bar"><i style="width:20%"></i></div></td></tr>
+  <tr><td>Muut hoitokulut (osakkailta laskutettavat)</td><td class="num">386,16</td><td class="num">0</td><td class="num">–</td><td></td></tr>
+  <tr class="total"><td>Hoitokulut yhteensä (kirjattu)</td><td class="num">51 353,31</td><td class="num">111 591</td><td class="num">46 %</td><td><div class="bar"><i style="width:46%"></i></div></td></tr>
+</table>
+<p class="note">*Lämmityksen kirjattu toteuma sisältää löydöksessä 1 kuvatun 4 397,87 € tuplakirjauksen. Lämmityskausi painottuu alkuvuoteen, joten korjattu 59 % puolessa vuodessa on normaali taso. Kulutus on ollut laskusuunnassa (270 MWh 2025 vs. 314 MWh 2021), ja Tampereen Energian raportin mukaan lämmönjaon toiminta on kunnossa.</p>
+
+<h3>Tuotot 1–6/2026</h3>
+<table>
+  <tr><th>Tuottolaji</th><th class="num">Toteuma 1–6</th><th class="num">Budjetti 2026</th></tr>
+  <tr><td>Hoitovastikkeet (4,70 €/m²/kk)</td><td class="num">49 152,60</td><td class="num">98 304,60</td></tr>
+  <tr><td>Vesivastikkeet (19 €/hlö/kk)</td><td class="num">4 332,00</td><td class="num">9 576,00</td></tr>
+  <tr><td>Kaapeli-tv-vastike (9,50 €/huon.; 1.7. alkaen valokuitu 16,90 €)</td><td class="num">1 197,00</td><td class="num">3 326,40</td></tr>
+  <tr><td>Autokatosvuokrat</td><td class="num">192,00</td><td class="num">384,00</td></tr>
+  <tr class="total"><td>Yhteensä</td><td class="num">54 873,60</td><td class="num">111 591,00</td></tr>
+</table>
+<p class="note">Vastikkeet kertyvät täsmälleen budjetin tahdissa. Rahoituspuoli (pääomavastikkeet, lainaosuussuoritukset) tuotti lisäksi +5 888,96 €; huoneisto E maksoi lainaosuutensa pois tammikuussa (3 415,42 €), ja pääomavastikelainaa on jäljellä 14 259,02 €.</p>
+
+<h2>Katse eteenpäin</h2>
+<p>Loppuvuonna tilanne kiristyy hieman: kiinteistöveron molemmat erät (~8 353 €) osuvat H2:lle ja lämmityskausi alkaa taas syksyllä. Nykyinen kassa (29 220 €) riittää tähän hyvin. Suuremmat kunnossapitotarveselvityksen hankkeet — pääovien ja terassiovien uusiminen lukituksineen (arvio 65 000 €, 2027–28) ja patteriverkoston perussäätö (19 000 €, 2027–30) — edellyttävät rahoituspäätöksiä lähivuosien yhtiökokouksissa. Valokuituun (ElmoNet) siirrytään heinäkuussa 2026, jolloin Elisan laajakaistamaksu (189,15 €/kk) poistuu ja kaapeli-tv-vastike nousee 16,90 €:oon/huoneisto.</p>
+
+<footer>
+Lähteet: 2026-kirjanpito (tase, tuloslaskelma, tositepääkirja, ostolaskuluettelo ja 80 laskutositetta, ajettu 26.6.2026) sekä yhtiökokouspöytäkirja liitteineen 2.3.2026 (talousarvio 2026, tilinpäätös 2025, kunnossapitotarveselvitys). Pankkitilin saldo 7.7.2026 käyttäjän ilmoittama. Raportti on laadittu hallituksen sisäiseen käyttöön; kirjauskorjaukset kannattaa varmistaa kirjanpitäjältä.
+</footer>
+
+</div>
+</body>
+</html>
