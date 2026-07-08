@@ -17,10 +17,11 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  // Keep the Nash Jocic pages public but out of search indexes.
+  // Keep selected public pages out of search indexes.
   async headers() {
     const noindex = [{ key: "X-Robots-Tag", value: "noindex, nofollow" }];
     return [
+      { source: "/2026-talousraportti-h1.html", headers: noindex },
       { source: "/nash-jocic-claude", headers: noindex },
       { source: "/nash-jocic-codex", headers: noindex },
       { source: "/nash-jocic-claude/:path*", headers: noindex },
