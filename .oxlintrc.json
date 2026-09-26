@@ -51,6 +51,7 @@
     "eslint/no-ternary": "off",
     "eslint/sort-keys": "off",
     "eslint/func-style": "off",
+    "eslint/one-var": "off",
     "eslint/id-length": "off",
     "unicorn/no-null": "off",
 

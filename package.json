@@ -6,9 +6,13 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "oxlint --fix",
+    "lint": "oxlint --deny-warnings",
+    "lint:fix": "oxlint --fix",
     "format": "oxfmt",
-    "check": "oxfmt && oxlint --fix && tsc --noEmit"
+    "format:check": "oxfmt --check",
+    "typecheck": "tsc --noEmit",
+    "fix": "bun run lint:fix && bun run format",
+    "check": "oxlint --deny-warnings && oxfmt --check && tsc --noEmit"
   },
   "dependencies": {
     "@t3-oss/env-nextjs": "0.13.11",

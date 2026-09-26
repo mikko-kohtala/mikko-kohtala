@@ -7,10 +7,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```bash
 bun dev      # Start dev server with Turbopack
 bun build    # Production build
-bun check    # Run oxfmt + oxlint (autofix) + TypeScript type check
-bun lint     # Run oxlint with autofix
-bun format   # Format with oxfmt
+bun check    # Read-only: oxlint + oxfmt --check + TypeScript type check
+bun run fix  # Apply oxlint autofixes + oxfmt formatting
 ```
+
+## Validation
+
+Validate all work with `bun check` (lint, format, typecheck) before calling it done. `bun run fix` applies lint/format fixes.
 
 ## Tech Stack
 
